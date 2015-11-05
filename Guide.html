@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignWriting Server Guide</title>
+    <meta name="description" content="Available API resources: descriptions and parameters.">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+      tt, pre, code { font-family: Consolas, "Liberation Mono", Courier, monospace; background-color: transparent !important; }
+      pre.prettyprint { border: 0px !important; background-color: #fff; margin-bottom: -0.5em; }
+      .panel-heading h2 { margin-top: 0.5em; }
+      .bg-default { background-color: #F8F8F8; }
+      .snippet { background: #F8F8; list-style: none; display: none; }
+      .snippet-toggle { margin-top: -0.3em; }
+      h2 { padding-bottom: 5px; border-bottom: 3px solid #E7E7E7; }
+      div.panel h2 { padding-bottom: 0px; border: 0px; }
+      h3 { padding-bottom: 5px; border-bottom: 1px solid #EEE; }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="page-header">
+            <ul id="pages-tab" class="nav nav-pills">
+              <li id="page-index"><a href="index.html"><strong>Index</strong></a></li>
+              <li id="page-guide"><a href="Guide.html"><strong>Guide</strong></a></li>
+              <li id="page-example"><a href="Example.html"><strong>Example</strong></a></li>
+              <li id="page-run"><a href="Run.html"><strong>Run</strong></a></li>
+              <li><a href="https://github.com/Slevinski/swserver/"><strong>GitHub</strong></a></li>
+            </ul>
+            <h1>SignWriting Server Guide</h1>
+            <p>Available API resources: descriptions and parameters.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 2em;">
+        <div class="col-md-12">
+<ul class="nav nav-tabs" id="group-tab">
+  
+    <li><a href="#server" data-toggle="tab"><strong>server</strong></a></li>
+  
+    <li><a href="#svg" data-toggle="tab"><strong>svg</strong></a></li>
+  
+    <li><a href="#regex" data-toggle="tab"><strong>regex</strong></a></li>
+  
+    <li><a href="#user" data-toggle="tab"><strong>user</strong></a></li>
+  
+</ul>
+</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="tab-content">
+
+  <div class="tab-pane" id="server">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 id="server">server</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead"><small>Server communication uses HTTP request methods and response statuses
+
+</small></p>
+        
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/</code>
+    </div>
+    <div class="panel-body">
+      <p>The root response from the SignWriting Server is an HTML version of README.md.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/Guide.html</code>
+    </div>
+    <div class="panel-body">
+      <p>Guide.html documents the available API resources: descriptions and parameters.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/Example.html</code>
+    </div>
+    <div class="panel-body">
+      <p>Example.html contains example requests and documented responses.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/Run.html</code>
+    </div>
+    <div class="panel-body">
+      <p>Run.html contains example requests and real-time responses.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/README.md</code>
+    </div>
+    <div class="panel-body">
+      <p>The Readme file contains information about the SignWriting Server project.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/Guide.md</code>
+    </div>
+    <div class="panel-body">
+      <p>The Markdown version of the API Blueprint for the SignWriting Server.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/Example.md</code>
+    </div>
+    <div class="panel-body">
+      <p>The Example API calls using <strong>curl</strong> from the command line and collated into a document.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/Example.json</code>
+    </div>
+    <div class="panel-body">
+      <p>The Example API calls documented with JSON data.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/notFound</code>
+    </div>
+    <div class="panel-body">
+      <p>The when a location is not found, a JSON error is returned.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="svg">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 id="svg">svg</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead"><small>The svg groups creates SVG images that are stand-alone or that require the SignWriting 2010 fonts.
+
+</small></p>
+        
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/svg/{text}</code>
+    </div>
+    <div class="panel-body">
+      <p>Individual signs and symbols are displayed in stand-alone SVG.
+An optional styling string can be used to adjust the output image.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>text</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> text of symbol key or FSW string, with optional styling string.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/svg/font/{text}</code>
+    </div>
+    <div class="panel-body">
+      <p>Individual signs and symbols are displayed in SVG using TrueType fonts.
+An optional styling string can be used to adjust the output image.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>text</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> text of symbol key or FSW string, with optional styling string.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="regex">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 id="regex">regex</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead"><small>Query string to regular expression transformation.
+
+</small></p>
+        
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/regex/{query}</code>
+    </div>
+    <div class="panel-body">
+      <p>Query strings can be transformed into regular expressions.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>query</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Formal SignWriting query string.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/regex/{flags}/{fsw}</code>
+    </div>
+    <div class="panel-body">
+      <p>Formal SignWriting can be transformed into regular expressions,
+depending on the flags supplied.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>flags</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Flags for FSW convertion to query string.
+&#39;A&#39; - sorted by the same exact symbols.
+&#39;a&#39; - sorted by the same general symbols.
+&#39;S&#39; - spatial arrangement contains the same exact symbols.
+&#39;s&#39; - spatial arrangement contains the same general symbols.
+&#39;L&#39; - location of spatial arrangement is similar.
+
+
+    </dd>
+  
+    <dt>fsw</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Formal SignWriting string.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="user">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 id="user">user</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead"><small>Work in progress
+
+</small></p>
+        
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/user/salt</code>
+    </div>
+    <div class="panel-body">
+      <p>User salt is required for user authentication.
+Passwords are mixed with the salt before they are sent to the server.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+        </div>
+      </div>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script>
+      jQuery(function($) {
+        $('#group-tab a[data-toggle="tab"]').on("click", function(e) {
+          window.location.hash = $(this).attr("href");
+        });
+        var pathname = window.location.pathname;
+        var page = pathname.substring(pathname.lastIndexOf("/") + 1);
+        page = page?page:'index.html';
+        page = page.split('.')[0].toLowerCase();
+        $('#page-' + page).addClass('active');
+        if (window.location.hash) {
+          $('#group-tab a:first').tab('show');
+          $('#group-tab a[href$="' + window.location.hash + '"]').tab(
+            "show");
+        } else {
+          $('#group-tab a:first').tab('show');
+        }
+        $('.snippet-toggle').on("click", function(e) {
+          e.preventDefault();
+          var target = $(this).data('target');
+          $(this).parent().next().toggle();
+          if ($(this).text() == "SHOW") {
+            $(this).text("HIDE");
+          } else {
+            $(this).text("SHOW");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+

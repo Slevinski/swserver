@@ -1,0 +1,820 @@
+[
+{
+  "top": "Example.md",
+  "lines": [
+    "FORMAT: X-1A",
+    "HOST: localhost:3000",
+    "# SignWriting Server Example",
+    "Example requests and documented responses from the SignWriting Server"
+  ]
+},
+{
+  "group": "server",
+  "text": "Server communication uses HTTP request methods and response statuses."
+},
+{
+  "id": "server-md-guide",
+  "method": "GET",
+  "headers": {
+      "Location": "/Guide.md",
+      "Description": "The API Blueprint for the SignWriting Server"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "server-not-found",
+  "method": "GET",
+  "headers": {
+      "Location": "/notFound",
+      "Description": "A URL that is not found"
+   },
+  "status": 404,
+  "type": "application/json",
+  "data": null
+},
+
+{
+  "group": "svg",
+  "text": "The svg groups creates SVG images that are stand-alone or that require the SignWriting 2010 fonts."
+},
+{
+  "id": "svg-sign",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "svg for sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-colorized",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-C",
+      "Description": "svg for colorized sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-padded",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-P99",
+      "Description": "svg for padded sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-line-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-D_red_",
+      "Description": "svg for line colored sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-line-fill-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-D_red,blue_",
+      "Description": "svg for line and fill colored sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-gray-background",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-G_gray_",
+      "Description": "svg with colored background"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-large",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-Z2",
+      "Description": "svg with large size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-size-x",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-Zx",
+      "Description": "svg with x size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-inverse",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-P05G_black_D_white,black_Z1.5",
+      "Description": "svg with inverse colors"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-symbol-red",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--D01_red_",
+      "Description": "svg with one red symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-symbol-red-green",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--D01_red_D02_green_",
+      "Description": "svg with one red symbol and one green symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-symbol-large",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--Z03,2",
+      "Description": "svg with one large symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-symbol-large-adj",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--Z01,1.5,480x480",
+      "Description": "svg with one large symbol with adjusted position"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-style-many",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-P05G_lightblue_-D01_red_D02_green_Z01,1.5,480x480Z03,2.1,480x500",
+      "Description": "svg with many styling options"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "svg for sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-colorized",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-C",
+      "Description": "svg for colorized sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-padded",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-P99",
+      "Description": "svg for padded sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-line-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-D_red_",
+      "Description": "svg for line colored sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-line-fill-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-D_red,blue_",
+      "Description": "svg for line and fill colored sign"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-gray-background",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-G_gray_",
+      "Description": "svg with colored background"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-large",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-Z2",
+      "Description": "svg with large size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-size-x",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-Zx",
+      "Description": "svg with x size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-inverse",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-P05G_black_D_white,black_Z1.5",
+      "Description": "svg with inverse colors"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-symbol-red",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--D01_red_",
+      "Description": "svg with one red symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-symbol-red-green",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--D01_red_D02_green_",
+      "Description": "svg with one red symbol and one green symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-symbol-large",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--Z03,2",
+      "Description": "svg with one large symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-symbol-large-adj",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520--Z01,1.5,480x480",
+      "Description": "svg with one large symbol with adjusted position"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-sign-font-style-many",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520-P05G_lightblue_-D01_red_D02_green_Z01,1.5,480x480Z03,2.1,480x500",
+      "Description": "svg with many styling options"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000",
+      "Description": "svg for symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-colorized",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-C",
+      "Description": "svg for colorized symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-padded",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-P99",
+      "Description": "svg for padded symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-line-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-D_red_",
+      "Description": "svg for line colored symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-line-fill-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-D_red,blue_",
+      "Description": "svg for line and fill colored symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-gray-background",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-G_gray_",
+      "Description": "svg with colored background"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-large",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-Z2",
+      "Description": "svg with large size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-size-x",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-Zx",
+      "Description": "svg with x size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-inverse",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-P05G_black_D_white,black_Z1.5",
+      "Description": "svg with inverse colors"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000",
+      "Description": "svg for symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-colorized",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-C",
+      "Description": "svg for colorized symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-padded",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-P99",
+      "Description": "svg for padded symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-line-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-D_red_",
+      "Description": "svg for line colored symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-line-fill-color",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-D_red,blue_",
+      "Description": "svg for line and fill colored symbol"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-gray-background",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-G_gray_",
+      "Description": "svg with colored background"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-large",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-Z2",
+      "Description": "svg with large size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-size-x",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-Zx",
+      "Description": "svg with x size"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-symbol-font-inverse",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/font/S10000-P05G_black_D_white,black_Z1.5",
+      "Description": "svg with inverse colors"
+   },
+  "status": 200,
+  "type": "image/svg+xml",
+  "data": null
+},
+{
+  "id": "svg-no-db",
+  "method": "GET",
+  "headers": {
+      "Location": "/svg/S10000-C?throwStatus=500",
+      "Description": "Fail due to database error"
+   },
+  "status": 500,
+  "type": "application/json",
+  "data": null
+},
+
+{
+  "group": "regex",
+  "text": "Query string to regular expression transformation."
+},
+{
+  "id": "regex-Q",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/Q",
+      "Description": "query all signs"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QS10000",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QS10000",
+      "Description": "query signs with symbol S10000"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QS100uu",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QS100uu",
+      "Description": "query signs with base symbol S100 all fills and rotations"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QS10000S20500",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QS10000S20500",
+      "Description": "query signs with symbols S10000 and S20500"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QR100t110",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QR100t110",
+      "Description": "query signs with any range of base symbols from S100 through S1100"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QT",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QT",
+      "Description": "query sortable signs"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QAS10000T",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QAS10000T",
+      "Description": "query signs with sort start of symbol S10000"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QAS100uuT",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QAS100uuT",
+      "Description": "query signs with sort start of base symbol S100 all fills and rotations"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QAS10000S20500T",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QAS10000S20500T",
+      "Description": "query signs with sort start of symbols S10000 then S20500"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-QAR100t110T",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/QR100t110",
+      "Description": "query signs with sort start range of base symbols from S100 through S1100"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-bad-query",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/bad-query",
+      "Description": "A bad query that can not be transformed"
+   },
+  "status": 422,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-sorting-exact",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/A/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "fsw conversion query with same exact sorting symbols"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-sorting-general",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/a/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "fsw conversion query with same general sorting symbols"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-spatial-exact",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/S/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "fsw conversion query with same exact spatial symbols"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-spatial-general",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/s/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "fsw conversion query with same general spatial symbols"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-spatial-exact-location",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/SL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "fsw conversion query with same exact spatial symbols at location"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-spatial-general-location",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/sL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "fsw conversion query with same general spatial symbols at location"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-both-exact-location",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/ASL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "fsw conversion query with same exact sorting symbols and same exact spatial symbols at location"
+   },
+  "status": 200,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-bad-flags",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/wrong/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "no valid flags"
+   },
+  "status": 422,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-bad-fsw",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/asL/not_fsw",
+      "Description": "not valid FSW"
+   },
+  "status": 422,
+  "type": "application/json",
+  "data": null
+},
+{
+  "id": "regex-flags-no-query",
+  "method": "GET",
+  "headers": {
+      "Location": "/regex/a/M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "no query possible"
+   },
+  "status": 422,
+  "type": "application/json",
+  "data": null
+},
+
+{
+  "group": "user",
+  "text": "Work in progress..."
+},
+{
+  "id": "user-salt",
+  "method": "GET",
+  "headers": {
+      "Location": "/user/salt",
+      "Description": "Request salt from server"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "group": "country",
+  "text": "Work in progress..."
+},
+{
+  "group": "language",
+  "text": "Work in progress..."
+},
+{}
+]
