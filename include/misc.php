@@ -13,7 +13,11 @@ function json_pretty($object)
     if($json_obj === false)
         return false;
 
-    $json = json_encode($json_obj,JSON_UNESCAPED_SLASHES);
+    if (defined("JSON_UNESCAPED_SLASHES")){
+      $json = json_encode($json_obj,JSON_UNESCAPED_SLASHES);
+    } else {
+      $json = str_replace('\\/', '/',json_encode($json_obj));
+    }
     $len = strlen($json);
 
     for($c = 0; $c < $len; $c++)

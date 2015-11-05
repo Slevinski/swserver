@@ -28,7 +28,6 @@ require 'include/user.php';
 
 $_ENV['SLIM_MODE'] = 'development'; //'development' or 'production'
 require 'Slim/Slim.php';
-require 'include/auth.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 
@@ -222,7 +221,7 @@ function haltNoDatabase() {
     $app->halt(500,json_pretty($return));
 }
 
-function haltValidation($desc,$errors=[]) {
+function haltValidation($desc,$errors=array()) {
     global $app;
     $app->contentType('application/json;charset=utf-8');
     $return = array();

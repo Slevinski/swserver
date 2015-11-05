@@ -60,7 +60,7 @@ function chex($name){
 
 function stylingArray($styling){
   $styling = styling($styling);
-  $options = ['size'=>1,'colorize'=>0,'pad'=>0,'line'=>'black','fill'=>'white','back'=>'','E'=>array(),'F'=>array()];
+  $options = array('size'=>1,'colorize'=>0,'pad'=>0,'line'=>'black','fill'=>'white','back'=>'','E'=>array(),'F'=>array());
   if ($styling){
     $parts = explode("-",$styling . '-');
 
