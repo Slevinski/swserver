@@ -103,6 +103,78 @@ Query strings can be transformed into regular expressions.
 Formal SignWriting can be transformed into regular expressions,
 depending on the flags supplied.
 
+## Group puddle
+Collections of signs.
+
+### Query for signs [/puddle/{puddle}/query/{query}{?offset}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - Name of puddle collection.
+    + query: Q (string) - Formal SignWriting query string.
+    + offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection with query.
+
+### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - Name of puddle collection.
+    + query: Q (string) - Formal SignWriting query string.
+    + offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection for SignText with query.
+
+### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - Name of puddle collection.
+    + flags: ASL (string) - Flags for FSW convertion to query string.
+        'A' - sorted by the same exact symbols.
+        'a' - sorted by the same general symbols.
+        'S' - spatial arrangement contains the same exact symbols.
+        's' - spatial arrangement contains the same general symbols.
+        'L' - location of spatial arrangement is similar.
+    + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
+    + offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection with Formal SignWriting and conversion flags.
+
+### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - Name of puddle collection.
+    + flags: ASL (string) - Flags for FSW convertion to query string.
+        'A' - sorted by the same exact symbols.
+        'a' - sorted by the same general symbols.
+        'S' - spatial arrangement contains the same exact symbols.
+        's' - spatial arrangement contains the same general symbols.
+        'L' - location of spatial arrangement is similar.
+    + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
+    + offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection for SignText with Formal SignWriting and conversion flags.
+
+### Search text [/puddle/{puddle}/search/{search}{?part,ci,offset}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - Name of puddle collection.
+    + search: hello (string) - search string.
+    + match: exact (optional, string) - matching strategy: start, end, exact
+    + ci: true (optional, boolean) - case insensitive flag.
+    + offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection with string.
+
 ## Group user
 Work in progress
 

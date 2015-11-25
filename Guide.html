@@ -47,6 +47,8 @@
   
     <li><a href="#regex" data-toggle="tab"><strong>regex</strong></a></li>
   
+    <li><a href="#puddle" data-toggle="tab"><strong>puddle</strong></a></li>
+  
     <li><a href="#user" data-toggle="tab"><strong>user</strong></a></li>
   
 </ul>
@@ -414,6 +416,304 @@ depending on the flags supplied.</p>
       <strong>(required)</strong>
     
     <code>string</code> Formal SignWriting string.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="puddle">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 id="puddle">puddle</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead"><small>Collections of signs.
+
+</small></p>
+        
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/query/{query}{?offset}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection with query.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Name of puddle collection.
+    </dd>
+  
+    <dt>query</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Formal SignWriting query string.
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/query/signtext/{query}{?offset}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection for SignText with query.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Name of puddle collection.
+    </dd>
+  
+    <dt>query</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Formal SignWriting query string.
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/query/{flags}/{fsw}{?offset}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection with Formal SignWriting and conversion flags.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Name of puddle collection.
+    </dd>
+  
+    <dt>flags</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Flags for FSW convertion to query string.
+&#39;A&#39; - sorted by the same exact symbols.
+&#39;a&#39; - sorted by the same general symbols.
+&#39;S&#39; - spatial arrangement contains the same exact symbols.
+&#39;s&#39; - spatial arrangement contains the same general symbols.
+&#39;L&#39; - location of spatial arrangement is similar.
+
+
+    </dd>
+  
+    <dt>fsw</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Formal SignWriting string.
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection for SignText with Formal SignWriting and conversion flags.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Name of puddle collection.
+    </dd>
+  
+    <dt>flags</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Flags for FSW convertion to query string.
+&#39;A&#39; - sorted by the same exact symbols.
+&#39;a&#39; - sorted by the same general symbols.
+&#39;S&#39; - spatial arrangement contains the same exact symbols.
+&#39;s&#39; - spatial arrangement contains the same general symbols.
+&#39;L&#39; - location of spatial arrangement is similar.
+
+
+    </dd>
+  
+    <dt>fsw</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Formal SignWriting string.
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/search/{search}{?part,ci,offset}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection with string.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> Name of puddle collection.
+    </dd>
+  
+    <dt>search</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> search string.
+    </dd>
+  
+    <dt>match</dt>
+    <dd>
+    
+    <code>string</code> matching strategy: start, end, exact
+    </dd>
+  
+    <dt>ci</dt>
+    <dd>
+    
+    <code>boolean</code> case insensitive flag.
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
     </dd>
   
 </dl>

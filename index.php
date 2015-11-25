@@ -36,7 +36,8 @@ $app->configureMode('production', function () use ($app) {
     ini_set('display_errors', 0);
     $app->config(array(
         'log.enable' => true,
-        'debug' => false
+        'debug' => false,
+        'entry_limit' => 100
     ));
 });
 
@@ -45,7 +46,8 @@ $app->configureMode('development', function () use ($app) {
     ini_set('display_errors', 1);
     $app->config(array(
         'log.enable' => false,
-        'debug' => true
+        'debug' => true,
+        'entry_limit' => 100
     ));
 });
 
@@ -363,7 +365,7 @@ $app->get('/regex/:flags/:fsw', function ($flags,$fsw) use ($app) {
 
   $query = SignWriting\convert($fsw,$flags);
   if (!$query){
-    haltValidation('no query string');
+    haltValidation('no query possible');
   }
   $regex = SignWriting\query2regex($query);
   $app->contentType('application/json;charset=utf-8');
@@ -376,6 +378,270 @@ $app->get('/regex/:flags/:fsw', function ($flags,$fsw) use ($app) {
   $return['meta']['searchTime'] = searchtime($timein);
   echo json_pretty($return);
 });
+
+
+/**********/
+// ## Group puddle
+// Collections of signs.
+// 
+
+/**
+* Resource
+*/
+// ### Query for signs [/puddle/{puddle}/query/{query}{?offset}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + query: Q (string) - Formal SignWriting query string.
+//     + offset: 100 (optional, number) - offset for results array.
+// 
+
+// #### GET
+// Search puddle collection with query.
+// 
+$app->get('/puddle/:puddle/query/:query', function ($puddle,$query) use ($app) {
+  $timein = microtime(true);
+  $offset = intval($app->request()->get('offset'));
+  $limit = $app->config('entry_limit');  
+  $results = puddle_query($puddle,$query,$offset,$limit);
+  if ($offset){
+    $plus = '?offset=' . $offset;
+  } else {
+    $plus = '';
+  }
+
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['locaction']='/puddle/' . $puddle . '/query/' . $query . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + query: Q (string) - Formal SignWriting query string.
+//     + offset: 100 (optional, number) - offset for results array.
+// 
+
+// #### GET
+// Search puddle collection for SignText with query.
+// 
+$app->get('/puddle/:puddle/query/signtext/:query', function ($puddle,$query) use ($app) {
+  $timein = microtime(true);
+  $offset = intval($app->request()->get('offset'));
+  $limit = $app->config('entry_limit');  
+  $results = puddle_query_signtext($puddle,$query,$offset,$limit);
+  if ($offset){
+    $plus = '?offset=' . $offset;
+  } else {
+    $plus = '';
+  }
+
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['locaction']='/puddle/' . $puddle . '/query/signtext/' . $query . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + flags: ASL (string) - Flags for FSW convertion to query string.
+//         'A' - sorted by the same exact symbols.
+//         'a' - sorted by the same general symbols.
+//         'S' - spatial arrangement contains the same exact symbols.
+//         's' - spatial arrangement contains the same general symbols.
+//         'L' - location of spatial arrangement is similar.
+//     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
+//     + offset: 100 (optional, number) - offset for results array.
+// 
+
+// #### GET
+// Search puddle collection with Formal SignWriting and conversion flags.
+// 
+$app->get('/puddle/:puddle/query/:flags/:fsw', function ($puddle,$flags,$fsw) use ($app) {
+  $timein = microtime(true);
+  $lflags = '';
+  $query = '';
+  $flags = SignWriting\convertFlags($flags);
+  if (!$flags){
+    haltValidation('invalid flags');
+  }
+
+  $fsw = SignWriting\fsw($fsw);
+  if (!$fsw){
+    haltValidation('invalid Formal SignWriting');
+  }
+
+  $query = SignWriting\convert($fsw,$flags);
+  if (!$query){
+    haltValidation('no query string');
+  }
+
+  $offset = intval($app->request()->get('offset'));
+  $limit = $app->config('entry_limit');  
+  $results = puddle_query($puddle,$query,$offset,$limit);
+  if ($offset){
+    $plus = '?offset=' . $offset;
+  } else {
+    $plus = '';
+  }
+
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['locaction']='/puddle/' . $puddle . '/query/' . $flags . '/' . $fsw . $plus;
+  $return['meta']['query']=$query;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + flags: ASL (string) - Flags for FSW convertion to query string.
+//         'A' - sorted by the same exact symbols.
+//         'a' - sorted by the same general symbols.
+//         'S' - spatial arrangement contains the same exact symbols.
+//         's' - spatial arrangement contains the same general symbols.
+//         'L' - location of spatial arrangement is similar.
+//     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
+//     + offset: 100 (optional, number) - offset for results array.
+// 
+
+// #### GET
+// Search puddle collection for SignText with Formal SignWriting and conversion flags.
+// 
+$app->get('/puddle/:puddle/query/signtext/:flags/:fsw', function ($puddle,$flags,$fsw) use ($app) {
+  $timein = microtime(true);
+  $lflags = '';
+  $query = '';
+  $flags = SignWriting\convertFlags($flags);
+  if (!$flags){
+    haltValidation('invalid flags');
+  }
+
+  $fsw = SignWriting\fsw($fsw);
+  if (!$fsw){
+    haltValidation('invalid Formal SignWriting');
+  }
+
+  $query = SignWriting\convert($fsw,$flags);
+  if (!$query){
+    haltValidation('no query string');
+  }
+
+  $offset = intval($app->request()->get('offset'));
+  $limit = $app->config('entry_limit');  
+  $results = puddle_query_signtext($puddle,$query,$offset,$limit);
+  if ($offset){
+    $plus = '?offset=' . $offset;
+  } else {
+    $plus = '';
+  }
+
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['locaction']='/puddle/' . $puddle . '/query/signtext/' . $flags . '/' . $fsw . $plus;
+  $return['meta']['query']=$query;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Search text [/puddle/{puddle}/search/{search}{?part,ci,offset}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + search: hello (string) - search string.
+//     + match: exact (optional, string) - matching strategy: start, end, exact
+//     + ci: true (optional, boolean) - case insensitive flag.
+//     + offset: 100 (optional, number) - offset for results array.
+// 
+
+// #### GET
+// Search puddle collection with string.
+// 
+$app->get('/puddle/:puddle/search/:search', function ($puddle,$search) use ($app) {
+  $timein = microtime(true);
+  $offset = intval($app->request()->get('offset'));
+  $ci = filter_var($app->request()->get('ci'),FILTER_VALIDATE_BOOLEAN);
+  $match = $app->request()->get('match');
+  $limit = $app->config('entry_limit');  
+  $results = puddle_search($puddle,$search,$match,$ci,$offset,$limit);
+  $plus = array();
+  if ($ci){
+    $plus[] = 'ci=' . $ci;
+  }
+  if ($match){
+    $plus[] = 'match=' . $match;
+  }
+  if ($offset){
+    $plus[] = 'offset=' . $offset;
+  }
+  if (count($plus)){
+    $plus = '?' . implode('&',$plus); 
+  } else {
+    $plus = ''; 
+  }
+
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['locaction']='/puddle/' . $puddle . '/search/' . $search . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
 
 /**********/
 // ## Group user
@@ -396,5 +662,6 @@ $app->get('/user/salt', function () use ($app) {
   $app->contentType('text/plain;charset=utf-8');
   echo User::salt();
 });
+
 
 $app->run();

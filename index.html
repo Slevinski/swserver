@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignWriting Server</title>
-    <meta name="description" content="&gt; swserver, v1.0.0
-November 5th, 2015
+    <meta name="description" content="&gt; swserver, v1.1.0
+November 25th, 2015
 
 ## About
 
@@ -33,6 +33,12 @@ Query strings are a concise representation of a much larger and detailed set of 
 Each query string is transformed into one or more regular expressions that can be used to search a text of Formal SignWriting.
 Additionally, Formal SignWriting strings can be converted into several types of query strings, each of which can be transformed into regular expressions.
 
+### Query and search puddle collections for sign entries
+
+All of the SignPuddle Online data is available as SQLite 3 databases.
+With a query, puddle entries can be access with sign language directly.
+With a search, puddle entries can be access with spoken language.
+
 
 ## Installation
 
@@ -42,11 +48,19 @@ Copy the SignWriting Server files to the root web server directory or to a sub-d
 
 Any server that supports PHP and SQLite 3 will be able to run the SignWriting Server.
 
-### Database
+### Databases
 
-The database is available from the [SignWriting Server Data project](https://github.com/Slevinski/swserver_data/).
+The main database is available from the [SignWriting Server Data project](https://github.com/Slevinski/swserver_data/).
 
 * install as data/swserver.db
+
+The puddle databases are available from [SignBank](http://signbank.org/swserver_data/puddle/).
+
+* install in data/puddle/
+
+A shell script is available to mirror all of the available puddles on SignBank with a single command.
+
+* execute data/refresh.sh
 
 ### Shell Script to Start Server
 
@@ -161,22 +175,19 @@ MIT
 
 * expand API for languages, users, groups, and countries
 
-* access SignPuddle data: dictionaries and documents
+* expand API for create, update, and delete
 
 ## Version History
 
-* 1.0.0 - Nov 5th, 2015: init
+* 1.1.0 - Nov 25th, 2015: added query and search for puddle data
+
+* 1.0.0 - Nov 5th, 2015: initial public release
 
 [draft-slevinski-signwriting-text]: http://tools.ietf.org/html/draft-slevinski-signwriting-text
 [SignWriting 2010 Fonts]: https://github.com/Slevinski/signwriting_2010_fonts
 [SignWriting List]: http://www.signwriting.org/forums/swlist/
 [SignPuddle Online]: http://signpuddle.org
-[SignWriting 2010 JavaScript Library]: http://slevinski.github.io/sw10js/
-[MIT]: http://www.opensource.org/licenses/mit-license.php
-[Draggabilly]: http://draggabilly.desandro.com/
-[Mithril]: https://lhorie.github.io/mithril/
-[Translate]: https://github.com/musterknabe/translate.js
-[Download]: https://github.com/Slevinski/swviewer/archive/gh-pages.zip">
+[SignWriting 2010 JavaScript Library]: http://slevinski.github.io/sw10js/">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <style>
       tt, pre, code { font-family: Consolas, "Liberation Mono", Courier, monospace; background-color: transparent !important; }
@@ -205,8 +216,8 @@ MIT
             </ul>
             <h1>SignWriting Server</h1>
             <blockquote>
-<p>swserver, v1.0.0
-November 5th, 2015</p>
+<p>swserver, v1.1.0
+November 25th, 2015</p>
 </blockquote>
 
 <h2>About</h2>
@@ -238,6 +249,12 @@ The SignWriting Server provides online resources for SignWriting applications an
 Each query string is transformed into one or more regular expressions that can be used to search a text of Formal SignWriting.
 Additionally, Formal SignWriting strings can be converted into several types of query strings, each of which can be transformed into regular expressions.</p>
 
+<h3>Query and search puddle collections for sign entries</h3>
+
+<p>All of the SignPuddle Online data is available as SQLite 3 databases.
+With a query, puddle entries can be access with sign language directly.
+With a search, puddle entries can be access with spoken language.</p>
+
 <h2>Installation</h2>
 
 <p>Copy the SignWriting Server files to the root web server directory or to a sub-directory.</p>
@@ -246,12 +263,24 @@ Additionally, Formal SignWriting strings can be converted into several types of 
 
 <p>Any server that supports PHP and SQLite 3 will be able to run the SignWriting Server.</p>
 
-<h3>Database</h3>
+<h3>Databases</h3>
 
-<p>The database is available from the <a href="https://github.com/Slevinski/swserver_data/">SignWriting Server Data project</a>.</p>
+<p>The main database is available from the <a href="https://github.com/Slevinski/swserver_data/">SignWriting Server Data project</a>.</p>
 
 <ul>
 <li>install as data/swserver.db</li>
+</ul>
+
+<p>The puddle databases are available from <a href="http://signbank.org/swserver_data/puddle/">SignBank</a>.</p>
+
+<ul>
+<li>install in data/puddle/</li>
+</ul>
+
+<p>A shell script is available to mirror all of the available puddles on SignBank with a single command.</p>
+
+<ul>
+<li>execute data/refresh.sh</li>
 </ul>
 
 <h3>Shell Script to Start Server</h3>
@@ -377,13 +406,15 @@ The next version is planned for November 2015.</p>
 <ul>
 <li><p>expand API for languages, users, groups, and countries</p></li>
 
-<li><p>access SignPuddle data: dictionaries and documents</p></li>
+<li><p>expand API for create, update, and delete</p></li>
 </ul>
 
 <h2>Version History</h2>
 
 <ul>
-<li>1.0.0 - Nov 5th, 2015: init</li>
+<li><p>1.1.0 - Nov 25th, 2015: added query and search for puddle data</p></li>
+
+<li><p>1.0.0 - Nov 5th, 2015: initial public release</p></li>
 </ul>
 
           </div>

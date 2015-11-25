@@ -664,7 +664,7 @@
   "id": "regex-QAR100t110T",
   "method": "GET",
   "headers": {
-      "Location": "/regex/QR100t110",
+      "Location": "/regex/QAR100t110T",
       "Description": "query signs with sort start range of base symbols from S100 through S1100"
    },
   "status": 200,
@@ -793,6 +793,144 @@
   "data": null
 },
 
+  
+{
+  "group": "puddle",
+  "text": "Interact will collections of signs."
+},
+{
+  "id": "puddle-query",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/query/QS10000S20500?offset=40",
+      "Description": "Query puddle for signs with index and contact, with offset"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-fsw",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520",
+      "Description": "Query puddle for signs with same symbols at location"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-signtext",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/query/signtext/QS20500S20320",
+      "Description": "Query puddle for signtext with contact and fist"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-fsw-signtext",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516",
+      "Description": "Query puddle for signtext with same symbols at location"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/del",
+      "Description": "Search puddle for string del"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search-start",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/del?match=start",
+      "Description": "Search puddle for string del at start"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search-end",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/del?match=end",
+      "Description": "Search puddle for string del at end"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search-exact",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/Delaware?match=exact",
+      "Description": "Search puddle for exact string Delaware"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search-ci",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/DEL?ci=1",
+      "Description": "Search puddle for string DEL, case insensitive"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search-start-ci",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/del?match=start&ci=1",
+      "Description": "Search puddle for string del at start, case insensitive"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search-end-ci",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/DEL?match=end&ci=1",
+      "Description": "Search puddle for string DEL at end, case insensitive"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-search-exact-ci",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/search/delaware?match=exact&ci=1",
+      "Description": "Search puddle for exact string delaware, case insensitive"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+  
 {
   "group": "user",
   "text": "Work in progress..."

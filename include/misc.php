@@ -1,5 +1,31 @@
 <?php
 
+function json_check() {
+  switch (json_last_error()) {
+    case JSON_ERROR_NONE:
+      //'No errors';
+      break;
+    case JSON_ERROR_DEPTH:
+      haltValidation('Maximum stack depth exceeded');
+      break;
+    case JSON_ERROR_STATE_MISMATCH:
+      haltValidation('Underflow or the modes mismatch');
+      break;
+    case JSON_ERROR_CTRL_CHAR:
+      haltValidation('Unexpected control character found');
+      break;
+    case JSON_ERROR_SYNTAX:
+      haltValidation('Syntax error, malformed JSON');
+      break;
+    case JSON_ERROR_UTF8:
+      haltValidation('Malformed UTF-8 characters, possibly incorrectly encoded');
+      break;
+    default:
+      haltValidation('Unknown error');
+      break;
+  }
+}
+
 function json_pretty($object)
 {
     $json = json_encode($object);

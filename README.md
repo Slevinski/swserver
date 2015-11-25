@@ -1,6 +1,6 @@
 # SignWriting Server
-> swserver, v1.0.0
-November 5th, 2015
+> swserver, v1.1.0
+November 25th, 2015
 
 ## About
 SignWriting is the international script for writing the sign languages of the world.
@@ -23,6 +23,11 @@ Query strings are a concise representation of a much larger and detailed set of 
 Each query string is transformed into one or more regular expressions that can be used to search a text of Formal SignWriting.
 Additionally, Formal SignWriting strings can be converted into several types of query strings, each of which can be transformed into regular expressions.
 
+### Query and search puddle collections for sign entries
+All of the SignPuddle Online data is available as SQLite 3 databases.
+With a query, puddle entries can be access with sign language directly.
+With a search, puddle entries can be access with spoken language.
+
 
 ## Installation
 Copy the SignWriting Server files to the root web server directory or to a sub-directory.
@@ -30,9 +35,15 @@ Copy the SignWriting Server files to the root web server directory or to a sub-d
 ### Requirements
 Any server that supports PHP and SQLite 3 will be able to run the SignWriting Server.
 
-### Database
-The database is available from the [SignWriting Server Data project](https://github.com/Slevinski/swserver_data/).
+### Databases
+The main database is available from the [SignWriting Server Data project](https://github.com/Slevinski/swserver_data/).
 * install as data/swserver.db
+
+The puddle databases are available from [SignBank](http://signbank.org/swserver_data/puddle/).
+* install in data/puddle/
+
+A shell script is available to mirror all of the available puddles on SignBank with a single command.
+* execute data/refresh.sh
 
 ### Shell Script to Start Server
 If a web server is not already running, the start server shell script can be used to start the built-in PHP web server.
@@ -112,9 +123,10 @@ MIT
 
 ## To Do
 * expand API for languages, users, groups, and countries
-* access SignPuddle data: dictionaries and documents
+* expand API for create, update, and delete
 
 ## Version History
+* 1.1.0 - Nov 25th, 2015: added query and search for puddle data
 * 1.0.0 - Nov 5th, 2015: initial public release
 
 [draft-slevinski-signwriting-text]: http://tools.ietf.org/html/draft-slevinski-signwriting-text

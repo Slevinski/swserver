@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -46,6 +47,8 @@
     <li><a href="#svg" data-toggle="tab"><strong>svg</strong></a></li>
   
     <li><a href="#regex" data-toggle="tab"><strong>regex</strong></a></li>
+  
+    <li><a href="#puddle" data-toggle="tab"><strong>puddle</strong></a></li>
   
     <li><a href="#user" data-toggle="tab"><strong>user</strong></a></li>
   
@@ -211,6 +214,78 @@ Query strings can be transformed into regular expressions.
 Formal SignWriting can be transformed into regular expressions,
 depending on the flags supplied.
 
+## Group puddle
+Collections of signs.
+
+### Query for signs [/puddle/{puddle}/query/{query}{?offset}]
+
+&#43; Parameters
+
+    &#43; puddle: sgn4 (string) - Name of puddle collection.
+    &#43; query: Q (string) - Formal SignWriting query string.
+    &#43; offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection with query.
+
+### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset}]
+
+&#43; Parameters
+
+    &#43; puddle: sgn4 (string) - Name of puddle collection.
+    &#43; query: Q (string) - Formal SignWriting query string.
+    &#43; offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection for SignText with query.
+
+### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset}]
+
+&#43; Parameters
+
+    &#43; puddle: sgn4 (string) - Name of puddle collection.
+    &#43; flags: ASL (string) - Flags for FSW convertion to query string.
+        &#39;A&#39; - sorted by the same exact symbols.
+        &#39;a&#39; - sorted by the same general symbols.
+        &#39;S&#39; - spatial arrangement contains the same exact symbols.
+        &#39;s&#39; - spatial arrangement contains the same general symbols.
+        &#39;L&#39; - location of spatial arrangement is similar.
+    &#43; fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
+    &#43; offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection with Formal SignWriting and conversion flags.
+
+### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}]
+
+&#43; Parameters
+
+    &#43; puddle: sgn4 (string) - Name of puddle collection.
+    &#43; flags: ASL (string) - Flags for FSW convertion to query string.
+        &#39;A&#39; - sorted by the same exact symbols.
+        &#39;a&#39; - sorted by the same general symbols.
+        &#39;S&#39; - spatial arrangement contains the same exact symbols.
+        &#39;s&#39; - spatial arrangement contains the same general symbols.
+        &#39;L&#39; - location of spatial arrangement is similar.
+    &#43; fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
+    &#43; offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection for SignText with Formal SignWriting and conversion flags.
+
+### Search text [/puddle/{puddle}/search/{search}{?part,ci,offset}]
+
+&#43; Parameters
+
+    &#43; puddle: sgn4 (string) - Name of puddle collection.
+    &#43; search: hello (string) - search string.
+    &#43; match: exact (optional, string) - matching strategy: start, end, exact
+    &#43; ci: true (optional, boolean) - case insensitive flag.
+    &#43; offset: 100 (optional, number) - offset for results array.
+
+#### GET
+Search puddle collection with string.
+
 ## Group user
 Work in progress
 
@@ -341,7 +416,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.06 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.97 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -398,7 +473,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.08 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.14 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -455,7 +530,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.02 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;237&#39; height=&#39;262&#39; viewBox=&#39;383 384 237 262&#39;&gt;
@@ -569,7 +644,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.05 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -626,7 +701,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.02 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -684,7 +759,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.05 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;78&#39; height=&#39;128&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -741,7 +816,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.02 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.36 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -798,7 +873,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.02 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.03 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;73.5&#39; height=&#39;111&#39; viewBox=&#39;477 478 49 74&#39;&gt;
@@ -856,7 +931,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.02 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -970,7 +1045,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.01 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.02 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;57&#39; height=&#39;91&#39; viewBox=&#39;482 483 57 91&#39;&gt;
@@ -1027,7 +1102,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.03 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.07 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;59&#39; height=&#39;84&#39; viewBox=&#39;462 463 59 84&#39;&gt;
@@ -1084,7 +1159,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.09 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.15 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;69&#39; height=&#39;123.7&#39; viewBox=&#39;457 458 69 123.7&#39;&gt;
@@ -1208,7 +1283,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.52 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.5 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -1274,7 +1349,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.42 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;237&#39; height=&#39;262&#39; viewBox=&#39;383 384 237 262&#39;&gt;
@@ -1340,7 +1415,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.43 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -1406,7 +1481,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.43 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -1472,7 +1547,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.43 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.42 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -1539,7 +1614,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.43 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.44 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;78&#39; height=&#39;128&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -1605,7 +1680,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.44 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -1671,7 +1746,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.46 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.48 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;73.5&#39; height=&#39;111&#39; viewBox=&#39;477 478 49 74&#39;&gt;
@@ -1738,7 +1813,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.42 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.43 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
@@ -1936,7 +2011,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.08 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.13 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;59&#39; height=&#39;84&#39; viewBox=&#39;462 463 59 84&#39;&gt;
@@ -2002,7 +2077,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.16 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.21 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;69&#39; height=&#39;123.7&#39; viewBox=&#39;457 458 69 123.7&#39;&gt;
@@ -2069,7 +2144,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.87 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.84 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2234,7 +2309,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.91 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.87 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2289,7 +2364,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.88 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.87 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2344,7 +2419,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.88 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.87 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2400,7 +2475,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.89 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.92 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;30&#39; height=&#39;60&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2455,7 +2530,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.89 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.88 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2510,7 +2585,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.92 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.95 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;37.5&#39; height=&#39;60&#39; viewBox=&#39;495 495 25 40&#39;&gt;
@@ -2566,7 +2641,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.87 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.93 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2624,7 +2699,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.93 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.95 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2682,7 +2757,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.9 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.87 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;213&#39; height=&#39;228&#39; viewBox=&#39;401 401 213 228&#39;&gt;
@@ -2798,7 +2873,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.88 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.94 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2856,7 +2931,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.94 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2915,7 +2990,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.9 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.91 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;30&#39; height=&#39;60&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -2973,7 +3048,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.95 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.9 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;500 500 15 30&#39;&gt;
@@ -3031,7 +3106,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.94 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
         <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;37.5&#39; height=&#39;60&#39; viewBox=&#39;495 495 25 40&#39;&gt;
@@ -3232,7 +3307,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/QS10000&#34;,
-    &#34;searchTime&#34;: &#34;0.25 ms&#34;
+    &#34;searchTime&#34;: &#34;0.22 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S10000[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3293,7 +3368,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/QS100uu&#34;,
-    &#34;searchTime&#34;: &#34;0.22 ms&#34;
+    &#34;searchTime&#34;: &#34;0.21 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S100[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3416,7 +3491,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/QR100t110&#34;,
-    &#34;searchTime&#34;: &#34;0.24 ms&#34;
+    &#34;searchTime&#34;: &#34;0.26 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S((10[0-9a-f])|(110))[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3477,7 +3552,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/QT&#34;,
-    &#34;searchTime&#34;: &#34;0.2 ms&#34;
+    &#34;searchTime&#34;: &#34;0.19 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3538,7 +3613,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/QAS10000T&#34;,
-    &#34;searchTime&#34;: &#34;0.22 ms&#34;
+    &#34;searchTime&#34;: &#34;0.23 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS10000(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3599,7 +3674,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/QAS100uuT&#34;,
-    &#34;searchTime&#34;: &#34;0.21 ms&#34;
+    &#34;searchTime&#34;: &#34;0.22 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS100[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3683,7 +3758,7 @@ Passwords are mixed with the salt before they are sent to the server.
   <div class="panel panel-info">
     <div class="panel-heading">
       <span class="btn btn-primary">GET</span>
-      <code>/regex/QR100t110</code>
+      <code>/regex/QAR100t110T</code>
     </div>
     <div class="panel-body">
       
@@ -3700,7 +3775,7 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: query signs with sort start range of base symbols from S100 through S1100</code><br><code>&gt; Location: /regex/QR100t110</code><br>
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: query signs with sort start range of base symbols from S100 through S1100</code><br><code>&gt; Location: /regex/QAR100t110T</code><br>
       
       
     </li>
@@ -3720,11 +3795,11 @@ Passwords are mixed with the salt before they are sent to the server.
         <pre class="prettyprint">{
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
-    &#34;locaction&#34;: &#34;/regex/QR100t110&#34;,
-    &#34;searchTime&#34;: &#34;0.24 ms&#34;
+    &#34;locaction&#34;: &#34;/regex/QAR100t110T&#34;,
+    &#34;searchTime&#34;: &#34;0.27 ms&#34;
   },
   &#34;results&#34;: [
-    &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S((10[0-9a-f])|(110))[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
+    &#34;/(AS((10[0-9a-f])|(110))[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
   ]
 }
 </pre>
@@ -3841,7 +3916,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/A/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QAS20310S26b02S33100T&#34;,
-    &#34;searchTime&#34;: &#34;0.3 ms&#34;
+    &#34;searchTime&#34;: &#34;0.31 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS20310S26b02S33100(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3903,7 +3978,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 1,
     &#34;locaction&#34;: &#34;/regex/a/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QAS203uuS26buuS331uuT&#34;,
-    &#34;searchTime&#34;: &#34;0.3 ms&#34;
+    &#34;searchTime&#34;: &#34;0.29 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS203[0-5][0-9a-f]S26b[0-5][0-9a-f]S331[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3965,7 +4040,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;locaction&#34;: &#34;/regex/S/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS33100S20310S26b02&#34;,
-    &#34;searchTime&#34;: &#34;0.29 ms&#34;
+    &#34;searchTime&#34;: &#34;0.32 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4029,7 +4104,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;locaction&#34;: &#34;/regex/s/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS331uuS203uuS26buu&#34;,
-    &#34;searchTime&#34;: &#34;0.32 ms&#34;
+    &#34;searchTime&#34;: &#34;0.31 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S331[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4093,7 +4168,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;locaction&#34;: &#34;/regex/SL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS33100482x483S20310506x500S26b02503x520&#34;,
-    &#34;searchTime&#34;: &#34;0.42 ms&#34;
+    &#34;searchTime&#34;: &#34;0.43 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4157,7 +4232,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;locaction&#34;: &#34;/regex/sL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS331uu482x483S203uu506x500S26buu503x520&#34;,
-    &#34;searchTime&#34;: &#34;0.45 ms&#34;
+    &#34;searchTime&#34;: &#34;0.44 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S331[0-5][0-9a-f]((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4221,7 +4296,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;locaction&#34;: &#34;/regex/ASL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QAS20310S26b02S33100TS33100482x483S20310506x500S26b02503x520&#34;,
-    &#34;searchTime&#34;: &#34;0.68 ms&#34;
+    &#34;searchTime&#34;: &#34;0.46 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS20310S26b02S33100(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4400,8 +4475,1792 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;error&#34;: {
     &#34;status&#34;: &#34;422&#34;,
     &#34;message&#34;: &#34;Unprocessable Entity&#34;,
-    &#34;description&#34;: &#34;no query string&#34;
+    &#34;description&#34;: &#34;no query possible&#34;
   }
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="puddle">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 id="puddle">puddle</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead"><small>Interact will collections of signs.
+
+</small></p>
+        
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/query/QS10000S20500?offset=40</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Query puddle for signs with index and contact, with offset</code><br><code>&gt; Location: /puddle/sgn4/query/QS10000S20500?offset=40</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 40,
+    &#34;totalResults&#34;: 46,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/query/QS10000S20500?offset=40&#34;,
+    &#34;searchTime&#34;: &#34;131.95 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;9732&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2009/02/06 05:25:45&#34;,
+      &#34;updated_at&#34;: &#34;2009/02/06 05:25:45&#34;,
+      &#34;sign&#34;: &#34;M540x562S2c600504x525S30004482x482S20500495x518S10000487x532S21600532x497S10e00524x507&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;twelve years old&#34;,
+        &#34;age twelve&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;9470&#34;,
+      &#34;user&#34;: &#34;75.190.163.185&#34;,
+      &#34;created_at&#34;: &#34;2008/08/20 10:13:55&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/20 10:13:55&#34;,
+      &#34;sign&#34;: &#34;M544x609S10000486x503S33b00482x482S20500504x518S14c20521x547S37700531x573S15a1a513x597S37806489x600&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Assure&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;David Correia ASL Browser&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;10449&#34;,
+      &#34;user&#34;: &#34;68.0.135.115&#34;,
+      &#34;created_at&#34;: &#34;2009/11/03 06:31:55&#34;,
+      &#34;updated_at&#34;: &#34;2009/11/03 06:32:54&#34;,
+      &#34;sign&#34;: &#34;M563x560S2c600507x522S30004482x482S20500495x518S10000486x530S2e231536x529S1ce11517x506&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;nineteen years old&#34;,
+        &#34;age nineteen&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;10446&#34;,
+      &#34;user&#34;: &#34;68.0.135.115&#34;,
+      &#34;created_at&#34;: &#34;2009/11/03 06:15:37&#34;,
+      &#34;updated_at&#34;: &#34;2009/11/03 06:25:06&#34;,
+      &#34;sign&#34;: &#34;M567x560S2c600507x522S30004482x482S20500495x518S10000486x530S18711520x510S2e231540x530&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;sixteen years old&#34;,
+        &#34;age sixteen&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;10447&#34;,
+      &#34;user&#34;: &#34;68.0.135.115&#34;,
+      &#34;created_at&#34;: &#34;2009/11/03 06:25:56&#34;,
+      &#34;updated_at&#34;: &#34;2009/11/03 06:27:15&#34;,
+      &#34;sign&#34;: &#34;M569x560S2c600507x522S30004482x482S20500495x518S10000486x530S2e231542x528S1a511521x505&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;seventeen years old&#34;,
+        &#34;age seventeen&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;10448&#34;,
+      &#34;user&#34;: &#34;68.0.135.115&#34;,
+      &#34;created_at&#34;: &#34;2009/11/03 06:27:40&#34;,
+      &#34;updated_at&#34;: &#34;2009/11/03 06:28:20&#34;,
+      &#34;sign&#34;: &#34;M569x560S2c600507x522S30004482x482S20500495x518S10000486x530S2e231542x528S1bb11523x505&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;eighteen years old&#34;,
+        &#34;age eighteen&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Query puddle for signs with same symbols at location</code><br><code>&gt; Location: /puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 2,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520&#34;,
+    &#34;query&#34;: &#34;QS33100482x483S20310506x500S26b02503x520&#34;,
+    &#34;searchTime&#34;: &#34;93.89 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;4509&#34;,
+      &#34;user&#34;: &#34;108.216.148.8&#34;,
+      &#34;created_at&#34;: &#34;2015/07/21 12:33:35&#34;,
+      &#34;updated_at&#34;: &#34;2015/09/03 10:30:16&#34;,
+      &#34;sign&#34;: &#34;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Steve Slevinski&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Adam Frost&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;4536&#34;,
+      &#34;user&#34;: &#34;85.8.120.90&#34;,
+      &#34;created_at&#34;: &#34;2015/08/09 09:59:57&#34;,
+      &#34;updated_at&#34;: &#34;2015/08/09 09:59:57&#34;,
+      &#34;sign&#34;: &#34;M521x547S33100482x483S20310506x500S26b02503x520&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Steve&#34;,
+        &#34;Steve_Slevinski&#34;
+      ],
+      &#34;detail&#34;: [
+
+      ]
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/query/signtext/QS20500S20320</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Query puddle for signtext with contact and fist</code><br><code>&gt; Location: /puddle/sgn4/query/signtext/QS20500S20320</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 1,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/query/signtext/QS20500S20320&#34;,
+    &#34;searchTime&#34;: &#34;102.73 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;10906&#34;,
+      &#34;user&#34;: &#34;68.33.136.73&#34;,
+      &#34;created_at&#34;: &#34;2010/09/13 21:09:43&#34;,
+      &#34;updated_at&#34;: &#34;2010/09/13 21:09:43&#34;,
+      &#34;sign&#34;: &#34;&#34;,
+      &#34;signtext&#34;: &#34;M525x515S14c20476x484S2880a503x497 M539x516S15d0a461x484S15d02475x487S2e700510x491S26500525x501S20500529x485 S38900464x493 M549x517S30007482x482S18010519x483S18018446x484S22104518x470S22104465x470 M513x518S15d02486x499S20500494x482 M525x523S1eb10501x477S15d0a475x477S2450c478x492 M556x528S17610509x512S17614480x512S14c20533x472S14c28445x471S2880a509x492S28812472x491S2fb00493x484 S38800464x496 M513x517S15d02486x498S20500495x482 M528x547S18620509x457S18628472x457S20500495x452S2df1e474x496S2df06507x497S20320513x532S20328474x530 M518x556S28802452x507S32403482x482S10010473x524S10029436x535S28812417x518S2fb01436x494 L516x550S17610494x450S17610493x534S11502484x479S19220495x503 L523x529S10028477x499S1dc20499x489S22e04505x471 S38800464x496 M521x518S10033491x481S20500478x507 M552x517S2ff00482x482S18510527x488S18508450x486S26a00520x468S26a10452x465S2fb00493x467 M538x515S1f720462x499S20320493x499S1dc20514x485 M524x513S18530499x498S26506475x492S22104503x486 M547x573S10021517x427S10029453x427S2eb08515x463S2eb14476x463S2fd00491x453S1eb10488x522S15d0a466x526S2450c468x542&#34;,
+      &#34;terms&#34;: [
+        &#34;hi&#34;,
+        &#34;all&#34;,
+        &#34;teach&#34;,
+        &#34;my&#34;,
+        &#34;workshop&#34;,
+        &#34;next month&#34;,
+        &#34;me&#34;,
+        &#34;teach&#34;,
+        &#34;ASL&#34;,
+        &#34;SignWriting&#34;,
+        &#34;Ohio&#34;,
+        &#34;over there (right)&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;Hi all, I hope my writing is clear. My workshop is in Ohio next month. I will teach ASL and SignWriting.&#34;,
+        &#34;src&#34;: &#34;Charles Butler Neto 2010&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Query puddle for signtext with same symbols at location</code><br><code>&gt; Location: /puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 1,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516&#34;,
+    &#34;query&#34;: &#34;QS18002491x474S20500488x516S20500502x516&#34;,
+    &#34;searchTime&#34;: &#34;104.28 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;88&#34;,
+      &#34;user&#34;: &#34;134.129.205.25&#34;,
+      &#34;created_at&#34;: &#34;2011/08/03 09:53:31&#34;,
+      &#34;updated_at&#34;: &#34;2011/08/03 09:53:31&#34;,
+      &#34;sign&#34;: &#34;&#34;,
+      &#34;signtext&#34;: &#34;M512x527S18002491x474S20500488x516S20500502x516 M576x535S2ff00482x483S2f806520x481S2f802469x480S16f01547x481S22b03536x507S22b03552x511 M564x535S36d00479x494S37902518x495S37909539x491S15350539x465S2f900553x492 M544x529S17148456x472S15a40492x492S20500469x487S26602513x493S26602514x513 M532x534S18040501x519S18048469x511S2ba00485x467 M540x518S10051461x497S2d808494x483&#34;,
+      &#34;terms&#34;: [
+        &#34;&#34;
+      ],
+      &#34;detail&#34;: [
+
+      ]
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/del</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for string del</code><br><code>&gt; Location: /puddle/sgn4/search/del</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 12,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/del&#34;,
+    &#34;searchTime&#34;: &#34;58.73 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;2528&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/06 15:55:15&#34;,
+      &#34;sign&#34;: &#34;AS10131S10139S2a204S2a21cS37713S3770bM524x545S3770b485x480S10131475x457S37713490x481S2a21c475x517S10139506x456S2a204501x516&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;deliver&#34;
+      ],
+      &#34;detail&#34;: [
+
+      ]
+    },
+    {
+      &#34;id&#34;: &#34;2857&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:56&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/06 17:36:02&#34;,
+      &#34;sign&#34;: &#34;AS14251S29a04M524x518S14251494x481S29a04475x483&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Philadelphia&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Kim from Boston, per David Watson book&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;50&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:20&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/13 16:07:32&#34;,
+      &#34;sign&#34;: &#34;AS1c310S20e00S26500S1bd10S30005M538x531S30005482x482S1bd10518x442S1c310515x499S20e00508x519S26500523x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delicious&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;mc&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2960&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:57&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:42&#34;,
+      &#34;sign&#34;: &#34;AS1ea07S22a07S2f700S1f501M526x526S1ea07475x498S2f700488x485S22a07493x494S1f501504x475&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;6308&#34;,
+      &#34;user&#34;: &#34;&#34;,
+      &#34;created_at&#34;: &#34;2007/03/08 18:24:11&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:33&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S20e00S22a07S2f700S1f501M530x525S1ea10471x504S20e00470x489S22a07493x495S1f501508x474S2f700493x485&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;875&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:32&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:12&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S22a07S2f700S1f540M527x532S1ea10473x511S1f540512x478S22a07496x504S2f700512x468S20e00473x496&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;3061&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:58&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:52&#34;,
+      &#34;sign&#34;: &#34;AS1ea17S20e00S22a07S21b00S2f700M524x527S1ea17489x499S21b00516x484S22a07504x492S2f700512x473S20e00476x498&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1395&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/12/31 19:09:37&#34;,
+      &#34;updated_at&#34;: &#34;2012/01/02 05:44:10&#34;,
+      &#34;sign&#34;: &#34;M523x530S1ce40501x470S1ce48478x470S2b800496x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;postpone&#34;,
+        &#34;delay&#34;,
+        &#34;defer&#34;,
+        &#34;put off&#34;,
+        &#34;procrastinate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1310&#34;,
+      &#34;user&#34;: &#34;Stefan W\u00f6hrmann&#34;,
+      &#34;created_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;updated_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;sign&#34;: &#34;M525x524S14c18476x486S18510493x509S20e00502x494S26a00498x476&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delegs&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;A wonderful program to design bilingual materials for deaf students!\n\ngo to: www.delegs.de \n\nCreate your own documents in ASL...&#34;,
+        &#34;src&#34;: &#34;SW&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2019&#34;,
+      &#34;user&#34;: &#34;frost&#34;,
+      &#34;created_at&#34;: &#34;2013/03/28 11:30:57&#34;,
+      &#34;updated_at&#34;: &#34;2013/03/28 11:30:57&#34;,
+      &#34;sign&#34;: &#34;M532x521S14051469x479S23d04505x487&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Philadelphia, Pennsylvania&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Adam Frost&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;420&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;updated_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;sign&#34;: &#34;M536x530S15a58524x470S15a50465x470S29a0d503x504S29a15465x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;valley&#34;,
+        &#34;lowland&#34;,
+        &#34;vale&#34;,
+        &#34;dell&#34;,
+        &#34;basin&#34;,
+        &#34;canyon&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;9873&#34;,
+      &#34;user&#34;: &#34;206.210.146.66&#34;,
+      &#34;created_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;updated_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;sign&#34;: &#34;M553x535S1c509453x493S1c501528x494S36f43481x467S20500476x522S20600514x524S2fd00490x504S36f57458x465S36f53462x473S36f57469x479&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Model&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Emily&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/del?match=start</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for string del at start</code><br><code>&gt; Location: /puddle/sgn4/search/del?match=start</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 9,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/del?match=start&#34;,
+    &#34;searchTime&#34;: &#34;65.7 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;2528&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/06 15:55:15&#34;,
+      &#34;sign&#34;: &#34;AS10131S10139S2a204S2a21cS37713S3770bM524x545S3770b485x480S10131475x457S37713490x481S2a21c475x517S10139506x456S2a204501x516&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;deliver&#34;
+      ],
+      &#34;detail&#34;: [
+
+      ]
+    },
+    {
+      &#34;id&#34;: &#34;50&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:20&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/13 16:07:32&#34;,
+      &#34;sign&#34;: &#34;AS1c310S20e00S26500S1bd10S30005M538x531S30005482x482S1bd10518x442S1c310515x499S20e00508x519S26500523x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delicious&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;mc&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2960&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:57&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:42&#34;,
+      &#34;sign&#34;: &#34;AS1ea07S22a07S2f700S1f501M526x526S1ea07475x498S2f700488x485S22a07493x494S1f501504x475&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;6308&#34;,
+      &#34;user&#34;: &#34;&#34;,
+      &#34;created_at&#34;: &#34;2007/03/08 18:24:11&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:33&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S20e00S22a07S2f700S1f501M530x525S1ea10471x504S20e00470x489S22a07493x495S1f501508x474S2f700493x485&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;875&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:32&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:12&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S22a07S2f700S1f540M527x532S1ea10473x511S1f540512x478S22a07496x504S2f700512x468S20e00473x496&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;3061&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:58&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:52&#34;,
+      &#34;sign&#34;: &#34;AS1ea17S20e00S22a07S21b00S2f700M524x527S1ea17489x499S21b00516x484S22a07504x492S2f700512x473S20e00476x498&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1395&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/12/31 19:09:37&#34;,
+      &#34;updated_at&#34;: &#34;2012/01/02 05:44:10&#34;,
+      &#34;sign&#34;: &#34;M523x530S1ce40501x470S1ce48478x470S2b800496x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;postpone&#34;,
+        &#34;delay&#34;,
+        &#34;defer&#34;,
+        &#34;put off&#34;,
+        &#34;procrastinate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1310&#34;,
+      &#34;user&#34;: &#34;Stefan W\u00f6hrmann&#34;,
+      &#34;created_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;updated_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;sign&#34;: &#34;M525x524S14c18476x486S18510493x509S20e00502x494S26a00498x476&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delegs&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;A wonderful program to design bilingual materials for deaf students!\n\ngo to: www.delegs.de \n\nCreate your own documents in ASL...&#34;,
+        &#34;src&#34;: &#34;SW&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;420&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;updated_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;sign&#34;: &#34;M536x530S15a58524x470S15a50465x470S29a0d503x504S29a15465x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;valley&#34;,
+        &#34;lowland&#34;,
+        &#34;vale&#34;,
+        &#34;dell&#34;,
+        &#34;basin&#34;,
+        &#34;canyon&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/del?match=end</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for string del at end</code><br><code>&gt; Location: /puddle/sgn4/search/del?match=end</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 1,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/del?match=end&#34;,
+    &#34;searchTime&#34;: &#34;58.36 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;9873&#34;,
+      &#34;user&#34;: &#34;206.210.146.66&#34;,
+      &#34;created_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;updated_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;sign&#34;: &#34;M553x535S1c509453x493S1c501528x494S36f43481x467S20500476x522S20600514x524S2fd00490x504S36f57458x465S36f53462x473S36f57469x479&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Model&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Emily&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/Delaware?match=exact</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for exact string Delaware</code><br><code>&gt; Location: /puddle/sgn4/search/Delaware?match=exact</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 2,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/Delaware?match=exact&#34;,
+    &#34;searchTime&#34;: &#34;73.15 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;7238&#34;,
+      &#34;user&#34;: &#34;24.24.146.131&#34;,
+      &#34;created_at&#34;: &#34;2008/01/02 00:39:41&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 00:37:23&#34;,
+      &#34;sign&#34;: &#34;AS10120S14a20S1dc20S26500M534x522S10120467x492S14a20487x507S1dc20506x492S26500520x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;(n) a state in the United States.&#34;,
+        &#34;src&#34;: &#34;Adam Frost&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;9307&#34;,
+      &#34;user&#34;: &#34;DavidCorreia&#34;,
+      &#34;created_at&#34;: &#34;2008/07/14 15:02:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 02:41:16&#34;,
+      &#34;sign&#34;: &#34;AS10120S20122S1dc20S26500M541x520S10120459x490S1dc20515x490S20122486x503S26500527x480&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;typed with SignWriter Java, taken from the SignBank Database (D Correia)&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/DEL?ci=1</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for string DEL, case insensitive</code><br><code>&gt; Location: /puddle/sgn4/search/DEL?ci=1</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 16,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/DEL?ci=1&#34;,
+    &#34;searchTime&#34;: &#34;59.19 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;6910&#34;,
+      &#34;user&#34;: &#34;StephenPJones2&#34;,
+      &#34;created_at&#34;: &#34;2007/06/16 14:37:22&#34;,
+      &#34;updated_at&#34;: &#34;2008/07/23 11:18:16&#34;,
+      &#34;sign&#34;: &#34;AS10058S10050S20500S24102S2411aS37703S37b0bS3770bS37b03M540x548S10058478x518S10050505x518S20500496x452S24102501x483S2411a460x482S37703501x470S37b0b489x477S37b03499x478S3770b478x468&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;SIL 2007&#34;,
+        &#34;Delta&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stephen  Jones&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;7238&#34;,
+      &#34;user&#34;: &#34;24.24.146.131&#34;,
+      &#34;created_at&#34;: &#34;2008/01/02 00:39:41&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 00:37:23&#34;,
+      &#34;sign&#34;: &#34;AS10120S14a20S1dc20S26500M534x522S10120467x492S14a20487x507S1dc20506x492S26500520x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;(n) a state in the United States.&#34;,
+        &#34;src&#34;: &#34;Adam Frost&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;9307&#34;,
+      &#34;user&#34;: &#34;DavidCorreia&#34;,
+      &#34;created_at&#34;: &#34;2008/07/14 15:02:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 02:41:16&#34;,
+      &#34;sign&#34;: &#34;AS10120S20122S1dc20S26500M541x520S10120459x490S1dc20515x490S20122486x503S26500527x480&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;typed with SignWriter Java, taken from the SignBank Database (D Correia)&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2528&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/06 15:55:15&#34;,
+      &#34;sign&#34;: &#34;AS10131S10139S2a204S2a21cS37713S3770bM524x545S3770b485x480S10131475x457S37713490x481S2a21c475x517S10139506x456S2a204501x516&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;deliver&#34;
+      ],
+      &#34;detail&#34;: [
+
+      ]
+    },
+    {
+      &#34;id&#34;: &#34;2857&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:56&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/06 17:36:02&#34;,
+      &#34;sign&#34;: &#34;AS14251S29a04M524x518S14251494x481S29a04475x483&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Philadelphia&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Kim from Boston, per David Watson book&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;50&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:20&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/13 16:07:32&#34;,
+      &#34;sign&#34;: &#34;AS1c310S20e00S26500S1bd10S30005M538x531S30005482x482S1bd10518x442S1c310515x499S20e00508x519S26500523x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delicious&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;mc&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;3&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:57&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 00:28:09&#34;,
+      &#34;sign&#34;: &#34;AS1ce40S1ce48S2b800M523x537S1ce40501x507S1ce48478x507S2b800498x462&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;DELAY&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;Delay, postpone, move forward in time&#34;,
+        &#34;src&#34;: &#34;Stuart Thiessen, Des Moines, IA&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2960&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:57&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:42&#34;,
+      &#34;sign&#34;: &#34;AS1ea07S22a07S2f700S1f501M526x526S1ea07475x498S2f700488x485S22a07493x494S1f501504x475&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;6308&#34;,
+      &#34;user&#34;: &#34;&#34;,
+      &#34;created_at&#34;: &#34;2007/03/08 18:24:11&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:33&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S20e00S22a07S2f700S1f501M530x525S1ea10471x504S20e00470x489S22a07493x495S1f501508x474S2f700493x485&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;875&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:32&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:12&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S22a07S2f700S1f540M527x532S1ea10473x511S1f540512x478S22a07496x504S2f700512x468S20e00473x496&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;3061&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:58&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:52&#34;,
+      &#34;sign&#34;: &#34;AS1ea17S20e00S22a07S21b00S2f700M524x527S1ea17489x499S21b00516x484S22a07504x492S2f700512x473S20e00476x498&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1395&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/12/31 19:09:37&#34;,
+      &#34;updated_at&#34;: &#34;2012/01/02 05:44:10&#34;,
+      &#34;sign&#34;: &#34;M523x530S1ce40501x470S1ce48478x470S2b800496x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;postpone&#34;,
+        &#34;delay&#34;,
+        &#34;defer&#34;,
+        &#34;put off&#34;,
+        &#34;procrastinate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1310&#34;,
+      &#34;user&#34;: &#34;Stefan W\u00f6hrmann&#34;,
+      &#34;created_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;updated_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;sign&#34;: &#34;M525x524S14c18476x486S18510493x509S20e00502x494S26a00498x476&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delegs&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;A wonderful program to design bilingual materials for deaf students!\n\ngo to: www.delegs.de \n\nCreate your own documents in ASL...&#34;,
+        &#34;src&#34;: &#34;SW&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2019&#34;,
+      &#34;user&#34;: &#34;frost&#34;,
+      &#34;created_at&#34;: &#34;2013/03/28 11:30:57&#34;,
+      &#34;updated_at&#34;: &#34;2013/03/28 11:30:57&#34;,
+      &#34;sign&#34;: &#34;M532x521S14051469x479S23d04505x487&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Philadelphia, Pennsylvania&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Adam Frost&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;420&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;updated_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;sign&#34;: &#34;M536x530S15a58524x470S15a50465x470S29a0d503x504S29a15465x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;valley&#34;,
+        &#34;lowland&#34;,
+        &#34;vale&#34;,
+        &#34;dell&#34;,
+        &#34;basin&#34;,
+        &#34;canyon&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;9873&#34;,
+      &#34;user&#34;: &#34;206.210.146.66&#34;,
+      &#34;created_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;updated_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;sign&#34;: &#34;M553x535S1c509453x493S1c501528x494S36f43481x467S20500476x522S20600514x524S2fd00490x504S36f57458x465S36f53462x473S36f57469x479&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Model&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Emily&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/del?match=start&amp;ci=1</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for string del at start, case insensitive</code><br><code>&gt; Location: /puddle/sgn4/search/del?match=start&amp;ci=1</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 13,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/del?ci=1&amp;match=start&#34;,
+    &#34;searchTime&#34;: &#34;63.15 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;6910&#34;,
+      &#34;user&#34;: &#34;StephenPJones2&#34;,
+      &#34;created_at&#34;: &#34;2007/06/16 14:37:22&#34;,
+      &#34;updated_at&#34;: &#34;2008/07/23 11:18:16&#34;,
+      &#34;sign&#34;: &#34;AS10058S10050S20500S24102S2411aS37703S37b0bS3770bS37b03M540x548S10058478x518S10050505x518S20500496x452S24102501x483S2411a460x482S37703501x470S37b0b489x477S37b03499x478S3770b478x468&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;SIL 2007&#34;,
+        &#34;Delta&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stephen  Jones&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;7238&#34;,
+      &#34;user&#34;: &#34;24.24.146.131&#34;,
+      &#34;created_at&#34;: &#34;2008/01/02 00:39:41&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 00:37:23&#34;,
+      &#34;sign&#34;: &#34;AS10120S14a20S1dc20S26500M534x522S10120467x492S14a20487x507S1dc20506x492S26500520x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;(n) a state in the United States.&#34;,
+        &#34;src&#34;: &#34;Adam Frost&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;9307&#34;,
+      &#34;user&#34;: &#34;DavidCorreia&#34;,
+      &#34;created_at&#34;: &#34;2008/07/14 15:02:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 02:41:16&#34;,
+      &#34;sign&#34;: &#34;AS10120S20122S1dc20S26500M541x520S10120459x490S1dc20515x490S20122486x503S26500527x480&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;typed with SignWriter Java, taken from the SignBank Database (D Correia)&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2528&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/06 15:55:15&#34;,
+      &#34;sign&#34;: &#34;AS10131S10139S2a204S2a21cS37713S3770bM524x545S3770b485x480S10131475x457S37713490x481S2a21c475x517S10139506x456S2a204501x516&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;deliver&#34;
+      ],
+      &#34;detail&#34;: [
+
+      ]
+    },
+    {
+      &#34;id&#34;: &#34;50&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:20&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/13 16:07:32&#34;,
+      &#34;sign&#34;: &#34;AS1c310S20e00S26500S1bd10S30005M538x531S30005482x482S1bd10518x442S1c310515x499S20e00508x519S26500523x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delicious&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;mc&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;3&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:57&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 00:28:09&#34;,
+      &#34;sign&#34;: &#34;AS1ce40S1ce48S2b800M523x537S1ce40501x507S1ce48478x507S2b800498x462&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;DELAY&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;Delay, postpone, move forward in time&#34;,
+        &#34;src&#34;: &#34;Stuart Thiessen, Des Moines, IA&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;2960&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:57&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:42&#34;,
+      &#34;sign&#34;: &#34;AS1ea07S22a07S2f700S1f501M526x526S1ea07475x498S2f700488x485S22a07493x494S1f501504x475&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;6308&#34;,
+      &#34;user&#34;: &#34;&#34;,
+      &#34;created_at&#34;: &#34;2007/03/08 18:24:11&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:33&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S20e00S22a07S2f700S1f501M530x525S1ea10471x504S20e00470x489S22a07493x495S1f501508x474S2f700493x485&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Valerie Sutton&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;875&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:28:32&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:36:12&#34;,
+      &#34;sign&#34;: &#34;AS1ea10S22a07S2f700S1f540M527x532S1ea10473x511S1f540512x478S22a07496x504S2f700512x468S20e00473x496&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;3061&#34;,
+      &#34;user&#34;: &#34;admin&#34;,
+      &#34;created_at&#34;: &#34;2007/02/25 15:27:58&#34;,
+      &#34;updated_at&#34;: &#34;2007/03/08 18:35:52&#34;,
+      &#34;sign&#34;: &#34;AS1ea17S20e00S22a07S21b00S2f700M524x527S1ea17489x499S21b00516x484S22a07504x492S2f700512x473S20e00476x498&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delete&#34;,
+        &#34;throw out&#34;,
+        &#34;eliminate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Stuart Thiessen&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1395&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/12/31 19:09:37&#34;,
+      &#34;updated_at&#34;: &#34;2012/01/02 05:44:10&#34;,
+      &#34;sign&#34;: &#34;M523x530S1ce40501x470S1ce48478x470S2b800496x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;postpone&#34;,
+        &#34;delay&#34;,
+        &#34;defer&#34;,
+        &#34;put off&#34;,
+        &#34;procrastinate&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;1310&#34;,
+      &#34;user&#34;: &#34;Stefan W\u00f6hrmann&#34;,
+      &#34;created_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;updated_at&#34;: &#34;2011/12/05 12:27:29&#34;,
+      &#34;sign&#34;: &#34;M525x524S14c18476x486S18510493x509S20e00502x494S26a00498x476&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;delegs&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;A wonderful program to design bilingual materials for deaf students!\n\ngo to: www.delegs.de \n\nCreate your own documents in ASL...&#34;,
+        &#34;src&#34;: &#34;SW&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;420&#34;,
+      &#34;user&#34;: &#34;EscaladaWestland&#34;,
+      &#34;created_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;updated_at&#34;: &#34;2011/09/02 06:17:51&#34;,
+      &#34;sign&#34;: &#34;M536x530S15a58524x470S15a50465x470S29a0d503x504S29a15465x504&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;valley&#34;,
+        &#34;lowland&#34;,
+        &#34;vale&#34;,
+        &#34;dell&#34;,
+        &#34;basin&#34;,
+        &#34;canyon&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Natasha Escalada-Westland&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/DEL?match=end&amp;ci=1</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for string DEL at end, case insensitive</code><br><code>&gt; Location: /puddle/sgn4/search/DEL?match=end&amp;ci=1</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 1,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/DEL?ci=1&amp;match=end&#34;,
+    &#34;searchTime&#34;: &#34;58.33 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;9873&#34;,
+      &#34;user&#34;: &#34;206.210.146.66&#34;,
+      &#34;created_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;updated_at&#34;: &#34;2009/03/04 13:32:26&#34;,
+      &#34;sign&#34;: &#34;M553x535S1c509453x493S1c501528x494S36f43481x467S20500476x522S20600514x524S2fd00490x504S36f57458x465S36f53462x473S36f57469x479&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Model&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;Emily&#34;
+      }
+    }
+  ]
+}
+</pre>
+      
+    </li>
+  
+
+  
+
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/sgn4/search/delaware?match=exact&amp;ci=1</code>
+    </div>
+    <div class="panel-body">
+      
+    </div>
+    <ul class="list-group">
+      
+      
+  
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Request</strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&gt; User-Agent: curl/7.35.0</code><br><code>&gt; Host: localhost:8888</code><br><code>&gt; Accept: */*</code><br><code>&gt; Description: Search puddle for exact string delaware, case insensitive</code><br><code>&gt; Location: /puddle/sgn4/search/delaware?match=exact&amp;ci=1</code><br>
+      
+      
+    </li>
+  
+
+    
+  
+    <li class="list-group-item bg-default response">
+      <strong>Response <code>200</code></strong>
+      <a href="javascript:;" class="pull-right btn btn-link btn-sm snippet-toggle">SHOW</a>
+    </li>
+    <li class="list-group-item snippet">
+      
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: application/json;charset=utf-8</code><br>
+      
+      
+        <pre class="prettyprint">{
+  &#34;meta&#34;: {
+    &#34;limit&#34;: 100,
+    &#34;offset&#34;: 0,
+    &#34;totalResults&#34;: 2,
+    &#34;locaction&#34;: &#34;/puddle/sgn4/search/delaware?ci=1&amp;match=exact&#34;,
+    &#34;searchTime&#34;: &#34;72.42 ms&#34;
+  },
+  &#34;results&#34;: [
+    {
+      &#34;id&#34;: &#34;7238&#34;,
+      &#34;user&#34;: &#34;24.24.146.131&#34;,
+      &#34;created_at&#34;: &#34;2008/01/02 00:39:41&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 00:37:23&#34;,
+      &#34;sign&#34;: &#34;AS10120S14a20S1dc20S26500M534x522S10120467x492S14a20487x507S1dc20506x492S26500520x478&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;text&#34;: &#34;(n) a state in the United States.&#34;,
+        &#34;src&#34;: &#34;Adam Frost&#34;
+      }
+    },
+    {
+      &#34;id&#34;: &#34;9307&#34;,
+      &#34;user&#34;: &#34;DavidCorreia&#34;,
+      &#34;created_at&#34;: &#34;2008/07/14 15:02:54&#34;,
+      &#34;updated_at&#34;: &#34;2008/08/08 02:41:16&#34;,
+      &#34;sign&#34;: &#34;AS10120S20122S1dc20S26500M541x520S10120459x490S1dc20515x490S20122486x503S26500527x480&#34;,
+      &#34;signtext&#34;: &#34;&#34;,
+      &#34;terms&#34;: [
+        &#34;Delaware&#34;
+      ],
+      &#34;detail&#34;: {
+        &#34;src&#34;: &#34;typed with SignWriter Java, taken from the SignBank Database (D Correia)&#34;
+      }
+    }
+  ]
 }
 </pre>
       
@@ -4470,7 +6329,7 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: text/plain;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">563bb3c9c360c
+        <pre class="prettyprint">5655f04e9f5ed
 </pre>
       
     </li>
