@@ -80,6 +80,11 @@ Server communication uses HTTP request methods and response statuses.
             #### GET
             The Example API calls documented with JSON data.
             
+            ### Main database [/db/swserver]
+            
+            #### GET
+            Download the main SignWriting Server database
+            
             ### API by Example [/notFound]
             
             #### GET
@@ -137,35 +142,71 @@ Server communication uses HTTP request methods and response statuses.
             depending on the flags supplied.
             
             ## Group puddle
-            Collections of signs.
+            Interact with collections of signs.
             
-            ### Query for signs [/puddle/{puddle}/query/{query}{?offset}]
+            ### Puddle list [/puddle]
+            
+            #### GET
+            A listing of all puddle collections available.
+            
+            ### Puddles for language [/puddle/language/{iso639}]
             
             + Parameters
             
-                + puddle: sgn4 (string) - Name of puddle collection.
+                + iso639: ase (string) - ISO 639-3 code for sign language.
+            
+            #### GET
+            A listing of all puddle collections available for specific sign language.
+            
+            ### Puddles information [/puddle/{puddle}]
+            
+            + Parameters
+            
+                + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+            
+            #### GET
+            Information about a specific puddle by code or alternate
+            
+            ### Puddles database [/puddle/db/{puddle}]
+            
+            + Parameters
+            
+                + puddle: sgn4 (string) - puddle code for collection.
+            
+            #### GET
+            Download database for a specific puddle
+            
+            ### Query for signs [/puddle/{puddle}/query/{query}{?offset,limit,sort}]
+            
+            + Parameters
+            
+                + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
                 + query: Q (string) - Formal SignWriting query string.
                 + offset: 100 (optional, number) - offset for results array.
+                + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+                + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
             
             #### GET
             Search puddle collection with query.
             
-            ### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset}]
+            ### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset,limit,sort}]
             
             + Parameters
             
-                + puddle: sgn4 (string) - Name of puddle collection.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
                 + query: Q (string) - Formal SignWriting query string.
                 + offset: 100 (optional, number) - offset for results array.
+                + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+                + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
             
             #### GET
             Search puddle collection for SignText with query.
             
-            ### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset}]
+            ### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset,limit,sort}]
             
             + Parameters
             
-                + puddle: sgn4 (string) - Name of puddle collection.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
                 + flags: ASL (string) - Flags for FSW convertion to query string.
                     'A' - sorted by the same exact symbols.
                     'a' - sorted by the same general symbols.
@@ -174,15 +215,17 @@ Server communication uses HTTP request methods and response statuses.
                     'L' - location of spatial arrangement is similar.
                 + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
                 + offset: 100 (optional, number) - offset for results array.
+                + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+                + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
             
             #### GET
             Search puddle collection with Formal SignWriting and conversion flags.
             
-            ### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}]
+            ### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset,limit,sort}]
             
             + Parameters
             
-                + puddle: sgn4 (string) - Name of puddle collection.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
                 + flags: ASL (string) - Flags for FSW convertion to query string.
                     'A' - sorted by the same exact symbols.
                     'a' - sorted by the same general symbols.
@@ -191,22 +234,54 @@ Server communication uses HTTP request methods and response statuses.
                     'L' - location of spatial arrangement is similar.
                 + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
                 + offset: 100 (optional, number) - offset for results array.
+                + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+                + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
             
             #### GET
             Search puddle collection for SignText with Formal SignWriting and conversion flags.
             
-            ### Search text [/puddle/{puddle}/search/{search}{?part,ci,offset}]
+            ### Search text [/puddle/{puddle}/search/{search}{?match,ci,offset,limit,sort}]
             
             + Parameters
             
-                + puddle: sgn4 (string) - Name of puddle collection.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
                 + search: hello (string) - search string.
                 + match: exact (optional, string) - matching strategy: start, end, exact
                 + ci: true (optional, boolean) - case insensitive flag.
                 + offset: 100 (optional, number) - offset for results array.
+                + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+                + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
             
             #### GET
             Search puddle collection with string.
+            
+            ### Search text [/puddle/{puddle}/created{?before,after,offset,limit,sort}]
+            
+            + Parameters
+            
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + before: 2015/01/01 (optional,string) - date time string
+                + after: 2015/01/01 (optional,string) - date time string
+                + offset: 100 (optional, number) - offset for results array.
+                + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+                + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+            
+            #### GET
+            Search puddle collection based on creation.
+            
+            ### Search text [/puddle/{puddle}/updated{?before,after,offset,limit,sort}]
+            
+            + Parameters
+            
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + before: 2015/01/01 (optional,string) - date time string
+                + after: 2015/01/01 (optional,string) - date time string
+                + offset: 100 (optional, number) - offset for results array.
+                + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+                + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+            
+            #### GET
+            Search puddle collection based on updates.
             
             ## Group user
             Work in progress
@@ -276,7 +351,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.97 ms
+            Search-Time:1.01 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -342,7 +417,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.02 ms
+            Search-Time:1.06 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -375,7 +450,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1 ms
+            Search-Time:1.05 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -408,7 +483,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.05 ms
+            Search-Time:1.09 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -441,7 +516,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.02 ms
+            Search-Time:1.03 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -475,7 +550,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.05 ms
+            Search-Time:1.04 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -508,7 +583,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.36 ms
+            Search-Time:1.03 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -541,7 +616,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.03 ms
+            Search-Time:1.13 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -575,7 +650,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.02 ms
+            Search-Time:1.09 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -608,7 +683,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.01 ms
+            Search-Time:1.07 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -641,7 +716,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.02 ms
+            Search-Time:1.07 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -707,7 +782,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.15 ms
+            Search-Time:1.2 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -741,7 +816,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.38 ms
+            Search-Time:0.4 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -783,7 +858,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.5 ms
+            Search-Time:0.52 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -825,7 +900,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.42 ms
+            Search-Time:0.4 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -909,7 +984,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.41 ms
+            Search-Time:0.43 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -994,7 +1069,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.44 ms
+            Search-Time:0.43 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1036,7 +1111,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.44 ms
+            Search-Time:0.41 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1078,7 +1153,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.48 ms
+            Search-Time:0.46 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1121,7 +1196,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.43 ms
+            Search-Time:0.44 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1163,7 +1238,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.44 ms
+            Search-Time:0.46 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1205,7 +1280,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.08 ms
+            Search-Time:1.18 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1247,7 +1322,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.13 ms
+            Search-Time:1.19 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1289,7 +1364,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.21 ms
+            Search-Time:1.3 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1332,7 +1407,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.84 ms
+            Search-Time:0.95 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1363,7 +1438,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.9 ms
+            Search-Time:1 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1394,7 +1469,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.88 ms
+            Search-Time:0.91 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1425,7 +1500,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.87 ms
+            Search-Time:0.92 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1456,7 +1531,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.87 ms
+            Search-Time:0.93 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1487,7 +1562,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.87 ms
+            Search-Time:0.92 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1519,7 +1594,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.92 ms
+            Search-Time:0.96 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1550,7 +1625,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.88 ms
+            Search-Time:0.97 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1581,7 +1656,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.95 ms
+            Search-Time:0.97 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1613,7 +1688,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.93 ms
+            Search-Time:0.92 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1647,7 +1722,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.95 ms
+            Search-Time:1.02 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1681,7 +1756,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.87 ms
+            Search-Time:0.94 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1715,7 +1790,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.9 ms
+            Search-Time:0.99 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1749,7 +1824,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.94 ms
+            Search-Time:0.95 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1783,7 +1858,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.94 ms
+            Search-Time:1.18 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1818,7 +1893,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.91 ms
+            Search-Time:0.96 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1852,7 +1927,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.9 ms
+            Search-Time:0.94 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1886,7 +1961,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.99 ms
+            Search-Time:0.98 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
@@ -1964,8 +2039,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/Q",
-                "searchTime": "0.19 ms"
+                "location": "/regex/Q",
+                "searchTime": "0.18 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2000,8 +2075,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QS10000",
-                "searchTime": "0.22 ms"
+                "location": "/regex/QS10000",
+                "searchTime": "0.21 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S10000[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2036,8 +2111,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QS100uu",
-                "searchTime": "0.21 ms"
+                "location": "/regex/QS100uu",
+                "searchTime": "0.22 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S100[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2072,8 +2147,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 2,
-                "locaction": "/regex/QS10000S20500",
-                "searchTime": "0.23 ms"
+                "location": "/regex/QS10000S20500",
+                "searchTime": "0.22 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S10000[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2109,8 +2184,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QR100t110",
-                "searchTime": "0.26 ms"
+                "location": "/regex/QR100t110",
+                "searchTime": "0.25 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S((10[0-9a-f])|(110))[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2145,8 +2220,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QT",
-                "searchTime": "0.19 ms"
+                "location": "/regex/QT",
+                "searchTime": "0.2 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2181,8 +2256,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QAS10000T",
-                "searchTime": "0.23 ms"
+                "location": "/regex/QAS10000T",
+                "searchTime": "0.22 ms"
               },
               "results": [
                 "/(AS10000(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2217,7 +2292,7 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QAS100uuT",
+                "location": "/regex/QAS100uuT",
                 "searchTime": "0.22 ms"
               },
               "results": [
@@ -2253,7 +2328,7 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QAS10000S20500T",
+                "location": "/regex/QAS10000S20500T",
                 "searchTime": "0.22 ms"
               },
               "results": [
@@ -2289,8 +2364,8 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/QAR100t110T",
-                "searchTime": "0.27 ms"
+                "location": "/regex/QAR100t110T",
+                "searchTime": "0.26 ms"
               },
               "results": [
                 "/(AS((10[0-9a-f])|(110))[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2358,9 +2433,9 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/A/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/regex/A/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QAS20310S26b02S33100T",
-                "searchTime": "0.31 ms"
+                "searchTime": "0.3 ms"
               },
               "results": [
                 "/(AS20310S26b02S33100(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2395,9 +2470,9 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 1,
-                "locaction": "/regex/a/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/regex/a/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QAS203uuS26buuS331uuT",
-                "searchTime": "0.29 ms"
+                "searchTime": "0.28 ms"
               },
               "results": [
                 "/(AS203[0-5][0-9a-f]S26b[0-5][0-9a-f]S331[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2432,9 +2507,9 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 3,
-                "locaction": "/regex/S/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/regex/S/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS33100S20310S26b02",
-                "searchTime": "0.32 ms"
+                "searchTime": "0.28 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2471,9 +2546,9 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 3,
-                "locaction": "/regex/s/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/regex/s/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS331uuS203uuS26buu",
-                "searchTime": "0.31 ms"
+                "searchTime": "0.28 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S331[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2510,7 +2585,7 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 3,
-                "locaction": "/regex/SL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/regex/SL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS33100482x483S20310506x500S26b02503x520",
                 "searchTime": "0.43 ms"
               },
@@ -2549,9 +2624,9 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 3,
-                "locaction": "/regex/sL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/regex/sL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS331uu482x483S203uu506x500S26buu503x520",
-                "searchTime": "0.44 ms"
+                "searchTime": "0.42 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S331[0-5][0-9a-f]((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2588,7 +2663,7 @@ Query string to regular expression transformation.
             {
               "meta": {
                 "totalResults": 3,
-                "locaction": "/regex/ASL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/regex/ASL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QAS20310S26b02S33100TS33100482x483S20310506x500S26b02503x520",
                 "searchTime": "0.46 ms"
               },
@@ -2701,15 +2776,2070 @@ Query string to regular expression transformation.
 # Group puddle
 Interact will collections of signs.
 
-# GET /puddle/sgn4/query/QS10000S20500?offset=40
+# GET /puddle
 + Request
     + Headers
 
             User-Agent:curl/7.35.0
             Host:localhost:8888
             Accept:*/*
-            Description:Query puddle for signs with index and contact, with offset
-            Location:/puddle/sgn4/query/QS10000S20500?offset=40
+            Description:Listing of puddles available
+            Location:/puddle
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "totalResults": 136,
+                "location": "/puddle",
+                "searchTime": "7.79 ms"
+              },
+              "results": [
+                {
+                  "code": "sgn1",
+                  "language": "ase",
+                  "namespace": "lessons",
+                  "subspace": "",
+                  "qqq": "puddle_sgn1",
+                  "name": "Lessons",
+                  "user": "admin",
+                  "created_at": "2007-03-09 12:15:38",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn10",
+                  "language": "ise",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn10",
+                  "name": "toponimi",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn100",
+                  "language": "eth",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn100",
+                  "name": "Literature Ethiopia",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn103",
+                  "language": "mdl",
+                  "namespace": "signs",
+                  "subspace": "",
+                  "qqq": "puddle_sgn103",
+                  "name": "Malta LSM Private Puddle",
+                  "user": "admin",
+                  "created_at": "2009-03-10 07:38:52",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn104",
+                  "language": "tse",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn104",
+                  "name": "Dictionnaire Tunisien",
+                  "user": "admin",
+                  "created_at": "2009-07-08 05:56:49",
+                  "alt": [
+                    "tse"
+                  ]
+                },
+                {
+                  "code": "sgn105",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn105",
+                  "name": "DAC Private Puddle",
+                  "user": "admin",
+                  "created_at": "2008-06-10 18:59:58",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn106",
+                  "language": "afg",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn106",
+                  "name": "Dictionary Afghanistan",
+                  "user": "admin",
+                  "created_at": "2008-07-27 16:43:13",
+                  "alt": [
+                    "afg"
+                  ]
+                },
+                {
+                  "code": "sgn108",
+                  "language": "lsl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn108",
+                  "name": "Dictionary Latvia",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "lsl"
+                  ]
+                },
+                {
+                  "code": "sgn110",
+                  "language": "isr",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn110",
+                  "name": "Dictionary Israel",
+                  "user": "admin",
+                  "created_at": "2009-11-24 12:12:46",
+                  "alt": [
+                    "isr"
+                  ]
+                },
+                {
+                  "code": "sgn111",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn111",
+                  "name": "Project 1 Translate Wiki",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn113",
+                  "language": "ase-HT",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn113",
+                  "name": "Dictionary Haiti",
+                  "user": "admin",
+                  "created_at": "2010-01-28 21:15:39",
+                  "alt": [
+                    "ase-HT"
+                  ]
+                },
+                {
+                  "code": "sgn114",
+                  "language": "bzs",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn114",
+                  "name": "Literatura Brasil",
+                  "user": "admin",
+                  "created_at": "2009-03-03 09:01:30",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn115",
+                  "language": "psr",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn115",
+                  "name": "Literatura Portugal",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn116",
+                  "language": "bzs",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn116",
+                  "name": "Enciclop\u00e9dia Brasil",
+                  "user": "admin",
+                  "created_at": "2009-06-17 07:54:11",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn117",
+                  "language": "psr",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn117",
+                  "name": "Enciclop\u00e9dia Portugal",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn119",
+                  "language": "ncs",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn119",
+                  "name": "Literatura Nicaragua",
+                  "user": "admin",
+                  "created_at": "2009-01-14 14:01:23",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn122",
+                  "language": "hsh",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn122",
+                  "name": "Dictionary Hungary",
+                  "user": "admin",
+                  "created_at": "2009-03-02 16:13:09",
+                  "alt": [
+                    "hsh"
+                  ]
+                },
+                {
+                  "code": "sgn123",
+                  "language": "hsh",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn123",
+                  "name": "Literature Hungary",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn124",
+                  "language": "fsl",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn124",
+                  "name": "Literature France",
+                  "user": "admin",
+                  "created_at": "2009-11-09 11:46:02",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn125",
+                  "language": "bfi",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn125",
+                  "name": "Literature Great Britain",
+                  "user": "admin",
+                  "created_at": "2009-09-23 13:11:26",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn126",
+                  "language": "tse",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn126",
+                  "name": "Litt\u00e9rature Tunisien",
+                  "user": "admin",
+                  "created_at": "2009-06-17 13:28:34",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn127",
+                  "language": "mdl",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn127",
+                  "name": "Literature Malta",
+                  "user": "admin",
+                  "created_at": "2009-05-08 06:09:52",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn128",
+                  "language": "ase-MW",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn128",
+                  "name": "Dictionary Malawi",
+                  "user": "admin",
+                  "created_at": "2009-05-14 16:09:58",
+                  "alt": [
+                    "ase-MW"
+                  ]
+                },
+                {
+                  "code": "sgn129",
+                  "language": "pys",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn129",
+                  "name": "Diccionario Paraguay",
+                  "user": "admin",
+                  "created_at": "2009-06-10 15:07:09",
+                  "alt": [
+                    "pys"
+                  ]
+                },
+                {
+                  "code": "sgn131",
+                  "language": "icl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn131",
+                  "name": "Ordab\u00f3k IS",
+                  "user": "admin",
+                  "created_at": "2009-10-12 12:09:09",
+                  "alt": [
+                    "icl"
+                  ]
+                },
+                {
+                  "code": "sgn132",
+                  "language": "rms",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn132",
+                  "name": "Dictionary Romania",
+                  "user": "admin",
+                  "created_at": "2010-07-22 20:17:27",
+                  "alt": [
+                    "rms"
+                  ]
+                },
+                {
+                  "code": "sgn133",
+                  "language": "nsp",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn133",
+                  "name": "Dictionary Nepal",
+                  "user": "admin",
+                  "created_at": "2010-08-25 04:40:57",
+                  "alt": [
+                    "nsp"
+                  ]
+                },
+                {
+                  "code": "sgn134",
+                  "language": "bqn",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn134",
+                  "name": "Dictionary Bulgaria",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "bqn"
+                  ]
+                },
+                {
+                  "code": "sgn135",
+                  "language": "csg",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn135",
+                  "name": "Diccionario Chile",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "csg"
+                  ]
+                },
+                {
+                  "code": "sgn136",
+                  "language": "ecs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn136",
+                  "name": "Diccionario Ecuador",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "ecs"
+                  ]
+                },
+                {
+                  "code": "sgn137",
+                  "language": "esn",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn137",
+                  "name": "Diccionario El Salvador",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "esn"
+                  ]
+                },
+                {
+                  "code": "sgn140",
+                  "language": "fcs",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn140",
+                  "name": "Encyclop\u00e9die Quebec",
+                  "user": "admin",
+                  "created_at": "2011-03-14 11:27:13",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn143",
+                  "language": "ugy",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn143",
+                  "name": "Diccionario Uruguay",
+                  "user": "admin",
+                  "created_at": "2012-03-23 13:59:31",
+                  "alt": [
+                    "ugy"
+                  ]
+                },
+                {
+                  "code": "sgn145",
+                  "language": "aed",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn145",
+                  "name": "Literatura Argentina",
+                  "user": "admin",
+                  "created_at": "2012-11-16 08:54:20",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn147",
+                  "language": "mdl",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn147",
+                  "name": "Literature Malta Archive",
+                  "user": "admin",
+                  "created_at": "2009-05-08 06:09:52",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn148",
+                  "language": "ysl",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn148",
+                  "name": "Besedila Slovenia",
+                  "user": "admin",
+                  "created_at": "2013-03-05 12:33:23",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn150",
+                  "language": "ase",
+                  "namespace": "signs",
+                  "subspace": "",
+                  "qqq": "puddle_sgn150",
+                  "name": "Anthropology Book Project",
+                  "user": "admin",
+                  "created_at": "2013-03-09 10:43:02",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn151",
+                  "language": "ase",
+                  "namespace": "bible",
+                  "subspace": "",
+                  "qqq": "puddle_sgn151",
+                  "name": "ASL Bible Books NLT",
+                  "user": "admin",
+                  "created_at": "2013-06-18 08:52:44",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn152",
+                  "language": "ase",
+                  "namespace": "bible",
+                  "subspace": "",
+                  "qqq": "puddle_sgn152",
+                  "name": "ASL Bible Books Shores Deaf Church",
+                  "user": "admin",
+                  "created_at": "2013-06-18 08:52:44",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn16",
+                  "language": "hds",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn16",
+                  "name": "Diccionario Honduras",
+                  "user": "admin",
+                  "created_at": "2007-05-11 22:14:19",
+                  "alt": [
+                    "hds"
+                  ]
+                },
+                {
+                  "code": "sgn17",
+                  "language": "ase",
+                  "namespace": "signs",
+                  "subspace": "",
+                  "qqq": "puddle_sgn17",
+                  "name": "Deaf Harbor",
+                  "user": "admin",
+                  "created_at": "2007-05-18 12:18:58",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn18",
+                  "language": "eth",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn18",
+                  "name": "Dictionary Ethiopia",
+                  "user": "admin",
+                  "created_at": "2007-04-26 21:17:03",
+                  "alt": [
+                    "eth"
+                  ]
+                },
+                {
+                  "code": "sgn19",
+                  "language": "pso",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn19",
+                  "name": "S\u0142ownik PL",
+                  "user": "admin",
+                  "created_at": "2007-05-25 13:50:32",
+                  "alt": [
+                    "pso"
+                  ]
+                },
+                {
+                  "code": "sgn20",
+                  "language": "ssr",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn20",
+                  "name": "Litt\u00e9rature CH-fr",
+                  "user": "admin",
+                  "created_at": "2008-03-20 04:07:28",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn21",
+                  "language": "ase",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn21",
+                  "name": "Encyclopedia US",
+                  "user": "admin",
+                  "created_at": "2008-06-04 14:06:43",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn22",
+                  "language": "ssr",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn22",
+                  "name": "Encyclop\u00e9die CH-fr",
+                  "user": "admin",
+                  "created_at": "2007-09-18 14:48:50",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn23",
+                  "language": "nsl",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn23",
+                  "name": "Litteratur NO",
+                  "user": "admin",
+                  "created_at": "2007-07-17 04:00:16",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn24",
+                  "language": "nsl",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn24",
+                  "name": "Leksikon NO",
+                  "user": "admin",
+                  "created_at": "2007-11-23 06:25:18",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn25",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn25",
+                  "name": "LLCN & SignTyp",
+                  "user": "admin",
+                  "created_at": "2007-02-25 15:27:44",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn26",
+                  "language": "gsg",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn26",
+                  "name": "Literatur DE",
+                  "user": "admin",
+                  "created_at": "2007-09-04 00:54:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn27",
+                  "language": "gsg",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn27",
+                  "name": "Enzyklop\u00e4die DE",
+                  "user": "admin",
+                  "created_at": "2007-11-24 15:35:17",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn28",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn28",
+                  "name": "ASL Bible Dictionary",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn29",
+                  "language": "asq",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn29",
+                  "name": "W\u00f6rterbuch AT",
+                  "user": "admin",
+                  "created_at": "2008-11-13 09:44:52",
+                  "alt": [
+                    "asq"
+                  ]
+                },
+                {
+                  "code": "sgn30",
+                  "language": "dsl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn30",
+                  "name": "Ordbog Danmark",
+                  "user": "admin",
+                  "created_at": "2008-10-04 23:21:32",
+                  "alt": [
+                    "dsl"
+                  ]
+                },
+                {
+                  "code": "sgn31",
+                  "language": "mdl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn31",
+                  "name": "Dictionary Malta",
+                  "user": "admin",
+                  "created_at": "2009-09-02 02:10:48",
+                  "alt": [
+                    "mdl"
+                  ]
+                },
+                {
+                  "code": "sgn33",
+                  "language": "psr",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn33",
+                  "name": "Dicion\u00e1rio Portugal",
+                  "user": "admin",
+                  "created_at": "2009-11-03 16:28:15",
+                  "alt": [
+                    "psr"
+                  ]
+                },
+                {
+                  "code": "sgn34",
+                  "language": "tsq",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn34",
+                  "name": "Dictionary Thailand",
+                  "user": "admin",
+                  "created_at": "2008-07-25 09:34:54",
+                  "alt": [
+                    "tsq"
+                  ]
+                },
+                {
+                  "code": "sgn35",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn35",
+                  "name": "Dictionary International",
+                  "user": "admin",
+                  "created_at": "2007-06-28 19:58:44",
+                  "alt": [
+                    "ils"
+                  ]
+                },
+                {
+                  "code": "sgn36",
+                  "language": "cse",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn36",
+                  "name": "Literatura CZ",
+                  "user": "admin",
+                  "created_at": "2009-12-14 15:09:42",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn37",
+                  "language": "cse",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn37",
+                  "name": "Encyklopedie CZ",
+                  "user": "admin",
+                  "created_at": "2008-02-08 15:47:37",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn38",
+                  "language": "pso",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn38",
+                  "name": "Literatura PL",
+                  "user": "admin",
+                  "created_at": "2008-04-19 14:56:22",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn4",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn4",
+                  "name": "Dictionary US",
+                  "user": "admin",
+                  "created_at": "2008-02-18 16:37:12",
+                  "alt": [
+                    "ase"
+                  ]
+                },
+                {
+                  "code": "sgn40",
+                  "language": "sdl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn40",
+                  "name": "Dictionary Saudi Arabia",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:06:54",
+                  "alt": [
+                    "sdl"
+                  ]
+                },
+                {
+                  "code": "sgn41",
+                  "language": "aed",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn41",
+                  "name": "Diccionario Argentina",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:07:13",
+                  "alt": [
+                    "aed"
+                  ]
+                },
+                {
+                  "code": "sgn42",
+                  "language": "asf",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn42",
+                  "name": "Dictionary Australia",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:07:27",
+                  "alt": [
+                    "asf"
+                  ]
+                },
+                {
+                  "code": "sgn43",
+                  "language": "sfb",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn43",
+                  "name": "Dictionnaire BE-fr",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:08:22",
+                  "alt": [
+                    "sfb"
+                  ]
+                },
+                {
+                  "code": "sgn44",
+                  "language": "vgt",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn44",
+                  "name": "Woordenboek Flanders",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:11:43",
+                  "alt": [
+                    "vgt"
+                  ]
+                },
+                {
+                  "code": "sgn45",
+                  "language": "bvl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn45",
+                  "name": "Diccionario Bolivia",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:35:57",
+                  "alt": [
+                    "bvl"
+                  ]
+                },
+                {
+                  "code": "sgn46",
+                  "language": "bzs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn46",
+                  "name": "Dicion\u00e1rio Brasil",
+                  "user": "admin",
+                  "created_at": "2011-03-29 20:42:29",
+                  "alt": [
+                    "bzs"
+                  ]
+                },
+                {
+                  "code": "sgn47",
+                  "language": "fcs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn47",
+                  "name": "Dictionnaire Quebec",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:36:41",
+                  "alt": [
+                    "fcs"
+                  ]
+                },
+                {
+                  "code": "sgn48",
+                  "language": "sgg",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn48",
+                  "name": "W\u00f6rterbuch CH-de",
+                  "user": "admin",
+                  "created_at": "2007-03-29 10:37:07",
+                  "alt": [
+                    "sgg"
+                  ]
+                },
+                {
+                  "code": "sgn49",
+                  "language": "ssr",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn49",
+                  "name": "Dictionnaire CH-fr",
+                  "user": "admin",
+                  "created_at": "2007-03-29 11:29:44",
+                  "alt": [
+                    "ssr"
+                  ]
+                },
+                {
+                  "code": "sgn5",
+                  "language": "ase",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn5",
+                  "name": "Literature US",
+                  "user": "admin",
+                  "created_at": "2007-03-09 19:14:07",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn50",
+                  "language": "slf",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn50",
+                  "name": "Dizionario CH-it",
+                  "user": "admin",
+                  "created_at": "2007-03-29 12:22:51",
+                  "alt": [
+                    "slf"
+                  ]
+                },
+                {
+                  "code": "sgn51",
+                  "language": "csn",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn51",
+                  "name": "Diccionario Colombia",
+                  "user": "admin",
+                  "created_at": "2007-03-29 12:23:09",
+                  "alt": [
+                    "csn"
+                  ]
+                },
+                {
+                  "code": "sgn52",
+                  "language": "cse",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn52",
+                  "name": "Slovn\u00edk CZ",
+                  "user": "admin",
+                  "created_at": "2007-03-29 12:23:39",
+                  "alt": [
+                    "cse"
+                  ]
+                },
+                {
+                  "code": "sgn53",
+                  "language": "gsg",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn53",
+                  "name": "W\u00f6rterbuch DE",
+                  "user": "admin",
+                  "created_at": "2007-03-29 12:24:50",
+                  "alt": [
+                    "gsg"
+                  ]
+                },
+                {
+                  "code": "sgn54",
+                  "language": "ils",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn54",
+                  "name": "Vortaro",
+                  "user": "admin",
+                  "created_at": "2007-03-29 13:52:53",
+                  "alt": [
+                    "sgn-eo"
+                  ]
+                },
+                {
+                  "code": "sgn55",
+                  "language": "ssp",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn55",
+                  "name": "Diccionario Espa\u00f1a",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:03:38",
+                  "alt": [
+                    "ssp"
+                  ]
+                },
+                {
+                  "code": "sgn56",
+                  "language": "csc",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn56",
+                  "name": "Diccionario Catal\u00e1n",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:03:52",
+                  "alt": [
+                    "csc"
+                  ]
+                },
+                {
+                  "code": "sgn57",
+                  "language": "fse",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn57",
+                  "name": "Dictionary Finland",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:04:21",
+                  "alt": [
+                    "fse"
+                  ]
+                },
+                {
+                  "code": "sgn58",
+                  "language": "fsl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn58",
+                  "name": "Dictionnaire FR",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:04:36",
+                  "alt": [
+                    "fsl"
+                  ]
+                },
+                {
+                  "code": "sgn59",
+                  "language": "bfi",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn59",
+                  "name": "Dictionary Great Britain",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:07:27",
+                  "alt": [
+                    "bfi"
+                  ]
+                },
+                {
+                  "code": "sgn6",
+                  "language": "ise",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn6",
+                  "name": "eufemismi",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn60",
+                  "language": "bfi-IE",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn60",
+                  "name": "Dictionary Northern Ireland",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:07:50",
+                  "alt": [
+                    "bfi-IE"
+                  ]
+                },
+                {
+                  "code": "sgn61",
+                  "language": "gss",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn61",
+                  "name": "Dictionary Greece",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:08:08",
+                  "alt": [
+                    "gss"
+                  ]
+                },
+                {
+                  "code": "sgn62",
+                  "language": "isg",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn62",
+                  "name": "Dictionary Ireland",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:08:24",
+                  "alt": [
+                    "isg"
+                  ]
+                },
+                {
+                  "code": "sgn63",
+                  "language": "ise",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn63",
+                  "name": "Dizionario IT",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:08:41",
+                  "alt": [
+                    "ise"
+                  ]
+                },
+                {
+                  "code": "sgn64",
+                  "language": "jsl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn64",
+                  "name": "Dictionary Japan",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:08:58",
+                  "alt": [
+                    "jsl"
+                  ]
+                },
+                {
+                  "code": "sgn65",
+                  "language": "mfs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn65",
+                  "name": "Diccionario Mexico",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:09:17",
+                  "alt": [
+                    "mfs"
+                  ]
+                },
+                {
+                  "code": "sgn66",
+                  "language": "xml",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn66",
+                  "name": "Dictionary Malaysia",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:09:37",
+                  "alt": [
+                    "xml"
+                  ]
+                },
+                {
+                  "code": "sgn67",
+                  "language": "ncs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn67",
+                  "name": "Diccionario Nicaragua",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:10:20",
+                  "alt": [
+                    "ncs"
+                  ]
+                },
+                {
+                  "code": "sgn68",
+                  "language": "dse",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn68",
+                  "name": "Woordenboek NL",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:11:53",
+                  "alt": [
+                    "dse"
+                  ]
+                },
+                {
+                  "code": "sgn69",
+                  "language": "nsl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn69",
+                  "name": "Ordbok NO",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:12:09",
+                  "alt": [
+                    "nsl"
+                  ]
+                },
+                {
+                  "code": "sgn7",
+                  "language": "ise",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn7",
+                  "name": "gab",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn70",
+                  "language": "nzs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn70",
+                  "name": "Dictionary New Zealand",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:13:01",
+                  "alt": [
+                    "nzs"
+                  ]
+                },
+                {
+                  "code": "sgn71",
+                  "language": "prl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn71",
+                  "name": "Diccionario Peru",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:13:17",
+                  "alt": [
+                    "prl"
+                  ]
+                },
+                {
+                  "code": "sgn72",
+                  "language": "psp",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn72",
+                  "name": "Dictionary Philippines",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:13:32",
+                  "alt": [
+                    "psp"
+                  ]
+                },
+                {
+                  "code": "sgn73",
+                  "language": "swl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn73",
+                  "name": "Ordbok Sverige",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:27:34",
+                  "alt": [
+                    "swl"
+                  ]
+                },
+                {
+                  "code": "sgn74",
+                  "language": "ysl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn74",
+                  "name": "Slovar Slovenia",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:27:48",
+                  "alt": [
+                    "ysl"
+                  ]
+                },
+                {
+                  "code": "sgn75",
+                  "language": "tss",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn75",
+                  "name": "Dictionary Taiwan",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:28:03",
+                  "alt": [
+                    "tss"
+                  ]
+                },
+                {
+                  "code": "sgn76",
+                  "language": "vsl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn76",
+                  "name": "Diccionario Venezuela",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:28:34",
+                  "alt": [
+                    "vsl"
+                  ]
+                },
+                {
+                  "code": "sgn77",
+                  "language": "sfs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn77",
+                  "name": "Dictionary South Africa",
+                  "user": "admin",
+                  "created_at": "2007-03-29 14:29:04",
+                  "alt": [
+                    "sfs"
+                  ]
+                },
+                {
+                  "code": "sgn78",
+                  "language": "kvk",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn78",
+                  "name": "Dictionary Korea",
+                  "user": "admin",
+                  "created_at": "2008-10-02 02:45:40",
+                  "alt": [
+                    "kvk"
+                  ]
+                },
+                {
+                  "code": "sgn79",
+                  "language": "xki",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn79",
+                  "name": "Dictionary Kenya",
+                  "user": "admin",
+                  "created_at": "2010-07-20 19:04:21",
+                  "alt": [
+                    "xki"
+                  ]
+                },
+                {
+                  "code": "sgn8",
+                  "language": "ise",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn8",
+                  "name": "lis",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn80",
+                  "language": "bzs",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn80",
+                  "name": "Project 2 Dictionary Sorting",
+                  "user": "admin",
+                  "created_at": "2011-03-29 20:42:29",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn81",
+                  "language": "fcs",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn81",
+                  "name": "Litt\u00e9rature Quebec",
+                  "user": "admin",
+                  "created_at": "2007-11-08 08:12:54",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn82",
+                  "language": "sqk",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn82",
+                  "name": "Dictionary Albania",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "sqk"
+                  ]
+                },
+                {
+                  "code": "sgn83",
+                  "language": "kvk",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn83",
+                  "name": "Dictionary China",
+                  "user": "admin",
+                  "created_at": "2009-03-04 02:21:48",
+                  "alt": [
+                    "csl"
+                  ]
+                },
+                {
+                  "code": "sgn84",
+                  "language": "esl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn84",
+                  "name": "Dictionary Egypt",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "esl"
+                  ]
+                },
+                {
+                  "code": "sgn85",
+                  "language": "ins",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn85",
+                  "name": "Dictionary India",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "ins"
+                  ]
+                },
+                {
+                  "code": "sgn86",
+                  "language": "jos",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn86",
+                  "name": "Dictionary Jordan",
+                  "user": "admin",
+                  "created_at": "2008-06-08 23:41:02",
+                  "alt": [
+                    "jos"
+                  ]
+                },
+                {
+                  "code": "sgn87",
+                  "language": "pks",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn87",
+                  "name": "Dictionary Pakistan",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "pks"
+                  ]
+                },
+                {
+                  "code": "sgn88",
+                  "language": "rsl",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn88",
+                  "name": "Dictionary Russia",
+                  "user": "admin",
+                  "created_at": "2009-10-01 03:45:26",
+                  "alt": [
+                    "rsl"
+                  ]
+                },
+                {
+                  "code": "sgn89",
+                  "language": "svk",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn89",
+                  "name": "Dictionary Slovakia",
+                  "user": "admin",
+                  "created_at": "2009-01-19 07:43:56",
+                  "alt": [
+                    "svk"
+                  ]
+                },
+                {
+                  "code": "sgn9",
+                  "language": "ise",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn9",
+                  "name": "lsf",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn90",
+                  "language": "tsm",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn90",
+                  "name": "Dictionary Turkey",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    "tsm"
+                  ]
+                },
+                {
+                  "code": "sgn91",
+                  "language": "sdl",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn91",
+                  "name": "Literature Saudi Arabia",
+                  "user": "admin",
+                  "created_at": "2008-04-26 02:06:24",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn92",
+                  "language": "jos",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn92",
+                  "name": "Literature Jordan",
+                  "user": "admin",
+                  "created_at": "2008-06-08 23:40:37",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn93",
+                  "language": "ssp",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn93",
+                  "name": "Literatura Espa\u00f1a",
+                  "user": "admin",
+                  "created_at": "2008-11-24 16:55:31",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn94",
+                  "language": "csc",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn94",
+                  "name": "Literatura Catal\u00e1n",
+                  "user": "admin",
+                  "created_at": "2007-11-16 14:33:50",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn95",
+                  "language": "sfb",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn95",
+                  "name": "Litt\u00e9rature BE-fr",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn96",
+                  "language": "sgg",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn96",
+                  "name": "Literatur CH-de",
+                  "user": "admin",
+                  "created_at": "2009-07-06 13:03:41",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn98",
+                  "language": "vgt",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn98",
+                  "name": "Literatuur Flanders",
+                  "user": "admin",
+                  "created_at": "2008-05-06 04:41:14",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn99",
+                  "language": "jsl",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn99",
+                  "name": "Literature Japan",
+                  "user": "admin",
+                  "created_at": "2008-11-25 05:58:35",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui1",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui1",
+                  "name": "English-ASL <br> User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui11",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui11",
+                  "name": "Esperanto-Signuno User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui12",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui12",
+                  "name": "Portuguese-LIBRAS User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui13",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui13",
+                  "name": "Slovenian User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui3",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui3",
+                  "name": "Norwegian-NTS<br>User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui4",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui4",
+                  "name": "French-FrenchSwissSL<br>User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui5",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui5",
+                  "name": "Spanish-ASL <br> User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui6",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui6",
+                  "name": "Czech <br> User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui7",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui7",
+                  "name": "Polish <br> User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "ui8",
+                  "language": "",
+                  "namespace": "",
+                  "subspace": "",
+                  "qqq": "puddle_ui8",
+                  "name": "German-DGS<br> User Interface",
+                  "user": "admin",
+                  "created_at": "2007-02-23 17:13:05",
+                  "alt": [
+                    
+                  ]
+                }
+              ]
+            }
+
+# GET /puddle/language/ase
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Listing of puddles available for sign language
+            Location:/puddle/language/ase
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "totalResults": 13,
+                "location": "/puddle/language/ase",
+                "searchTime": "1.4 ms"
+              },
+              "results": [
+                {
+                  "code": "sgn1",
+                  "language": "ase",
+                  "namespace": "lessons",
+                  "subspace": "",
+                  "qqq": "puddle_sgn1",
+                  "name": "Lessons",
+                  "user": "admin",
+                  "created_at": "2007-03-09 12:15:38",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn105",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn105",
+                  "name": "DAC Private Puddle",
+                  "user": "admin",
+                  "created_at": "2008-06-10 18:59:58",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn111",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn111",
+                  "name": "Project 1 Translate Wiki",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn150",
+                  "language": "ase",
+                  "namespace": "signs",
+                  "subspace": "",
+                  "qqq": "puddle_sgn150",
+                  "name": "Anthropology Book Project",
+                  "user": "admin",
+                  "created_at": "2013-03-09 10:43:02",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn151",
+                  "language": "ase",
+                  "namespace": "bible",
+                  "subspace": "",
+                  "qqq": "puddle_sgn151",
+                  "name": "ASL Bible Books NLT",
+                  "user": "admin",
+                  "created_at": "2013-06-18 08:52:44",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn152",
+                  "language": "ase",
+                  "namespace": "bible",
+                  "subspace": "",
+                  "qqq": "puddle_sgn152",
+                  "name": "ASL Bible Books Shores Deaf Church",
+                  "user": "admin",
+                  "created_at": "2013-06-18 08:52:44",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn17",
+                  "language": "ase",
+                  "namespace": "signs",
+                  "subspace": "",
+                  "qqq": "puddle_sgn17",
+                  "name": "Deaf Harbor",
+                  "user": "admin",
+                  "created_at": "2007-05-18 12:18:58",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn21",
+                  "language": "ase",
+                  "namespace": "encyclopedia",
+                  "subspace": "",
+                  "qqq": "puddle_sgn21",
+                  "name": "Encyclopedia US",
+                  "user": "admin",
+                  "created_at": "2008-06-04 14:06:43",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn25",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn25",
+                  "name": "LLCN & SignTyp",
+                  "user": "admin",
+                  "created_at": "2007-02-25 15:27:44",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn28",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn28",
+                  "name": "ASL Bible Dictionary",
+                  "user": "admin",
+                  "created_at": "1969-12-31 18:00:00",
+                  "alt": [
+                    
+                  ]
+                },
+                {
+                  "code": "sgn35",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn35",
+                  "name": "Dictionary International",
+                  "user": "admin",
+                  "created_at": "2007-06-28 19:58:44",
+                  "alt": [
+                    "ils"
+                  ]
+                },
+                {
+                  "code": "sgn4",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn4",
+                  "name": "Dictionary US",
+                  "user": "admin",
+                  "created_at": "2008-02-18 16:37:12",
+                  "alt": [
+                    "ase"
+                  ]
+                },
+                {
+                  "code": "sgn5",
+                  "language": "ase",
+                  "namespace": "literature",
+                  "subspace": "",
+                  "qqq": "puddle_sgn5",
+                  "name": "Literature US",
+                  "user": "admin",
+                  "created_at": "2007-03-09 19:14:07",
+                  "alt": [
+                    
+                  ]
+                }
+              ]
+            }
+
+# GET /puddle/ase
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Puddle information based on code
+            Location:/puddle/ase
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "totalResults": 1,
+                "location": "/puddle/ase",
+                "searchTime": "1.51 ms"
+              },
+              "results": [
+                {
+                  "code": "sgn4",
+                  "language": "ase",
+                  "namespace": "dictionary",
+                  "subspace": "",
+                  "qqq": "puddle_sgn4",
+                  "name": "Dictionary US",
+                  "user": "admin",
+                  "created_at": "2008-02-18 16:37:12",
+                  "alt": [
+                    "ase"
+                  ]
+                }
+              ]
+            }
+
+# GET /puddle/ase/query/QS10000S10008S21100
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Query puddle for signs with 3 symbols
+            Location:/puddle/ase/query/QS10000S10008S21100
 
     + Body
 
@@ -2729,100 +4859,836 @@ Interact will collections of signs.
             {
               "meta": {
                 "limit": 100,
-                "offset": 40,
-                "totalResults": 46,
-                "locaction": "/puddle/sgn4/query/QS10000S20500?offset=40",
-                "searchTime": "131.95 ms"
+                "offset": 0,
+                "totalResults": 1,
+                "location": "/puddle/ase/query/QS10000S10008S21100",
+                "searchTime": "100.1 ms"
               },
               "results": [
                 {
-                  "id": "9732",
+                  "id": "1845",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:49",
+                  "updated_at": "2008/07/14 00:02:27",
+                  "sign": "AS10020S10008S21100S10028S10000M513x544S21100486x498S10008492x457S10000496x509S10028489x514S10020498x463",
+                  "signtext": "",
+                  "terms": [
+                    "translate"
+                  ],
+                  "detail": {
+                    "src": "Val ;-)"
+                  }
+                }
+              ]
+            }
+
+# GET /puddle/ase/query/QS2ff00S20500?offset=160
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Query puddle for signs with 2 symbols, skip first 160 results
+            Location:/puddle/ase/query/QS2ff00S20500?offset=160
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 100,
+                "offset": 160,
+                "totalResults": 180,
+                "location": "/puddle/ase/query/QS2ff00S20500?offset=160",
+                "searchTime": "146.28 ms"
+              },
+              "results": [
+                {
+                  "id": "3376",
+                  "user": "frost",
+                  "created_at": "2013/11/05 13:17:16",
+                  "updated_at": "2013/11/05 13:17:16",
+                  "sign": "M540x537S20500519x499S1f527507x515S22a00527x508S2ff00482x483",
+                  "signtext": "",
+                  "terms": [
+                    "yesterday"
+                  ],
+                  "detail": {
+                    "src": "Adam Frost"
+                  }
+                },
+                {
+                  "id": "10031",
                   "user": "EscaladaWestland",
-                  "created_at": "2009/02/06 05:25:45",
-                  "updated_at": "2009/02/06 05:25:45",
-                  "sign": "M540x562S2c600504x525S30004482x482S20500495x518S10000487x532S21600532x497S10e00524x507",
+                  "created_at": "2009/04/07 06:23:59",
+                  "updated_at": "2009/04/07 06:48:23",
+                  "sign": "M540x558S2ff00482x482S2fb07485x503S2fb01503x503S17d17511x503S17d1f465x505S2fb04493x537S22b03516x525S22b15460x525S20500496x547",
                   "signtext": "",
                   "terms": [
-                    "twelve years old",
-                    "age twelve"
+                    "full beard"
                   ],
                   "detail": {
                     "src": "Natasha Escalada-Westland"
                   }
                 },
                 {
-                  "id": "9470",
-                  "user": "75.190.163.185",
-                  "created_at": "2008/08/20 10:13:55",
-                  "updated_at": "2008/08/20 10:13:55",
-                  "sign": "M544x609S10000486x503S33b00482x482S20500504x518S14c20521x547S37700531x573S15a1a513x597S37806489x600",
+                  "id": "9628",
+                  "user": "petercdehaas",
+                  "created_at": "2008/12/10 14:26:00",
+                  "updated_at": "2008/12/10 14:26:00",
+                  "sign": "M541x517S2ff00482x482S18600523x459S20500514x479",
                   "signtext": "",
                   "terms": [
-                    "Assure"
+                    "Willy"
                   ],
                   "detail": {
-                    "src": "David Correia ASL Browser"
+                    "text": "Sign name Willy Moers",
+                    "src": "petercdehaas"
                   }
                 },
                 {
-                  "id": "10449",
+                  "id": "827",
+                  "user": "EscaladaWestland",
+                  "created_at": "2011/09/11 19:34:15",
+                  "updated_at": "2011/09/11 19:34:15",
+                  "sign": "M541x593S15a10516x494S2ff00482x483S20500514x480S15a40516x551S15a48475x552S22104529x552S22104461x556S18048481x578S18040489x541S2b700518x524",
+                  "signtext": "",
+                  "terms": [
+                    "bedroom"
+                  ],
+                  "detail": {
+                    "src": "Natasha Escalada-Westland"
+                  }
+                },
+                {
+                  "id": "4309",
+                  "user": "72.78.4.40",
+                  "created_at": "2015/03/02 17:53:13",
+                  "updated_at": "2015/03/02 17:53:13",
+                  "sign": "M542x626S2ff00482x483S1f418455x498S1f055463x546S1f057502x596S20500484x528S20500503x577S2d508500x535S2d509523x573",
+                  "signtext": "",
+                  "terms": [
+                    "Stethoscope"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "1698",
+                  "user": "168.174.253.222",
+                  "created_at": "2012/10/10 14:21:50",
+                  "updated_at": "2012/10/10 14:21:50",
+                  "sign": "M543x518S2ff00482x483S14c11517x479S21800525x468S20500509x476",
+                  "signtext": "",
+                  "terms": [
+                    "weak-mind",
+                    "retard"
+                  ],
+                  "detail": {
+                    "src": "Tanner Giessuebel, Daniel McClelland, Natasha Escalada-Westland"
+                  }
+                },
+                {
+                  "id": "10564",
+                  "user": "173.179.109.60",
+                  "created_at": "2009/12/03 07:28:48",
+                  "updated_at": "2009/12/03 07:30:36",
+                  "sign": "M543x597S31400483x505S11000524x522S2df06518x557S2f900527x592S2ff00480x460S20500514x471S20500507x486S10011522x483",
+                  "signtext": "",
+                  "terms": [
+                    "deafblind"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "4049",
+                  "user": "207.191.190.2",
+                  "created_at": "2014/09/25 14:15:59",
+                  "updated_at": "2014/09/25 14:15:59",
+                  "sign": "M545x585S2ff00482x483S14c20518x473S20500511x512S15d5a490x550S20340497x570S28a0d516x555",
+                  "signtext": "",
+                  "terms": [
+                    "custody"
+                  ],
+                  "detail": {
+                    "src": "clw"
+                  }
+                },
+                {
+                  "id": "10878",
+                  "user": "gabe",
+                  "created_at": "2010/07/22 12:11:23",
+                  "updated_at": "2010/07/22 12:11:23",
+                  "sign": "M546x524S2ff00482x482S2a404521x488S20500495x485S19a00506x461",
+                  "signtext": "",
+                  "terms": [
+                    "buffalo"
+                  ],
+                  "detail": {
+                    "src": "gabe"
+                  }
+                },
+                {
+                  "id": "10238",
+                  "user": "72.129.73.90",
+                  "created_at": "2009/08/04 17:22:02",
+                  "updated_at": "2009/08/04 17:22:02",
+                  "sign": "M547x522S2ff00482x482S15a06481x510S15a02493x499S22f04522x491S20500530x507",
+                  "signtext": "",
+                  "terms": [
+                    "knight"
+                  ],
+                  "detail": {
+                    "text": "AKA A Knight in Shining Armor, A Medieval Knight.",
+                    "src": "Adam Frost"
+                  }
+                },
+                {
+                  "id": "10185",
+                  "user": "134.129.174.89",
+                  "created_at": "2009/07/13 23:47:27",
+                  "updated_at": "2009/07/13 23:47:27",
+                  "sign": "M548x597S1f752494x577S1f738476x526S37900488x541S37906508x585S2ff00482x482S20500493x563S20500495x518",
+                  "signtext": "",
+                  "terms": [
+                    "chin resting on hand"
+                  ],
+                  "detail": {
+                    "src": "Sarah E."
+                  }
+                },
+                {
+                  "id": "10175",
+                  "user": "134.129.174.89",
+                  "created_at": "2009/07/13 21:37:38",
+                  "updated_at": "2009/07/13 21:37:38",
+                  "sign": "M549x624S1ce40509x553S1ce48470x552S22a04509x595S22a14477x594S2fb04494x618S2ff00482x482S10001528x493S20500517x478",
+                  "signtext": "",
+                  "terms": [
+                    "decide"
+                  ],
+                  "detail": {
+                    "src": "Sarah E."
+                  }
+                },
+                {
+                  "id": "4434",
+                  "user": "24.115.11.202",
+                  "created_at": "2015/03/17 21:20:11",
+                  "updated_at": "2015/03/17 21:20:11",
+                  "sign": "M550x518S2ff00482x483S17e10527x490S17e18447x494S20500504x492S20500487x492",
+                  "signtext": "",
+                  "terms": [
+                    "cosmetics"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "3093",
+                  "user": "66.27.57.178",
+                  "created_at": "2013/09/18 10:56:21",
+                  "updated_at": "2013/09/18 10:56:21",
+                  "sign": "M559x525S2ff00482x483S18010509x508S20500520x495S2f900520x488S2ea00544x500",
+                  "signtext": "",
+                  "terms": [
+                    "tobacco"
+                  ],
+                  "detail": {
+                    "src": "Adam Frost"
+                  }
+                },
+                {
+                  "id": "9927",
+                  "user": "71.59.56.245",
+                  "created_at": "2009/03/10 15:48:44",
+                  "updated_at": "2009/03/10 15:48:44",
+                  "sign": "M567x641S2ff00482x482S20500524x498S16d10517x474S20356496x541S37806464x547S37806466x626S20356497x619S2f900499x560S2f900499x636S14404509x585S2d80a533x602",
+                  "signtext": "",
+                  "terms": [
+                    "solar system"
+                  ],
+                  "detail": {
+                    "src": "cw"
+                  }
+                },
+                {
+                  "id": "10563",
+                  "user": "173.179.109.60",
+                  "created_at": "2009/12/03 07:25:22",
+                  "updated_at": "2009/12/03 07:27:57",
+                  "sign": "M576x556S31400519x480S11000560x491S2df06556x522S2f900562x551S2ff00444x484S20500478x495S20500470x513S10011486x507",
+                  "signtext": "",
+                  "terms": [
+                    "deafblind"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "3095",
+                  "user": "66.27.57.178",
+                  "created_at": "2013/09/18 10:57:01",
+                  "updated_at": "2013/09/18 10:57:01",
+                  "sign": "M583x523S2ff00482x483S18010509x508S20500520x495S2f900520x488S2c500543x499",
+                  "signtext": "",
+                  "terms": [
+                    "tobacco"
+                  ],
+                  "detail": {
+                    "src": "Adam Frost"
+                  }
+                },
+                {
+                  "id": "679",
+                  "user": "66.27.57.178",
+                  "created_at": "2011/09/08 11:25:18",
+                  "updated_at": "2011/09/08 11:25:18",
+                  "sign": "M583x620S2ff00482x483S10620515x498S21100521x481S23600544x505S10620515x549S10620516x594S1c518483x540S26512465x551S20500508x537S1001a481x596S26516463x596",
+                  "signtext": "",
+                  "terms": [
+                    "razor blade"
+                  ],
+                  "detail": {
+                    "src": "aslpro.com, msutton"
+                  }
+                },
+                {
+                  "id": "2321",
+                  "user": "168.174.253.221",
+                  "created_at": "2013/05/22 13:02:38",
+                  "updated_at": "2013/05/22 13:02:38",
+                  "sign": "M594x602S34700428x483S27106438x435S20b00444x589S10011459x532S1001a421x549S26504443x568S2ff00536x482S27102548x436S15a37529x557S10014562x525S26a04567x563S20500569x584S20500583x583",
+                  "signtext": "",
+                  "terms": [
+                    "cant afford",
+                    "insufficient funds",
+                    "unaffordable"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "2316",
+                  "user": "168.174.253.220",
+                  "created_at": "2013/05/22 12:53:45",
+                  "updated_at": "2013/05/22 12:53:45",
+                  "sign": "M607x546S2ff00483x458S2ff10482x488S2ff10483x514S21600491x470S21600501x470S26632509x499S26631476x486S21400494x453S20500472x483S20500561x483S2f700491x480S20500556x414S20500489x432S20500527x452S20500523x407S20500451x443S20500423x412S20500472x405S20500428x487S20500421x456S20500412x535S20500448x508S20500597x487S20500571x450S20500595x428S20500554x524S20500594x530S20500403x501S20500398x433",
+                  "signtext": "",
+                  "terms": [
+                    "snowman",
+                    "christmas",
+                    "frost",
+                    "cold",
+                    "snow",
+                    "snowy",
+                    "winter",
+                    "frosty the snowman"
+                  ],
+                  "detail": {
+                    "src": "tanner g"
+                  }
+                }
+              ]
+            }
+
+# GET /puddle/ase/query/QS10000?limit=1
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Query puddle for signs with 1 symbol, only returns first result
+            Location:/puddle/ase/query/QS10000?limit=1
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 1,
+                "offset": 0,
+                "totalResults": 159,
+                "location": "/puddle/ase/query/QS10000?limit=1",
+                "searchTime": "109.27 ms"
+              },
+              "results": [
+                {
+                  "id": "130",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:46",
+                  "updated_at": "2007/08/21 21:00:32",
+                  "sign": "AS10000M507x515S10000492x485",
+                  "signtext": "M528x531S18510502x483S18514473x472S1851c503x505S18518475x516S20500496x502S20500495x468 M530x526S15a39469x486S1d457476x501S20e00501x491S26a07509x475 S38a00464x490 M529x561S1f548490x537S10002499x533S20600474x525S30a00482x482 S38700463x496 M514x527S19a20486x473S22e04493x498S2f700496x520 S38800464x496",
+                  "terms": [
+                    "1",
+                    "one"
+                  ],
+                  "detail": {
+                    "text": "number (cardinal)",
+                    "src": "Adam Frost and Valerie Sutton"
+                  }
+                }
+              ]
+            }
+
+# GET /puddle/ase/query/QS2ff00S20500S26504?limit=0
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Query puddle for signs with 3 symbol, returning all results without limit
+            Location:/puddle/ase/query/QS2ff00S20500S26504?limit=0
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 0,
+                "offset": 0,
+                "totalResults": 6,
+                "location": "/puddle/ase/query/QS2ff00S20500S26504?limit=0",
+                "searchTime": "107.41 ms"
+              },
+              "results": [
+                {
+                  "id": "2568",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:54",
+                  "updated_at": "2008/08/07 09:46:32",
+                  "sign": "AS10000S20500S26504S2ff00M518x541S2ff00482x482S10000487x511S26504465x500S20500505x517",
+                  "signtext": "",
+                  "terms": [
+                    "dissapointed"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "5492",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:28:25",
+                  "updated_at": "2008/08/05 03:30:49",
+                  "sign": "AS10000S26504S20500S2ff00M518x541S2ff00482x482S10000487x511S26504465x500S20500505x517",
+                  "signtext": "",
+                  "terms": [
+                    "disappointed"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "8207",
+                  "user": "msutton",
+                  "created_at": "2008/06/11 00:12:51",
+                  "updated_at": "2008/07/29 12:19:25",
+                  "sign": "AS10610S26504S20500S2ff00M536x520S2ff00482x482S20500495x494S26504522x474S10610518x494",
+                  "signtext": "",
+                  "terms": [
+                    "strict"
+                  ],
+                  "detail": {
+                    "src": "typed with SignWriter Java, taken from the SignBank Database(msutton)"
+                  }
+                },
+                {
+                  "id": "2569",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:54",
+                  "updated_at": "2008/07/23 11:32:39",
+                  "sign": "AS11010S20500S26504S2ff00M542x525S2ff00482x482S20500495x494S11010525x498S26504528x471",
+                  "signtext": "",
+                  "terms": [
+                    "strict"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "9410",
+                  "user": "msutton",
+                  "created_at": "2008/08/09 03:57:34",
+                  "updated_at": "2008/08/09 03:58:21",
+                  "sign": "AS1f540S20e00S26500S2ff00S15020S20350S26504S20350S20500M527x656S2ff00482x482S20e00514x526S26500513x507S1f540493x517S15020491x565S26504498x603S20350502x626S20350496x641S20500514x643",
+                  "signtext": "",
+                  "terms": [
+                    "unaccustomed"
+                  ],
+                  "detail": {
+                    "src": "msutton from asl browser"
+                  }
+                },
+                {
+                  "id": "2321",
+                  "user": "168.174.253.221",
+                  "created_at": "2013/05/22 13:02:38",
+                  "updated_at": "2013/05/22 13:02:38",
+                  "sign": "M594x602S34700428x483S27106438x435S20b00444x589S10011459x532S1001a421x549S26504443x568S2ff00536x482S27102548x436S15a37529x557S10014562x525S26a04567x563S20500569x584S20500583x583",
+                  "signtext": "",
+                  "terms": [
+                    "cant afford",
+                    "insufficient funds",
+                    "unaffordable"
+                  ],
+                  "detail": [
+                    
+                  ]
+                }
+              ]
+            }
+
+# GET /puddle/ase/query/QS2ff00S20500S26504?sort=-created_at
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Query puddle for signs with 3 symbol, sort by created_at descending
+            Location:/puddle/ase/query/QS2ff00S20500S26504?sort=-created_at
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 100,
+                "offset": 0,
+                "totalResults": 6,
+                "location": "/puddle/ase/query/QS2ff00S20500S26504?sort=-created_at",
+                "searchTime": "106.99 ms"
+              },
+              "results": [
+                {
+                  "id": "2321",
+                  "user": "168.174.253.221",
+                  "created_at": "2013/05/22 13:02:38",
+                  "updated_at": "2013/05/22 13:02:38",
+                  "sign": "M594x602S34700428x483S27106438x435S20b00444x589S10011459x532S1001a421x549S26504443x568S2ff00536x482S27102548x436S15a37529x557S10014562x525S26a04567x563S20500569x584S20500583x583",
+                  "signtext": "",
+                  "terms": [
+                    "cant afford",
+                    "insufficient funds",
+                    "unaffordable"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "9410",
+                  "user": "msutton",
+                  "created_at": "2008/08/09 03:57:34",
+                  "updated_at": "2008/08/09 03:58:21",
+                  "sign": "AS1f540S20e00S26500S2ff00S15020S20350S26504S20350S20500M527x656S2ff00482x482S20e00514x526S26500513x507S1f540493x517S15020491x565S26504498x603S20350502x626S20350496x641S20500514x643",
+                  "signtext": "",
+                  "terms": [
+                    "unaccustomed"
+                  ],
+                  "detail": {
+                    "src": "msutton from asl browser"
+                  }
+                },
+                {
+                  "id": "8207",
+                  "user": "msutton",
+                  "created_at": "2008/06/11 00:12:51",
+                  "updated_at": "2008/07/29 12:19:25",
+                  "sign": "AS10610S26504S20500S2ff00M536x520S2ff00482x482S20500495x494S26504522x474S10610518x494",
+                  "signtext": "",
+                  "terms": [
+                    "strict"
+                  ],
+                  "detail": {
+                    "src": "typed with SignWriter Java, taken from the SignBank Database(msutton)"
+                  }
+                },
+                {
+                  "id": "5492",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:28:25",
+                  "updated_at": "2008/08/05 03:30:49",
+                  "sign": "AS10000S26504S20500S2ff00M518x541S2ff00482x482S10000487x511S26504465x500S20500505x517",
+                  "signtext": "",
+                  "terms": [
+                    "disappointed"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "2568",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:54",
+                  "updated_at": "2008/08/07 09:46:32",
+                  "sign": "AS10000S20500S26504S2ff00M518x541S2ff00482x482S10000487x511S26504465x500S20500505x517",
+                  "signtext": "",
+                  "terms": [
+                    "dissapointed"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "2569",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:54",
+                  "updated_at": "2008/07/23 11:32:39",
+                  "sign": "AS11010S20500S26504S2ff00M542x525S2ff00482x482S20500495x494S11010525x498S26504528x471",
+                  "signtext": "",
+                  "terms": [
+                    "strict"
+                  ],
+                  "detail": [
+                    
+                  ]
+                }
+              ]
+            }
+
+# GET /puddle/ase/query/QS2ff00S20500?offset=160&limit=10&sort=id
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Query puddle for signs with 2 symbol, sort by id, skip the first 160, and return 10 results
+            Location:/puddle/ase/query/QS2ff00S20500?offset=160&limit=10&sort=id
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 10,
+                "offset": 160,
+                "totalResults": 180,
+                "location": "/puddle/ase/query/QS2ff00S20500?offset=160&limit=10&sort=id",
+                "searchTime": "136.33 ms"
+              },
+              "results": [
+                {
+                  "id": "10050",
+                  "user": "EscaladaWestland",
+                  "created_at": "2009/04/16 08:01:12",
+                  "updated_at": "2011/08/28 17:06:02",
+                  "sign": "M529x544S2ff00482x483S20500495x495S21900515x515S1e101486x501S26a00486x530",
+                  "signtext": "",
+                  "terms": [
+                    "cold",
+                    "have a cold"
+                  ],
+                  "detail": {
+                    "src": "Natasha Escalada-Westland"
+                  }
+                },
+                {
+                  "id": "10052",
                   "user": "68.0.135.115",
-                  "created_at": "2009/11/03 06:31:55",
-                  "updated_at": "2009/11/03 06:32:54",
-                  "sign": "M563x560S2c600507x522S30004482x482S20500495x518S10000486x530S2e231536x529S1ce11517x506",
+                  "created_at": "2009/04/16 08:10:10",
+                  "updated_at": "2009/04/16 08:10:10",
+                  "sign": "M522x517S2ff00482x482S14722500x484S20500495x468",
                   "signtext": "",
                   "terms": [
-                    "nineteen years old",
-                    "age nineteen"
+                    "fever",
+                    "high temperature"
+                  ],
+                  "detail": {
+                    "text": "From Master ASL, p. 313, by Jason Zinza",
+                    "src": "Natasha Escalada-Westland"
+                  }
+                },
+                {
+                  "id": "10173",
+                  "user": "65.10.183.196",
+                  "created_at": "2009/07/11 06:59:31",
+                  "updated_at": "2009/07/11 06:59:31",
+                  "sign": "M519x546S26600461x516S19210498x522S2ff00482x482S20500495x503",
+                  "signtext": "",
+                  "terms": [
+                    ""
+                  ],
+                  "detail": {
+                    "text": "Is this how you write sign language?   Is this the correct way?"
+                  }
+                },
+                {
+                  "id": "10175",
+                  "user": "134.129.174.89",
+                  "created_at": "2009/07/13 21:37:38",
+                  "updated_at": "2009/07/13 21:37:38",
+                  "sign": "M549x624S1ce40509x553S1ce48470x552S22a04509x595S22a14477x594S2fb04494x618S2ff00482x482S10001528x493S20500517x478",
+                  "signtext": "",
+                  "terms": [
+                    "decide"
+                  ],
+                  "detail": {
+                    "src": "Sarah E."
+                  }
+                },
+                {
+                  "id": "10185",
+                  "user": "134.129.174.89",
+                  "created_at": "2009/07/13 23:47:27",
+                  "updated_at": "2009/07/13 23:47:27",
+                  "sign": "M548x597S1f752494x577S1f738476x526S37900488x541S37906508x585S2ff00482x482S20500493x563S20500495x518",
+                  "signtext": "",
+                  "terms": [
+                    "chin resting on hand"
+                  ],
+                  "detail": {
+                    "src": "Sarah E."
+                  }
+                },
+                {
+                  "id": "10214",
+                  "user": "134.129.203.20",
+                  "created_at": "2009/07/29 09:47:01",
+                  "updated_at": "2009/07/29 09:47:01",
+                  "sign": "M538x560S11019506x534S36d00479x527S2ff00482x482S20500528x526",
+                  "signtext": "",
+                  "terms": [
+                    "Ivo",
+                    "SIL2009"
+                  ],
+                  "detail": {
+                    "text": "paraguan",
+                    "src": "Ivo maidana"
+                  }
+                },
+                {
+                  "id": "10238",
+                  "user": "72.129.73.90",
+                  "created_at": "2009/08/04 17:22:02",
+                  "updated_at": "2009/08/04 17:22:02",
+                  "sign": "M547x522S2ff00482x482S15a06481x510S15a02493x499S22f04522x491S20500530x507",
+                  "signtext": "",
+                  "terms": [
+                    "knight"
+                  ],
+                  "detail": {
+                    "text": "AKA A Knight in Shining Armor, A Medieval Knight.",
+                    "src": "Adam Frost"
+                  }
+                },
+                {
+                  "id": "10440",
+                  "user": "68.0.135.115",
+                  "created_at": "2009/11/01 09:10:01",
+                  "updated_at": "2009/11/01 09:11:26",
+                  "sign": "M518x573S2ff00482x482S20500495x505S11011487x516S2c100491x543",
+                  "signtext": "",
+                  "terms": [
+                    "snake"
                   ],
                   "detail": {
                     "src": "Natasha Escalada-Westland"
                   }
                 },
                 {
-                  "id": "10446",
-                  "user": "68.0.135.115",
-                  "created_at": "2009/11/03 06:15:37",
-                  "updated_at": "2009/11/03 06:25:06",
-                  "sign": "M567x560S2c600507x522S30004482x482S20500495x518S10000486x530S18711520x510S2e231540x530",
+                  "id": "10563",
+                  "user": "173.179.109.60",
+                  "created_at": "2009/12/03 07:25:22",
+                  "updated_at": "2009/12/03 07:27:57",
+                  "sign": "M576x556S31400519x480S11000560x491S2df06556x522S2f900562x551S2ff00444x484S20500478x495S20500470x513S10011486x507",
                   "signtext": "",
                   "terms": [
-                    "sixteen years old",
-                    "age sixteen"
+                    "deafblind"
                   ],
-                  "detail": {
-                    "src": "Natasha Escalada-Westland"
-                  }
+                  "detail": [
+                    
+                  ]
                 },
                 {
-                  "id": "10447",
-                  "user": "68.0.135.115",
-                  "created_at": "2009/11/03 06:25:56",
-                  "updated_at": "2009/11/03 06:27:15",
-                  "sign": "M569x560S2c600507x522S30004482x482S20500495x518S10000486x530S2e231542x528S1a511521x505",
+                  "id": "10564",
+                  "user": "173.179.109.60",
+                  "created_at": "2009/12/03 07:28:48",
+                  "updated_at": "2009/12/03 07:30:36",
+                  "sign": "M543x597S31400483x505S11000524x522S2df06518x557S2f900527x592S2ff00480x460S20500514x471S20500507x486S10011522x483",
                   "signtext": "",
                   "terms": [
-                    "seventeen years old",
-                    "age seventeen"
+                    "deafblind"
                   ],
-                  "detail": {
-                    "src": "Natasha Escalada-Westland"
-                  }
-                },
-                {
-                  "id": "10448",
-                  "user": "68.0.135.115",
-                  "created_at": "2009/11/03 06:27:40",
-                  "updated_at": "2009/11/03 06:28:20",
-                  "sign": "M569x560S2c600507x522S30004482x482S20500495x518S10000486x530S2e231542x528S1bb11523x505",
-                  "signtext": "",
-                  "terms": [
-                    "eighteen years old",
-                    "age eighteen"
-                  ],
-                  "detail": {
-                    "src": "Natasha Escalada-Westland"
-                  }
+                  "detail": [
+                    
+                  ]
                 }
               ]
             }
@@ -2857,9 +5723,9 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 2,
-                "locaction": "/puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520",
+                "location": "/puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS33100482x483S20310506x500S26b02503x520",
-                "searchTime": "93.89 ms"
+                "searchTime": "102.27 ms"
               },
               "results": [
                 {
@@ -2924,8 +5790,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 1,
-                "locaction": "/puddle/sgn4/query/signtext/QS20500S20320",
-                "searchTime": "102.73 ms"
+                "location": "/puddle/sgn4/query/signtext/QS20500S20320",
+                "searchTime": "102.42 ms"
               },
               "results": [
                 {
@@ -2987,9 +5853,9 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 1,
-                "locaction": "/puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516",
+                "location": "/puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516",
                 "query": "QS18002491x474S20500488x516S20500502x516",
-                "searchTime": "104.28 ms"
+                "searchTime": "102.34 ms"
               },
               "results": [
                 {
@@ -3039,8 +5905,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 12,
-                "locaction": "/puddle/sgn4/search/del",
-                "searchTime": "58.73 ms"
+                "location": "/puddle/sgn4/search/del",
+                "searchTime": "49.42 ms"
               },
               "results": [
                 {
@@ -3262,8 +6128,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 9,
-                "locaction": "/puddle/sgn4/search/del?match=start",
-                "searchTime": "65.7 ms"
+                "location": "/puddle/sgn4/search/del?match=start",
+                "searchTime": "63.1 ms"
               },
               "results": [
                 {
@@ -3443,8 +6309,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 1,
-                "locaction": "/puddle/sgn4/search/del?match=end",
-                "searchTime": "58.36 ms"
+                "location": "/puddle/sgn4/search/del?match=end",
+                "searchTime": "58.6 ms"
               },
               "results": [
                 {
@@ -3494,8 +6360,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 2,
-                "locaction": "/puddle/sgn4/search/Delaware?match=exact",
-                "searchTime": "73.15 ms"
+                "location": "/puddle/sgn4/search/Delaware?match=exact",
+                "searchTime": "73.48 ms"
               },
               "results": [
                 {
@@ -3560,8 +6426,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 16,
-                "locaction": "/puddle/sgn4/search/DEL?ci=1",
-                "searchTime": "59.19 ms"
+                "location": "/puddle/sgn4/search/DEL?ci=1",
+                "searchTime": "59.06 ms"
               },
               "results": [
                 {
@@ -3842,8 +6708,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 13,
-                "locaction": "/puddle/sgn4/search/del?ci=1&match=start",
-                "searchTime": "63.15 ms"
+                "location": "/puddle/sgn4/search/del?match=start&ci=1",
+                "searchTime": "63.73 ms"
               },
               "results": [
                 {
@@ -4082,8 +6948,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 1,
-                "locaction": "/puddle/sgn4/search/DEL?ci=1&match=end",
-                "searchTime": "58.33 ms"
+                "location": "/puddle/sgn4/search/DEL?match=end&ci=1",
+                "searchTime": "55.73 ms"
               },
               "results": [
                 {
@@ -4133,8 +6999,8 @@ Interact will collections of signs.
                 "limit": 100,
                 "offset": 0,
                 "totalResults": 2,
-                "locaction": "/puddle/sgn4/search/delaware?ci=1&match=exact",
-                "searchTime": "72.42 ms"
+                "location": "/puddle/sgn4/search/delaware?match=exact&ci=1",
+                "searchTime": "73.83 ms"
               },
               "results": [
                 {
@@ -4169,6 +7035,683 @@ Interact will collections of signs.
               ]
             }
 
+# GET /puddle/sgn4/created?after=2015/08/01
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Search puddle for entries created after August 1st, sort by the sign spelling, limit to 5 results
+            Location:/puddle/sgn4/created?after=2015/08/01 23:59:59&sort=sign&limit=5
+
+    + Body
+
+            
+
++ Response undefined
+    + Headers
+
+
+    + Body
+
+            
+
+# GET /puddle/sgn4/created?before=2008&limit=10
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Search puddle for entries created before 2008, limit to 10 results
+            Location:/puddle/sgn4/created?before=2008&limit=10
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 10,
+                "offset": 0,
+                "totalResults": 5028,
+                "location": "/puddle/sgn4/created?before=2008&limit=10",
+                "searchTime": "94.73 ms"
+              },
+              "results": [
+                {
+                  "id": "786",
+                  "user": "AndrewSutton",
+                  "created_at": "",
+                  "updated_at": "2008/07/29 12:11:59",
+                  "sign": "AS19c47S19c41S20c00M528x526S20c00474x513S19c47498x489S19c41473x473",
+                  "signtext": "",
+                  "terms": [
+                    "liquor"
+                  ],
+                  "detail": {
+                    "src": "typed with SignWriter Java, taken from the SignBank Database (A Sutton)"
+                  }
+                },
+                {
+                  "id": "5016",
+                  "user": "AndrewSutton",
+                  "created_at": "",
+                  "updated_at": "2008/07/25 19:07:34",
+                  "sign": "AS14e21S15d39S20500S26507S20351M548x530S15d39453x500S20500479x489S14e21481x502S26507512x495S20351527x471",
+                  "signtext": "",
+                  "terms": [
+                    "exempt"
+                  ],
+                  "detail": {
+                    "src": "Andrew Sutton"
+                  }
+                },
+                {
+                  "id": "5550",
+                  "user": "AndrewSutton",
+                  "created_at": "",
+                  "updated_at": "2008/07/29 00:21:53",
+                  "sign": "AS1f702S1f70aS23610S23600S2fb00S21100S36d00M549x540S36d00479x460S2fb00492x487S21100493x497S23600510x497S23610450x497S1f702511x520S1f70a473x520",
+                  "signtext": "",
+                  "terms": [
+                    "bath"
+                  ],
+                  "detail": {
+                    "src": "Andrew Sutton"
+                  }
+                },
+                {
+                  "id": "7321",
+                  "user": "Charles",
+                  "created_at": "",
+                  "updated_at": "2008/05/28 11:43:37",
+                  "sign": "AS1ce40S1ce28S20a00S2e752M519x539S1ce28481x509S1ce40497x509S20a00493x487S2e752487x461",
+                  "signtext": "",
+                  "terms": [
+                    "cooperate"
+                  ],
+                  "detail": {
+                    "text": "cooperate; work together.  From two hands moving together in a circle.",
+                    "src": "Charles Butler"
+                  }
+                },
+                {
+                  "id": "10",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:44",
+                  "updated_at": "2008/08/08 14:44:54",
+                  "sign": "AS10012S26506S10612S30000M595x517S30000482x482S10012508x477S26506545x478S10612569x478",
+                  "signtext": "",
+                  "terms": [
+                    "Summer"
+                  ],
+                  "detail": {
+                    "src": "typed with SignWriter Java, taken from the SignBank Database (A Sutton)"
+                  }
+                },
+                {
+                  "id": "100",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:44",
+                  "updated_at": "2008/07/15 23:21:39",
+                  "sign": "AS20301S20307S23109S23115S2fb04M533x530S20301512x470S20307467x470S23109509x497S23115469x497S2fb04492x524",
+                  "signtext": "",
+                  "terms": [
+                    "car"
+                  ],
+                  "detail": {
+                    "src": "typed with SignWriter Java, taken from the SignBank Database"
+                  }
+                },
+                {
+                  "id": "101",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:44",
+                  "updated_at": "2007/03/14 09:07:47",
+                  "sign": "AS1d010S1d018S30007S30001M533x517S2ff00482x482S1d010510x473S1d018467x473",
+                  "signtext": "",
+                  "terms": [
+                    "glasses"
+                  ],
+                  "detail": {
+                    "src": "Valerie Sutton"
+                  }
+                },
+                {
+                  "id": "1000",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:44",
+                  "updated_at": "2008/07/29 19:40:02",
+                  "sign": "AS15d50S22b00S36d00M536x538S36d00479x472S15d50517x511S22b00517x462",
+                  "signtext": "",
+                  "terms": [
+                    "grow-up"
+                  ],
+                  "detail": {
+                    "text": "grow-up or raised",
+                    "src": "SignPuddle SignMaker"
+                  }
+                },
+                {
+                  "id": "1002",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:44",
+                  "updated_at": "2007/03/13 22:45:20",
+                  "sign": "AS10e00S20e00S22f00S36a00M536x552S36a00482x477S10e00491x522S20e00517x534S22f00511x518",
+                  "signtext": "",
+                  "terms": [
+                    "voice"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "1003",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:44",
+                  "updated_at": "2008/08/07 21:52:18",
+                  "sign": "AS15a41S15a4fS22c05S22c15S36d00M547x537S15a41495x478S15a4f465x484S36d00479x464S22c05514x497S22c15484x504",
+                  "signtext": "",
+                  "terms": [
+                    "intentional-grounding"
+                  ],
+                  "detail": {
+                    "text": "in football, an intentionally incompleted pass - usually to avoid a sack"
+                  }
+                }
+              ]
+            }
+
+# GET /puddle/sgn4/created?after=2015/01/01&before=2015/02/01
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Search puddle for entries created in January 2015
+            Location:/puddle/sgn4/created?after=2015/01/01&before=2015/02/01
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 100,
+                "offset": 0,
+                "totalResults": 7,
+                "location": "/puddle/sgn4/created?before=2015%2F02%2F01&after=2015%2F01%2F01",
+                "searchTime": "12.33 ms"
+              },
+              "results": [
+                {
+                  "id": "4260",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 08:57:06",
+                  "updated_at": "2015/01/20 08:57:06",
+                  "sign": "M519x530S11520483x471S28c0c498x500S20320481x515",
+                  "signtext": "",
+                  "terms": [
+                    "United States"
+                  ],
+                  "detail": {
+                    "src": "clw"
+                  }
+                },
+                {
+                  "id": "4269",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 09:01:49",
+                  "updated_at": "2015/01/20 09:01:49",
+                  "sign": "M520x532S1440a480x468S14402489x492S22f04488x518",
+                  "signtext": "",
+                  "terms": [
+                    "running water",
+                    "cl44 water running"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "4271",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 09:25:11",
+                  "updated_at": "2015/01/20 09:25:11",
+                  "sign": "M543x562S14c02496x452S14c0a472x455S20a00491x438S2e806485x480S15d40524x501S15d48458x500S22b04522x532S22b14464x531",
+                  "signtext": "",
+                  "terms": [
+                    "American"
+                  ],
+                  "detail": {
+                    "src": "clw"
+                  }
+                },
+                {
+                  "id": "4272",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 09:30:32",
+                  "updated_at": "2015/01/20 09:30:32",
+                  "sign": "M566x555S10020461x477S10028444x488S23100463x513S23110435x524S20f00451x543S14c20496x452S28b0a522x445S22a07482x478",
+                  "signtext": "",
+                  "terms": [
+                    "space"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "4273",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 10:33:47",
+                  "updated_at": "2015/01/20 10:33:47",
+                  "sign": "M526x533S15a56475x487S1c550496x505S20e00486x503S26500484x467",
+                  "signtext": "",
+                  "terms": [
+                    "early"
+                  ],
+                  "detail": {
+                    "src": "clw"
+                  }
+                },
+                {
+                  "id": "4275",
+                  "user": "frost",
+                  "created_at": "2015/01/26 12:11:44",
+                  "updated_at": "2015/01/26 12:14:19",
+                  "sign": "M516x538S26504495x494S15a00484x463S18527493x511S14c21489x466",
+                  "signtext": "",
+                  "terms": [
+                    "copy you"
+                  ],
+                  "detail": {
+                    "src": "Adam Frost"
+                  }
+                },
+                {
+                  "id": "4277",
+                  "user": "frost",
+                  "created_at": "2015/01/26 12:14:31",
+                  "updated_at": "2015/01/26 12:15:39",
+                  "sign": "M540x516S26506496x495S15a18460x489S18510515x495S14c11468x484",
+                  "signtext": "",
+                  "terms": [
+                    "copy"
+                  ],
+                  "detail": {
+                    "src": "Adam Frost"
+                  }
+                }
+              ]
+            }
+
+# GET /puddle/sgn4/updated?after=2015/08/01
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Search puddle for entries updated after August 1st, sort by the sign spelling, limit to 5 results
+            Location:/puddle/sgn4/updated?after=2015/08/01 23:59:59&sort=sign&limit=5
+
+    + Body
+
+            
+
++ Response undefined
+    + Headers
+
+
+    + Body
+
+            
+
+# GET /puddle/sgn4/updated?before=2008&limit=10
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Search puddle for entries updated before 2008, limit to 10 results
+            Location:/puddle/sgn4/updated?before=2008&limit=10
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 10,
+                "offset": 0,
+                "totalResults": 1698,
+                "location": "/puddle/sgn4/updated?before=2008&limit=10",
+                "searchTime": "51.49 ms"
+              },
+              "results": [
+                {
+                  "id": "1095",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:45",
+                  "updated_at": "2007/02/25 15:27:45",
+                  "sign": "AS1f720S1dc20S26c0cS1f720M537x518S1f720462x503S1f720517x503S1dc20487x488S26c0c504x482",
+                  "signtext": "",
+                  "terms": [
+                    "Alabama"
+                  ],
+                  "detail": {
+                    "text": "(noun) State in the United States",
+                    "src": "Valerie Sutton"
+                  }
+                },
+                {
+                  "id": "125",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:46",
+                  "updated_at": "2007/02/25 15:27:46",
+                  "sign": "AS1f540S2d608S26501S26500S26507M525x528S1f540475x504S2d608490x495S26500495x471S26501480x477S26507512x477",
+                  "signtext": "",
+                  "terms": [
+                    "themselves"
+                  ],
+                  "detail": {
+                    "src": "Valerie Sutton"
+                  }
+                },
+                {
+                  "id": "1272",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:46",
+                  "updated_at": "2007/02/25 15:27:46",
+                  "sign": "AS14710S2e200M510x529S14710493x507S2e200490x471",
+                  "signtext": "",
+                  "terms": [
+                    "blue"
+                  ],
+                  "detail": {
+                    "src": "cw"
+                  }
+                },
+                {
+                  "id": "1477",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:47",
+                  "updated_at": "2007/02/25 15:27:47",
+                  "sign": "AS14c00S14c08S22520S22520S2eb00S2eb18S2fb04M535x543S14c00508x471S14c08471x471S2eb00513x506S2eb18473x506S2fb04494x537S22520466x457S22520503x457",
+                  "signtext": "",
+                  "terms": [
+                    "wait over time"
+                  ],
+                  "detail": {
+                    "src": "Stuart Thiessen, Des Moines, Iowa"
+                  }
+                },
+                {
+                  "id": "1629",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:48",
+                  "updated_at": "2007/02/25 15:27:48",
+                  "sign": "AS20340S20348S2ea34S20600M521x531S20340506x498S20348499x516S20600479x500S2ea34502x469",
+                  "signtext": "",
+                  "terms": [
+                    "years"
+                  ],
+                  "detail": {
+                    "src": "Valerie Sutton"
+                  }
+                },
+                {
+                  "id": "184",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:49",
+                  "updated_at": "2007/02/25 15:27:49",
+                  "sign": "AS15030S15038S28804S2881cS15050S15058S2fb04M531x549S15030505x452S15038469x452S15050505x518S15058470x518S28804508x487S2881c478x486S2fb04492x510",
+                  "signtext": "",
+                  "terms": [
+                    "do not want",
+                    "don't want"
+                  ],
+                  "detail": {
+                    "src": "Valerie Sutton"
+                  }
+                },
+                {
+                  "id": "1776",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:49",
+                  "updated_at": "2007/02/25 15:27:49",
+                  "sign": "AS10e50S32400S26600M535x536S32400482x482S26600519x487S10e50507x506",
+                  "signtext": "",
+                  "terms": [
+                    "look at",
+                    "observe",
+                    "see"
+                  ],
+                  "detail": {
+                    "text": "Person or object in front",
+                    "src": "Valerie Sutton"
+                  }
+                },
+                {
+                  "id": "1986",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:50",
+                  "updated_at": "2007/02/25 15:27:50",
+                  "sign": "AS10e20S1fb20M517x515S10e20482x485S1fb20502x496",
+                  "signtext": "",
+                  "terms": [
+                    "Vermont"
+                  ],
+                  "detail": {
+                    "src": "Valerie Sutton"
+                  }
+                },
+                {
+                  "id": "2153",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:51",
+                  "updated_at": "2007/02/25 15:27:51",
+                  "sign": "AS18002S1800aS20500S20500S28807S1f502M536x537S18002496x492S1800a464x492S20500472x526S28807515x489S20500492x526S1f502521x462",
+                  "signtext": "",
+                  "terms": [
+                    "youngest"
+                  ],
+                  "detail": {
+                    "src": "Kim from Boston ;-)"
+                  }
+                },
+                {
+                  "id": "2202",
+                  "user": "admin",
+                  "created_at": "2007/02/25 15:27:52",
+                  "updated_at": "2007/02/25 15:27:52",
+                  "sign": "AS16d10S33200S2390cS20340M518x587S33200482x482S2390c489x537S20340490x572S16d10493x513",
+                  "signtext": "",
+                  "terms": [
+                    "Bulgaria"
+                  ],
+                  "detail": {
+                    "src": "Valerie Sutton"
+                  }
+                }
+              ]
+            }
+
+# GET /puddle/sgn4/updated?after=2015/01/01&before=2015/02/01
++ Request
+    + Headers
+
+            User-Agent:curl/7.35.0
+            Host:localhost:8888
+            Accept:*/*
+            Description:Search puddle for entries updated in January 2015
+            Location:/puddle/sgn4/updated?after=2015/01/01&before=2015/02/01
+
+    + Body
+
+            
+
++ Response 200
+    + Headers
+
+            Host:localhost:8888
+            Connection:close
+            Access-Control-Allow-Origin:*
+            X-Powered-By:SignWriting Server
+            Content-Type:application/json;charset=utf-8
+
+    + Body
+
+            {
+              "meta": {
+                "limit": 100,
+                "offset": 0,
+                "totalResults": 7,
+                "location": "/puddle/sgn4/updated?before=2015%2F02%2F01&after=2015%2F01%2F01",
+                "searchTime": "17.78 ms"
+              },
+              "results": [
+                {
+                  "id": "4260",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 08:57:06",
+                  "updated_at": "2015/01/20 08:57:06",
+                  "sign": "M519x530S11520483x471S28c0c498x500S20320481x515",
+                  "signtext": "",
+                  "terms": [
+                    "United States"
+                  ],
+                  "detail": {
+                    "src": "clw"
+                  }
+                },
+                {
+                  "id": "4269",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 09:01:49",
+                  "updated_at": "2015/01/20 09:01:49",
+                  "sign": "M520x532S1440a480x468S14402489x492S22f04488x518",
+                  "signtext": "",
+                  "terms": [
+                    "running water",
+                    "cl44 water running"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "4271",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 09:25:11",
+                  "updated_at": "2015/01/20 09:25:11",
+                  "sign": "M543x562S14c02496x452S14c0a472x455S20a00491x438S2e806485x480S15d40524x501S15d48458x500S22b04522x532S22b14464x531",
+                  "signtext": "",
+                  "terms": [
+                    "American"
+                  ],
+                  "detail": {
+                    "src": "clw"
+                  }
+                },
+                {
+                  "id": "4272",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 09:30:32",
+                  "updated_at": "2015/01/20 09:30:32",
+                  "sign": "M566x555S10020461x477S10028444x488S23100463x513S23110435x524S20f00451x543S14c20496x452S28b0a522x445S22a07482x478",
+                  "signtext": "",
+                  "terms": [
+                    "space"
+                  ],
+                  "detail": [
+                    
+                  ]
+                },
+                {
+                  "id": "4273",
+                  "user": "207.191.190.2",
+                  "created_at": "2015/01/20 10:33:47",
+                  "updated_at": "2015/01/20 10:33:47",
+                  "sign": "M526x533S15a56475x487S1c550496x505S20e00486x503S26500484x467",
+                  "signtext": "",
+                  "terms": [
+                    "early"
+                  ],
+                  "detail": {
+                    "src": "clw"
+                  }
+                },
+                {
+                  "id": "4275",
+                  "user": "frost",
+                  "created_at": "2015/01/26 12:11:44",
+                  "updated_at": "2015/01/26 12:14:19",
+                  "sign": "M516x538S26504495x494S15a00484x463S18527493x511S14c21489x466",
+                  "signtext": "",
+                  "terms": [
+                    "copy you"
+                  ],
+                  "detail": {
+                    "src": "Adam Frost"
+                  }
+                },
+                {
+                  "id": "4277",
+                  "user": "frost",
+                  "created_at": "2015/01/26 12:14:31",
+                  "updated_at": "2015/01/26 12:15:39",
+                  "sign": "M540x516S26506496x495S15a18460x489S18510515x495S14c11468x484",
+                  "signtext": "",
+                  "terms": [
+                    "copy"
+                  ],
+                  "detail": {
+                    "src": "Adam Frost"
+                  }
+                }
+              ]
+            }
+
 # Group user
 Work in progress...
 
@@ -4197,5 +7740,5 @@ Work in progress...
 
     + Body
 
-            5655f04e9f5ed
+            5672ff2ddc882
 

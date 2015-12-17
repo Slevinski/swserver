@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignWriting Server Guide</title>
     <meta name="description" content="Available API resources: descriptions and parameters.">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <style>
       tt, pre, code { font-family: Consolas, "Liberation Mono", Courier, monospace; background-color: transparent !important; }
       pre.prettyprint { border: 0px !important; background-color: #fff; margin-bottom: -0.5em; }
@@ -212,6 +212,25 @@
     </div>
     <div class="panel-body">
       <p>The Example API calls documented with JSON data.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/db/swserver</code>
+    </div>
+    <div class="panel-body">
+      <p>Download the main SignWriting Server database</p>
 
     </div>
     <ul class="list-group">
@@ -437,7 +456,7 @@ depending on the flags supplied.</p>
         <h2 id="puddle">puddle</h2>
       </div>
       <div class="panel-body">
-        <p class="lead"><small>Collections of signs.
+        <p class="lead"><small>Interact with collections of signs.
 
 </small></p>
         
@@ -448,7 +467,128 @@ depending on the flags supplied.</p>
   <div class="panel panel-info">
     <div class="panel-heading">
       <span class="btn btn-primary">GET</span>
-      <code>/puddle/{puddle}/query/{query}{?offset}</code>
+      <code>/puddle</code>
+    </div>
+    <div class="panel-body">
+      <p>A listing of all puddle collections available.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/language/{iso639}</code>
+    </div>
+    <div class="panel-body">
+      <p>A listing of all puddle collections available for specific sign language.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>iso639</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> ISO 639-3 code for sign language.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}</code>
+    </div>
+    <div class="panel-body">
+      <p>Information about a specific puddle by code or alternate</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/db/{puddle}</code>
+    </div>
+    <div class="panel-body">
+      <p>Download database for a specific puddle</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> puddle code for collection.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/query/{query}{?offset,limit,sort}</code>
     </div>
     <div class="panel-body">
       <p>Search puddle collection with query.</p>
@@ -465,7 +605,7 @@ depending on the flags supplied.</p>
     
       <strong>(required)</strong>
     
-    <code>string</code> Name of puddle collection.
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
     </dd>
   
     <dt>query</dt>
@@ -482,6 +622,18 @@ depending on the flags supplied.</p>
     <code>number</code> offset for results array.
     </dd>
   
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
 </dl>
 </li>
       
@@ -496,7 +648,7 @@ depending on the flags supplied.</p>
   <div class="panel panel-info">
     <div class="panel-heading">
       <span class="btn btn-primary">GET</span>
-      <code>/puddle/{puddle}/query/signtext/{query}{?offset}</code>
+      <code>/puddle/{puddle}/query/signtext/{query}{?offset,limit,sort}</code>
     </div>
     <div class="panel-body">
       <p>Search puddle collection for SignText with query.</p>
@@ -513,7 +665,7 @@ depending on the flags supplied.</p>
     
       <strong>(required)</strong>
     
-    <code>string</code> Name of puddle collection.
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
     </dd>
   
     <dt>query</dt>
@@ -530,6 +682,18 @@ depending on the flags supplied.</p>
     <code>number</code> offset for results array.
     </dd>
   
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
 </dl>
 </li>
       
@@ -544,7 +708,7 @@ depending on the flags supplied.</p>
   <div class="panel panel-info">
     <div class="panel-heading">
       <span class="btn btn-primary">GET</span>
-      <code>/puddle/{puddle}/query/{flags}/{fsw}{?offset}</code>
+      <code>/puddle/{puddle}/query/{flags}/{fsw}{?offset,limit,sort}</code>
     </div>
     <div class="panel-body">
       <p>Search puddle collection with Formal SignWriting and conversion flags.</p>
@@ -561,7 +725,7 @@ depending on the flags supplied.</p>
     
       <strong>(required)</strong>
     
-    <code>string</code> Name of puddle collection.
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
     </dd>
   
     <dt>flags</dt>
@@ -593,6 +757,18 @@ depending on the flags supplied.</p>
     <code>number</code> offset for results array.
     </dd>
   
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
 </dl>
 </li>
       
@@ -607,7 +783,7 @@ depending on the flags supplied.</p>
   <div class="panel panel-info">
     <div class="panel-heading">
       <span class="btn btn-primary">GET</span>
-      <code>/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}</code>
+      <code>/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset,limit,sort}</code>
     </div>
     <div class="panel-body">
       <p>Search puddle collection for SignText with Formal SignWriting and conversion flags.</p>
@@ -624,7 +800,7 @@ depending on the flags supplied.</p>
     
       <strong>(required)</strong>
     
-    <code>string</code> Name of puddle collection.
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
     </dd>
   
     <dt>flags</dt>
@@ -656,6 +832,18 @@ depending on the flags supplied.</p>
     <code>number</code> offset for results array.
     </dd>
   
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
 </dl>
 </li>
       
@@ -670,7 +858,7 @@ depending on the flags supplied.</p>
   <div class="panel panel-info">
     <div class="panel-heading">
       <span class="btn btn-primary">GET</span>
-      <code>/puddle/{puddle}/search/{search}{?part,ci,offset}</code>
+      <code>/puddle/{puddle}/search/{search}{?match,ci,offset,limit,sort}</code>
     </div>
     <div class="panel-body">
       <p>Search puddle collection with string.</p>
@@ -687,7 +875,7 @@ depending on the flags supplied.</p>
     
       <strong>(required)</strong>
     
-    <code>string</code> Name of puddle collection.
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
     </dd>
   
     <dt>search</dt>
@@ -714,6 +902,146 @@ depending on the flags supplied.</p>
     <dd>
     
     <code>number</code> offset for results array.
+    </dd>
+  
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/created{?before,after,offset,limit,sort}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection based on creation.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
+    </dd>
+  
+    <dt>before</dt>
+    <dd>
+    
+    <code>string</code> date time string
+    </dd>
+  
+    <dt>after</dt>
+    <dd>
+    
+    <code>string</code> date time string
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/updated{?before,after,offset,limit,sort}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection based on updates.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
+    </dd>
+  
+    <dt>before</dt>
+    <dd>
+    
+    <code>string</code> date time string
+    </dd>
+  
+    <dt>after</dt>
+    <dd>
+    
+    <code>string</code> date time string
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
     </dd>
   
 </dl>
@@ -769,9 +1097,9 @@ Passwords are mixed with the salt before they are sent to the server.</p>
         </div>
       </div>
     </div>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     <script>
       jQuery(function($) {
         $('#group-tab a[data-toggle="tab"]').on("click", function(e) {

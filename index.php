@@ -51,6 +51,35 @@ $app->configureMode('development', function () use ($app) {
     ));
 });
 
+/********************/
+/* common functions */
+function entry_limit(){
+  global $app;
+  $limit = $app->request()->get('limit');
+  if ($limit=='' || !is_numeric($limit)){ 
+    $limit = $app->config('entry_limit');
+  } else {
+    $limit = intval($limit);
+    if ($limit<0){
+      $limit = $app->config('entry_limit'); 
+    }
+  }
+  return $limit;
+}
+
+function entry_sort(){
+  global $app;
+  $valid = array('id','user','sign','created_at','updated_at');
+  $sort = $app->request()->get('sort');
+  if ($sort[0]=='-') {
+    $sort = substr($sort,1);
+  }
+  if (in_array($sort,$valid)){
+    return $app->request()->get('sort');
+  } else {
+    return ''; 
+  }
+}
 
 /**********/
 // ## Group server
@@ -59,11 +88,14 @@ $app->configureMode('development', function () use ($app) {
 function getFile($file){
   global $app;
   $parts = explode('.',$file);
-
   $rel_api = $file;
   $abs_api = dirname(__FILE__) . '/' . $rel_api;
   if (file_exists($abs_api)){
     switch ($parts[1]){
+      case "db":
+        $app->contentType('application/x-sqlite3');
+        $app->response->headers->set('Content-Disposition','attachment; filename=' . pathinfo($app->request->getResourceUri(),PATHINFO_FILENAME) . '.db');
+        break;
       case "html":
         $app->contentType('text/html;charset=utf-8');
         break;
@@ -195,6 +227,20 @@ $app->get('/Example.json', function () use ($app) {
 /**
 * Resource
 */
+// ### Main database [/db/swserver]
+// 
+
+// #### GET
+// Download the main SignWriting Server database
+// 
+$app->get('/db/swserver', function () use ($app) {
+  $db_file = 'data/swserver.db';
+  getFile($db_file);
+});
+
+/**
+* Resource
+*/
 // ### API by Example [/notFound]
 // 
 
@@ -237,6 +283,12 @@ function haltValidation($desc,$errors=array()) {
    $app->halt(422,json_pretty($return));
 }
 
+function stamp(){
+  global $app;
+  ob_start();
+  echo $app->request->getResourceUri();
+  error_log(ob_get_clean(),4);
+}
 
 /**********/
 // ## Group svg
@@ -324,7 +376,7 @@ $app->get('/regex/:query', function ($query) use ($app) {
   $return['meta']=array();
   $return['meta']['totalResults']=count($regex);
   $return['results']=$regex;
-  $return['meta']['locaction']='/regex/' . $query;
+  $return['meta']['location']='/regex/' . $query;
   $return['meta']['searchTime'] = searchtime($timein);
   echo json_pretty($return);
 });
@@ -373,7 +425,7 @@ $app->get('/regex/:flags/:fsw', function ($flags,$fsw) use ($app) {
   $return['meta']=array();
   $return['meta']['totalResults']=count($regex);
   $return['results']=$regex;
-  $return['meta']['locaction']='/regex/' . $flags . '/' . $fsw;
+  $return['meta']['location']='/regex/' . $flags . '/' . $fsw;
   $return['meta']['query']=$query;
   $return['meta']['searchTime'] = searchtime($timein);
   echo json_pretty($return);
@@ -382,19 +434,120 @@ $app->get('/regex/:flags/:fsw', function ($flags,$fsw) use ($app) {
 
 /**********/
 // ## Group puddle
-// Collections of signs.
+// Interact with collections of signs.
 // 
 
 /**
 * Resource
 */
-// ### Query for signs [/puddle/{puddle}/query/{query}{?offset}]
+// ### Puddle list [/puddle]
+// 
+
+// #### GET
+// A listing of all puddle collections available.
+// 
+$app->get('/puddle', function () use ($app) {
+  $timein = microtime(true);
+  $results = puddle_list();
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle';
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Puddles for language [/puddle/language/{iso639}]
 // 
 // + Parameters
 // 
-//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + iso639: ase (string) - ISO 639-3 code for sign language.
+// 
+
+// #### GET
+// A listing of all puddle collections available for specific sign language.
+// 
+$app->get('/puddle/language/:lang', function ($lang) use ($app) {
+  $timein = microtime(true);
+  $results = puddle_list($lang);
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/language/' . $lang;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Puddles information [/puddle/{puddle}]
+// 
+// + Parameters
+// 
+//     + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+// 
+
+// #### GET
+// Information about a specific puddle by code or alternate
+// 
+$app->get('/puddle/:puddle', function ($puddle) use ($app) {
+
+  $timein = microtime(true);
+  $results = puddle_list('',$puddle);
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/' . $puddle;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Puddles database [/puddle/db/{puddle}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - puddle code for collection.
+// 
+
+// #### GET
+// Download database for a specific puddle
+// 
+$app->get('/puddle/db/:puddle', function ($puddle) use ($app) {
+  $puddle_file = 'data/puddle/' . $puddle . '.db';
+  getFile($puddle_file);
+});
+
+/**
+* Resource
+*/
+// ### Query for signs [/puddle/{puddle}/query/{query}{?offset,limit,sort}]
+// 
+// + Parameters
+// 
+//     + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
 //     + query: Q (string) - Formal SignWriting query string.
 //     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 // 
 
 // #### GET
@@ -403,21 +556,34 @@ $app->get('/regex/:flags/:fsw', function ($flags,$fsw) use ($app) {
 $app->get('/puddle/:puddle/query/:query', function ($puddle,$query) use ($app) {
   $timein = microtime(true);
   $offset = intval($app->request()->get('offset'));
-  $limit = $app->config('entry_limit');  
-  $results = puddle_query($puddle,$query,$offset,$limit);
-  if ($offset){
-    $plus = '?offset=' . $offset;
-  } else {
-    $plus = '';
-  }
+  $limit = entry_limit();
+  $sort = entry_sort();
+  
+  $results = puddle_query($puddle,$query,$offset,$limit,$sort);
 
+  $plus = array();
+  if ($offset){
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
+  } else {
+    $plus = ''; 
+  }
+  
   $return = array();
   $return['meta']=array();
   $return['meta']['limit']=$limit;
   $return['meta']['offset']=$offset;
   $return['meta']['totalResults']=$results['total'];
   $return['results']=$results['data'];
-  $return['meta']['locaction']='/puddle/' . $puddle . '/query/' . $query . $plus;
+  $return['meta']['location']='/puddle/' . $puddle . '/query/' . $query . $plus;
   $return['meta']['searchTime'] = searchtime($timein);
 
   $app->contentType('application/json;charset=utf-8');
@@ -427,13 +593,15 @@ $app->get('/puddle/:puddle/query/:query', function ($puddle,$query) use ($app) {
 /**
 * Resource
 */
-// ### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset}]
+// ### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset,limit,sort}]
 // 
 // + Parameters
 // 
-//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
 //     + query: Q (string) - Formal SignWriting query string.
 //     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 // 
 
 // #### GET
@@ -442,12 +610,24 @@ $app->get('/puddle/:puddle/query/:query', function ($puddle,$query) use ($app) {
 $app->get('/puddle/:puddle/query/signtext/:query', function ($puddle,$query) use ($app) {
   $timein = microtime(true);
   $offset = intval($app->request()->get('offset'));
-  $limit = $app->config('entry_limit');  
-  $results = puddle_query_signtext($puddle,$query,$offset,$limit);
+  $limit = entry_limit();
+  $sort = entry_sort();
+  $results = puddle_query_signtext($puddle,$query,$offset,$limit,$sort);
+
+  $plus = array();
   if ($offset){
-    $plus = '?offset=' . $offset;
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
   } else {
-    $plus = '';
+    $plus = ''; 
   }
 
   $return = array();
@@ -456,7 +636,7 @@ $app->get('/puddle/:puddle/query/signtext/:query', function ($puddle,$query) use
   $return['meta']['offset']=$offset;
   $return['meta']['totalResults']=$results['total'];
   $return['results']=$results['data'];
-  $return['meta']['locaction']='/puddle/' . $puddle . '/query/signtext/' . $query . $plus;
+  $return['meta']['location']='/puddle/' . $puddle . '/query/signtext/' . $query . $plus;
   $return['meta']['searchTime'] = searchtime($timein);
 
   $app->contentType('application/json;charset=utf-8');
@@ -466,11 +646,11 @@ $app->get('/puddle/:puddle/query/signtext/:query', function ($puddle,$query) use
 /**
 * Resource
 */
-// ### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset}]
+// ### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset,limit,sort}]
 // 
 // + Parameters
 // 
-//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
 //     + flags: ASL (string) - Flags for FSW convertion to query string.
 //         'A' - sorted by the same exact symbols.
 //         'a' - sorted by the same general symbols.
@@ -479,6 +659,8 @@ $app->get('/puddle/:puddle/query/signtext/:query', function ($puddle,$query) use
 //         'L' - location of spatial arrangement is similar.
 //     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
 //     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 // 
 
 // #### GET
@@ -504,12 +686,24 @@ $app->get('/puddle/:puddle/query/:flags/:fsw', function ($puddle,$flags,$fsw) us
   }
 
   $offset = intval($app->request()->get('offset'));
-  $limit = $app->config('entry_limit');  
-  $results = puddle_query($puddle,$query,$offset,$limit);
+  $limit = entry_limit();
+  $sort = entry_sort();
+  $results = puddle_query($puddle,$query,$offset,$limit,$sort);
+
+  $plus = array();
   if ($offset){
-    $plus = '?offset=' . $offset;
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
   } else {
-    $plus = '';
+    $plus = ''; 
   }
 
   $return = array();
@@ -518,7 +712,7 @@ $app->get('/puddle/:puddle/query/:flags/:fsw', function ($puddle,$flags,$fsw) us
   $return['meta']['offset']=$offset;
   $return['meta']['totalResults']=$results['total'];
   $return['results']=$results['data'];
-  $return['meta']['locaction']='/puddle/' . $puddle . '/query/' . $flags . '/' . $fsw . $plus;
+  $return['meta']['location']='/puddle/' . $puddle . '/query/' . $flags . '/' . $fsw . $plus;
   $return['meta']['query']=$query;
   $return['meta']['searchTime'] = searchtime($timein);
 
@@ -529,11 +723,11 @@ $app->get('/puddle/:puddle/query/:flags/:fsw', function ($puddle,$flags,$fsw) us
 /**
 * Resource
 */
-// ### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}]
+// ### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset,limit,sort}]
 // 
 // + Parameters
 // 
-//     + puddle: sgn4 (string) - Name of puddle collection.
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
 //     + flags: ASL (string) - Flags for FSW convertion to query string.
 //         'A' - sorted by the same exact symbols.
 //         'a' - sorted by the same general symbols.
@@ -542,6 +736,8 @@ $app->get('/puddle/:puddle/query/:flags/:fsw', function ($puddle,$flags,$fsw) us
 //         'L' - location of spatial arrangement is similar.
 //     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
 //     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 // 
 
 // #### GET
@@ -567,64 +763,22 @@ $app->get('/puddle/:puddle/query/signtext/:flags/:fsw', function ($puddle,$flags
   }
 
   $offset = intval($app->request()->get('offset'));
-  $limit = $app->config('entry_limit');  
-  $results = puddle_query_signtext($puddle,$query,$offset,$limit);
-  if ($offset){
-    $plus = '?offset=' . $offset;
-  } else {
-    $plus = '';
-  }
+  $limit = entry_limit();
+  $sort = entry_sort();
+  $results = puddle_query_signtext($puddle,$query,$offset,$limit,$sort);
 
-  $return = array();
-  $return['meta']=array();
-  $return['meta']['limit']=$limit;
-  $return['meta']['offset']=$offset;
-  $return['meta']['totalResults']=$results['total'];
-  $return['results']=$results['data'];
-  $return['meta']['locaction']='/puddle/' . $puddle . '/query/signtext/' . $flags . '/' . $fsw . $plus;
-  $return['meta']['query']=$query;
-  $return['meta']['searchTime'] = searchtime($timein);
-
-  $app->contentType('application/json;charset=utf-8');
-  echo json_pretty($return);
-});
-
-/**
-* Resource
-*/
-// ### Search text [/puddle/{puddle}/search/{search}{?part,ci,offset}]
-// 
-// + Parameters
-// 
-//     + puddle: sgn4 (string) - Name of puddle collection.
-//     + search: hello (string) - search string.
-//     + match: exact (optional, string) - matching strategy: start, end, exact
-//     + ci: true (optional, boolean) - case insensitive flag.
-//     + offset: 100 (optional, number) - offset for results array.
-// 
-
-// #### GET
-// Search puddle collection with string.
-// 
-$app->get('/puddle/:puddle/search/:search', function ($puddle,$search) use ($app) {
-  $timein = microtime(true);
-  $offset = intval($app->request()->get('offset'));
-  $ci = filter_var($app->request()->get('ci'),FILTER_VALIDATE_BOOLEAN);
-  $match = $app->request()->get('match');
-  $limit = $app->config('entry_limit');  
-  $results = puddle_search($puddle,$search,$match,$ci,$offset,$limit);
   $plus = array();
-  if ($ci){
-    $plus[] = 'ci=' . $ci;
-  }
-  if ($match){
-    $plus[] = 'match=' . $match;
-  }
   if ($offset){
-    $plus[] = 'offset=' . $offset;
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
   }
   if (count($plus)){
-    $plus = '?' . implode('&',$plus); 
+    $plus = '?' . http_build_query($plus); 
   } else {
     $plus = ''; 
   }
@@ -635,7 +789,198 @@ $app->get('/puddle/:puddle/search/:search', function ($puddle,$search) use ($app
   $return['meta']['offset']=$offset;
   $return['meta']['totalResults']=$results['total'];
   $return['results']=$results['data'];
-  $return['meta']['locaction']='/puddle/' . $puddle . '/search/' . $search . $plus;
+  $return['meta']['location']='/puddle/' . $puddle . '/query/signtext/' . $flags . '/' . $fsw . $plus;
+  $return['meta']['query']=$query;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Search text [/puddle/{puddle}/search/{search}{?match,ci,offset,limit,sort}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+//     + search: hello (string) - search string.
+//     + match: exact (optional, string) - matching strategy: start, end, exact
+//     + ci: true (optional, boolean) - case insensitive flag.
+//     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+// 
+
+// #### GET
+// Search puddle collection with string.
+// 
+$app->get('/puddle/:puddle/search/:search', function ($puddle,$search) use ($app) {
+  $timein = microtime(true);
+  $ci = filter_var($app->request()->get('ci'),FILTER_VALIDATE_BOOLEAN);
+  $match = $app->request()->get('match');
+  $offset = intval($app->request()->get('offset'));
+  $limit = entry_limit();
+  $sort = entry_sort();
+  $results = puddle_search($puddle,$search,$match,$ci,$offset,$limit,$sort);
+
+  $plus = array();
+  if ($match){
+    $plus['match'] = $match;
+  }
+  if ($ci){
+    $plus['ci'] = $ci;
+  }
+  if ($offset){
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
+  } else {
+    $plus = ''; 
+  }
+
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/' . $puddle . '/search/' . $search . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+
+/**
+* Resource
+*/
+// ### Search text [/puddle/{puddle}/created{?before,after,offset,limit,sort}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+//     + before: 2015/01/01 (optional,string) - date time string
+//     + after: 2015/01/01 (optional,string) - date time string
+//     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+// 
+
+// #### GET
+// Search puddle collection based on creation.
+// 
+$app->get('/puddle/:puddle/created', function ($puddle) use ($app) {
+  $timein = microtime(true);
+  $before = $app->request()->get('before');
+  $after = $app->request()->get('after');
+  $offset = intval($app->request()->get('offset'));
+  $limit = entry_limit();
+  $sort = entry_sort();
+
+  $results = puddle_date($puddle,'created',$before,$after,$offset,$limit,$sort);
+
+  $plus = array();
+  if ($before){
+    $plus['before'] = $before;
+  }
+  if ($after){
+    $plus['after'] = $after;
+  }
+  if ($offset){
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
+  } else {
+    $plus = ''; 
+  }
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/' . $puddle . '/created' . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+
+/**
+* Resource
+*/
+// ### Search text [/puddle/{puddle}/updated{?before,after,offset,limit,sort}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+//     + before: 2015/01/01 (optional,string) - date time string
+//     + after: 2015/01/01 (optional,string) - date time string
+//     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+// 
+
+// #### GET
+// Search puddle collection based on updates.
+// 
+$app->get('/puddle/:puddle/updated', function ($puddle) use ($app) {
+  $timein = microtime(true);
+  $before = $app->request()->get('before');
+  $after = $app->request()->get('after');
+  $offset = intval($app->request()->get('offset'));
+  $limit = entry_limit();
+  $sort = entry_sort();
+  $results = puddle_date($puddle,'updated',$before,$after,$offset,$limit,$sort);
+
+  $plus = array();
+  if ($before){
+    $plus['before'] = $before;
+  }
+  if ($after){
+    $plus['after'] = $after;
+  }
+  if ($offset){
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
+  } else {
+    $plus = ''; 
+  }
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/' . $puddle . '/updated' . $plus;
   $return['meta']['searchTime'] = searchtime($timein);
 
   $app->contentType('application/json;charset=utf-8');

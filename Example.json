@@ -799,11 +799,99 @@
   "text": "Interact will collections of signs."
 },
 {
+  "id": "puddle-list",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle",
+      "Description": "Listing of puddles available"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-language",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/language/ase",
+      "Description": "Listing of puddles available for sign language"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-information",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/ase",
+      "Description": "Puddle information based on code"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
   "id": "puddle-query",
   "method": "GET",
   "headers": {
-      "Location": "/puddle/sgn4/query/QS10000S20500?offset=40",
-      "Description": "Query puddle for signs with index and contact, with offset"
+      "Location": "/puddle/ase/query/QS10000S10008S21100",
+      "Description": "Query puddle for signs with 3 symbols"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-offset",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/ase/query/QS2ff00S20500?offset=160",
+      "Description": "Query puddle for signs with 2 symbols, skip first 160 results"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-limit",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/ase/query/QS10000?limit=1",
+      "Description": "Query puddle for signs with 1 symbol, only returns first result"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-unlimited",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/ase/query/QS2ff00S20500S26504?limit=0",
+      "Description": "Query puddle for signs with 3 symbol, returning all results without limit"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-sort",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/ase/query/QS2ff00S20500S26504?sort=-created_at",
+      "Description": "Query puddle for signs with 3 symbol, sort by created_at descending"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-query-offset-limit-sort",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/ase/query/QS2ff00S20500?offset=160&limit=10&sort=id",
+      "Description": "Query puddle for signs with 2 symbol, sort by id, skip the first 160, and return 10 results"
    },
   "status": 200,
   "type": "text/plain",
@@ -925,6 +1013,72 @@
   "headers": {
       "Location": "/puddle/sgn4/search/delaware?match=exact&ci=1",
       "Description": "Search puddle for exact string delaware, case insensitive"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-created-after",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/created?after=2015/08/01 23:59:59&sort=sign&limit=5",
+      "Description": "Search puddle for entries created after August 1st, sort by the sign spelling, limit to 5 results"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-created-before",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/created?before=2008&limit=10",
+      "Description": "Search puddle for entries created before 2008, limit to 10 results"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-created-between",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/created?after=2015/01/01&before=2015/02/01",
+      "Description": "Search puddle for entries created in January 2015"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-updated-after",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/updated?after=2015/08/01 23:59:59&sort=sign&limit=5",
+      "Description": "Search puddle for entries updated after August 1st, sort by the sign spelling, limit to 5 results"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-updated-before",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/updated?before=2008&limit=10",
+      "Description": "Search puddle for entries updated before 2008, limit to 10 results"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-updated-between",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/updated?after=2015/01/01&before=2015/02/01",
+      "Description": "Search puddle for entries updated in January 2015"
    },
   "status": 200,
   "type": "text/plain",

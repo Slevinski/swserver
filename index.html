@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignWriting Server</title>
-    <meta name="description" content="&gt; swserver, v1.1.0
-November 25th, 2015
+    <meta name="description" content="&gt; swserver, v1.2.0
+December 17th, 2015
 
 ## About
 
@@ -16,7 +16,7 @@ The primary site can be found on the SignBank server.
 
 * http://signbank.org/swserver
 
-A mirror site will be available on Wikimedia Labs.
+A mirror site is available on Wikimedia Labs.
 
 * http://swserver.wmflabs.org
 
@@ -33,11 +33,15 @@ Query strings are a concise representation of a much larger and detailed set of 
 Each query string is transformed into one or more regular expressions that can be used to search a text of Formal SignWriting.
 Additionally, Formal SignWriting strings can be converted into several types of query strings, each of which can be transformed into regular expressions.
 
-### Query and search puddle collections for sign entries
+### Puddle collections and sign entries
 
 All of the SignPuddle Online data is available as SQLite 3 databases.
-With a query, puddle entries can be access with sign language directly.
-With a search, puddle entries can be access with spoken language.
+These databases can be downloaded individually.
+The various puddle collections can be listed, limited by sign language or individual code.
+For each sign language, a default public dictionary has been selected so that ISO 639-3 codes can be used rather than a puddle code.
+With a puddle query, individual entries can be access with sign language directly.
+With a puddle search, individual entries can be access with spoken language.
+Additionally, entries can be retrieved by the dates created or updated.
 
 
 ## Installation
@@ -179,6 +183,8 @@ MIT
 
 ## Version History
 
+* 1.2.0 - Dec 17th, 2015: list puddles, download databases, custom limits, sorting, and date retrieval
+
 * 1.1.0 - Nov 25th, 2015: added query and search for puddle data
 
 * 1.0.0 - Nov 5th, 2015: initial public release
@@ -188,7 +194,7 @@ MIT
 [SignWriting List]: http://www.signwriting.org/forums/swlist/
 [SignPuddle Online]: http://signpuddle.org
 [SignWriting 2010 JavaScript Library]: http://slevinski.github.io/sw10js/">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <style>
       tt, pre, code { font-family: Consolas, "Liberation Mono", Courier, monospace; background-color: transparent !important; }
       pre.prettyprint { border: 0px !important; background-color: #fff; margin-bottom: -0.5em; }
@@ -216,8 +222,8 @@ MIT
             </ul>
             <h1>SignWriting Server</h1>
             <blockquote>
-<p>swserver, v1.1.0
-November 25th, 2015</p>
+<p>swserver, v1.2.0
+December 17th, 2015</p>
 </blockquote>
 
 <h2>About</h2>
@@ -231,7 +237,7 @@ The SignWriting Server provides online resources for SignWriting applications an
 <li><a href="http://signbank.org/swserver">http://signbank.org/swserver</a></li>
 </ul>
 
-<p>A mirror site will be available on Wikimedia Labs.</p>
+<p>A mirror site is available on Wikimedia Labs.</p>
 
 <ul>
 <li><a href="http://swserver.wmflabs.org">http://swserver.wmflabs.org</a></li>
@@ -249,11 +255,15 @@ The SignWriting Server provides online resources for SignWriting applications an
 Each query string is transformed into one or more regular expressions that can be used to search a text of Formal SignWriting.
 Additionally, Formal SignWriting strings can be converted into several types of query strings, each of which can be transformed into regular expressions.</p>
 
-<h3>Query and search puddle collections for sign entries</h3>
+<h3>Puddle collections and sign entries</h3>
 
 <p>All of the SignPuddle Online data is available as SQLite 3 databases.
-With a query, puddle entries can be access with sign language directly.
-With a search, puddle entries can be access with spoken language.</p>
+These databases can be downloaded individually.
+The various puddle collections can be listed, limited by sign language or individual code.
+For each sign language, a default public dictionary has been selected so that ISO 639-3 codes can be used rather than a puddle code.
+With a puddle query, individual entries can be access with sign language directly.
+With a puddle search, individual entries can be access with spoken language.
+Additionally, entries can be retrieved by the dates created or updated.</p>
 
 <h2>Installation</h2>
 
@@ -412,6 +422,8 @@ The next version is planned for November 2015.</p>
 <h2>Version History</h2>
 
 <ul>
+<li><p>1.2.0 - Dec 17th, 2015: list puddles, download databases, custom limits, sorting, and date retrieval</p></li>
+
 <li><p>1.1.0 - Nov 25th, 2015: added query and search for puddle data</p></li>
 
 <li><p>1.0.0 - Nov 5th, 2015: initial public release</p></li>
@@ -435,9 +447,9 @@ The next version is planned for November 2015.</p>
         </div>
       </div>
     </div>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="http://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
     <script>
       jQuery(function($) {
         $('#group-tab a[data-toggle="tab"]').on("click", function(e) {

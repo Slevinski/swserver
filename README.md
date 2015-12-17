@@ -1,6 +1,6 @@
 # SignWriting Server
-> swserver, v1.1.0
-November 25th, 2015
+> swserver, v1.2.0
+December 17th, 2015
 
 ## About
 SignWriting is the international script for writing the sign languages of the world.
@@ -9,7 +9,7 @@ The SignWriting Server provides online resources for SignWriting applications an
 The primary site can be found on the SignBank server.
 * http://signbank.org/swserver
 
-A mirror site will be available on Wikimedia Labs.
+A mirror site is available on Wikimedia Labs.
 * http://swserver.wmflabs.org
 
 
@@ -23,10 +23,14 @@ Query strings are a concise representation of a much larger and detailed set of 
 Each query string is transformed into one or more regular expressions that can be used to search a text of Formal SignWriting.
 Additionally, Formal SignWriting strings can be converted into several types of query strings, each of which can be transformed into regular expressions.
 
-### Query and search puddle collections for sign entries
+### Puddle collections and sign entries
 All of the SignPuddle Online data is available as SQLite 3 databases.
-With a query, puddle entries can be access with sign language directly.
-With a search, puddle entries can be access with spoken language.
+These databases can be downloaded individually.
+The various puddle collections can be listed, limited by sign language or individual code.
+For each sign language, a default public dictionary has been selected so that ISO 639-3 codes can be used rather than a puddle code.
+With a puddle query, individual entries can be access with sign language directly.
+With a puddle search, individual entries can be access with spoken language.
+Additionally, entries can be retrieved by the dates created or updated.
 
 
 ## Installation
@@ -126,6 +130,7 @@ MIT
 * expand API for create, update, and delete
 
 ## Version History
+* 1.2.0 - Dec 17th, 2015: list puddles, download databases, custom limits, sorting, and date retrieval
 * 1.1.0 - Nov 25th, 2015: added query and search for puddle data
 * 1.0.0 - Nov 5th, 2015: initial public release
 

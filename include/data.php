@@ -2,7 +2,7 @@
 
 $db_file = dirname(__FILE__) . '/../data/swserver.db';
 if (file_exists($db_file)){
-  $db = new PDO('sqlite:' . dirname(__FILE__) . '/../data/swserver.db');
+  $db = new PDO('sqlite:' . $db_file );
 } else {
   $db = false;
 }
@@ -17,23 +17,113 @@ function _sqliteRegex($string, $pattern, $ci) {
 }
 $puddle_dbs = array();
 function puddle_db($puddle){
-  global $puddle_dbs;
+  global $db,$puddle_dbs;
   if (array_key_exists($puddle,$puddle_dbs)){
     return $puddle_dbs[$puddle];
   } else {
-    $puddle_db = new PDO('sqlite:' . dirname(__FILE__) . '/../data/puddle/' . $puddle . '.db');
-    if ($puddle_db){
-//      $puddle_db->sqliteCreateFunction('regexp', '_sqliteRegexp', 2);
+
+    $puddle_file = dirname(__FILE__) . '/../data/puddle/' . $puddle . '.db';
+    if (file_exists($puddle_file)){
+      $puddle_db = new PDO('sqlite:' . $puddle_file );
       $puddle_db->sqliteCreateFunction('regex', '_sqliteRegex', 3);
       $puddle_dbs[$puddle] = $puddle_db;
       return $puddle_db;
     } else {
-      haltNoDatabase();
+      $sel = 'SELECT code from puddle_alt where alt=:puddle;';
+      try {
+        $stmt = $db->prepare($sel);
+        $stmt->bindParam(':puddle', $puddle, PDO::PARAM_STR);
+        $stmt->execute();
+        $code = $stmt->fetch();
+        if ($code){
+          return puddle_db($code[0]);
+        } else {
+          haltValidation('invalid puddle code');
+        }
+      } catch (PDOException $e) {
+        haltValidation($e->getCode() . ' ' . $e->getMessage());
+      }  
+//      haltNoDatabase();
     }
   }
 }
 
-function puddle_query($puddle,$query,$offset,$limit){
+function entry_orderby($sort,$default){
+  $orderby = ' order by ' . $default;
+  if ($sort){
+    if ($sort[0]=='-') {
+      $desc = 1; 
+      $sort = substr($sort,1);
+    } else {
+      $desc = 0;
+    }
+    $orderby = ' order by ' . $sort;
+    if ($desc) {
+      $orderby .= ' desc'; 
+    }
+  }
+  return $orderby;
+}
+
+function puddle_list($lang='',$code=''){
+  global $db;
+
+  $sql = 'SELECT code,alt from puddle_alt;';
+  $results=$db->query($sql);
+  $rows = $results->fetchAll(PDO::FETCH_ASSOC);
+  $alt = '';
+  $alts = array();
+  foreach ($rows as $row){
+    $alts[$row['code']][] = $row['alt'];
+    if ($row['alt']==$code){
+      $alt = $row['code'];
+    }
+  }
+  
+  $sql = 'SELECT code, language, namespace, subspace, qqq, name, user, created_at from puddle';
+  if ($lang) {
+    $sql .= ' where language=:lang';
+  }
+  if ($code) {
+    $sql .= ' where code=:code';
+  }
+  $sql .= ';';
+
+  try {
+    $stmt = $db->prepare($sql);
+    if ($lang){
+      $stmt->bindParam(':lang', $lang, PDO::PARAM_STR);
+    }
+    if ($code){
+      $stmt->bindParam(':code', $code, PDO::PARAM_STR);
+    }
+    $stmt->execute();
+    $entries = $stmt->fetchAll(PDO::FETCH_CLASS);
+    
+    if ($code && count($entries)==0){
+      if ($alt){
+        return puddle_list('',$alt);
+      }
+      haltValidation('invalid puddle code');
+    }
+    foreach ($entries as $i=>$entry){
+      if(array_key_exists($entry->code,$alts)){
+        $entries[$i]->alt=$alts[$entry->code];
+      } else {
+        $entries[$i]->alt=array();
+      }
+    }
+
+    $return['total'] = count($entries);
+    $return['data'] = $entries;
+    return $return;
+  } catch (PDOException $e) {
+    haltValidation($e->getCode() . ' ' . $e->getMessage());
+  }  
+  
+}
+
+function puddle_query($puddle,$query,$offset,$limit,$sort){
   $puddle_db = puddle_db($puddle);
   $regex = SignWriting\query2regex($query);
   if (!$regex){
@@ -62,11 +152,16 @@ function puddle_query($puddle,$query,$offset,$limit){
     $end = str_replace('END)',')',$end);
     $sel .= $end;
 
-    $sel .= ' order by sign';
+    $sel .= entry_orderby($sort,'sign');
+
     $results=$puddle_db->query($sel);
     $entries = $results->fetchAll(PDO::FETCH_ASSOC);
     $total = count($entries);
-    $data = array_slice($entries,$offset,$limit);
+    if ($limit>0){
+      $data = array_slice($entries,$offset,$limit);
+    } else {
+      $data = array_slice($entries,$offset);
+    }
     $return = array();
     if($data){
       foreach ($data as $i=>$entry){
@@ -82,15 +177,17 @@ function puddle_query($puddle,$query,$offset,$limit){
   }  
 }
 
-function puddle_query_signtext($puddle,$query,$offset,$limit){
+function puddle_query_signtext($puddle,$query,$offset,$limit,$sort){
   $puddle_db = puddle_db($puddle);
   $regex = SignWriting\query2regex($query);
   if (!$regex){
     haltValidation('invalid query string');
   }
+  
+  $orderby = entry_orderby($sort,'sign');
 
   try {
-    $sel = 'SELECT id, user, created_at, updated_at, sign, signtext, terms, detail from entry where REGEX(signtext,"' . $regex[0] . '",0) order by sign;';
+    $sel = 'SELECT id, user, created_at, updated_at, sign, signtext, terms, detail from entry where REGEX(signtext,"' . $regex[0] . '",0)' . $orderby . ';';
     $results=$puddle_db->query($sel);
     $entries = $results->fetchAll(PDO::FETCH_ASSOC);
     $cnt = count($regex);
@@ -114,7 +211,7 @@ function puddle_query_signtext($puddle,$query,$offset,$limit){
         foreach ($words as $i=>$word){
           $words[$i] = '(signtext LIKE "%' . $word . '%")';
         }
-        $sel = 'SELECT id, user, created_at, updated_at, sign, signtext, terms, detail from entry where ' . implode($words,' or ') . ';';
+        $sel = 'SELECT id, user, created_at, updated_at, sign, signtext, terms, detail from entry where ' . implode($words,' or ') . $orderby . ';';
         $results=$puddle_db->query($sel);
         $entries = $results->fetchAll(PDO::FETCH_ASSOC);
       } else {
@@ -123,7 +220,11 @@ function puddle_query_signtext($puddle,$query,$offset,$limit){
     }
 
     $total = count($entries);
-    $data = array_slice($entries,$offset,$limit);
+    if ($limit>0){
+      $data = array_slice($entries,$offset,$limit);
+    } else {
+      $data = array_slice($entries,$offset);
+    }
     $return = array();
     if($data){
       foreach ($data as $i=>$entry){
@@ -140,7 +241,7 @@ function puddle_query_signtext($puddle,$query,$offset,$limit){
 }
 
 
-function puddle_search($puddle,$search,$type,$ci,$offset,$limit){
+function puddle_search($puddle,$search,$type,$ci,$offset,$limit,$sort){
 //  (^|\|)
   if ($ci) {
     $search = mb_strtolower($search,'UTF-8');
@@ -160,7 +261,8 @@ function puddle_search($puddle,$search,$type,$ci,$offset,$limit){
   if (!$search){
     haltValidation('missing search string');
   }
-  $sel = 'select id, user, created_at, updated_at, sign, signtext, terms, detail from entry where REGEX(' . $col . ',:search,0) order by sign;';
+  $orderby = entry_orderby($sort,'sign');
+  $sel = 'select id, user, created_at, updated_at, sign, signtext, terms, detail from entry where REGEX(' . $col . ',:search,0)' . $orderby . ';';
   $puddle_db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
   PDO::FETCH_ASSOC);
   $puddle_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -173,7 +275,64 @@ function puddle_search($puddle,$search,$type,$ci,$offset,$limit){
     $entries = $stmt->fetchAll();
 
     $total = count($entries);
-    $data = array_slice($entries,$offset,$limit);
+    if ($limit>0){
+      $data = array_slice($entries,$offset,$limit);
+    } else {
+      $data = array_slice($entries,$offset);
+    }
+    $return = array();
+    if($data){
+      foreach ($data as $i=>$entry){
+        $data[$i]['terms'] = explode('|',$entry['terms']);
+        $data[$i]['detail'] = json_decode($entry['detail']);
+      }
+    }
+    $return['total'] = $total;
+    $return['data'] = $data;
+    return $return;
+  } catch (PDOException $e) {
+    haltValidation($e->getCode() . ' ' . $e->getMessage());
+  }  
+}
+
+function puddle_date($puddle,$date,$before,$after,$offset,$limit,$sort){
+  $puddle_db = puddle_db($puddle);
+  $col = $date . '_at';
+  $orderby = entry_orderby($sort,$col);
+  $sel = 'select id, user, created_at, updated_at, sign, signtext, terms, detail from entry ';
+  $where = array();
+  if ($before){
+    $where[] = $col . ' < :before';
+  }
+  if ($after){
+    $where[] = $col . ' > :after';
+  }
+
+  if (count($where)){
+    $where = implode(' and ',$where);
+    $sel .= 'where ' . $where . ' ';
+  }
+  $sel .= $orderby . ';';
+  $puddle_db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
+  PDO::FETCH_ASSOC);
+  $puddle_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  try {
+    $stmt = $puddle_db->prepare($sel);
+    if ($before){
+      $stmt->bindParam(':before', $before, PDO::PARAM_STR);
+    }
+    if ($after){
+      $stmt->bindParam(':after', $after, PDO::PARAM_STR);
+    }
+    $stmt->execute();
+    $entries = $stmt->fetchAll();
+
+    $total = count($entries);
+    if ($limit>0){
+      $data = array_slice($entries,$offset,$limit);
+    } else {
+      $data = array_slice($entries,$offset);
+    }
     $return = array();
     if($data){
       foreach ($data as $i=>$entry){

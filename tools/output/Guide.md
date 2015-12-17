@@ -47,6 +47,11 @@ The Example API calls using **curl** from the command line and collated into a d
 #### GET
 The Example API calls documented with JSON data.
 
+### Main database [/db/swserver]
+
+#### GET
+Download the main SignWriting Server database
+
 ### API by Example [/notFound]
 
 #### GET
@@ -104,35 +109,71 @@ Formal SignWriting can be transformed into regular expressions,
 depending on the flags supplied.
 
 ## Group puddle
-Collections of signs.
+Interact with collections of signs.
 
-### Query for signs [/puddle/{puddle}/query/{query}{?offset}]
+### Puddle list [/puddle]
+
+#### GET
+A listing of all puddle collections available.
+
+### Puddles for language [/puddle/language/{iso639}]
 
 + Parameters
 
-    + puddle: sgn4 (string) - Name of puddle collection.
+    + iso639: ase (string) - ISO 639-3 code for sign language.
+
+#### GET
+A listing of all puddle collections available for specific sign language.
+
+### Puddles information [/puddle/{puddle}]
+
++ Parameters
+
+    + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+
+#### GET
+Information about a specific puddle by code or alternate
+
+### Puddles database [/puddle/db/{puddle}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - puddle code for collection.
+
+#### GET
+Download database for a specific puddle
+
+### Query for signs [/puddle/{puddle}/query/{query}{?offset,limit,sort}]
+
++ Parameters
+
+    + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
     + query: Q (string) - Formal SignWriting query string.
     + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 
 #### GET
 Search puddle collection with query.
 
-### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset}]
+### Query for signs [/puddle/{puddle}/query/signtext/{query}{?offset,limit,sort}]
 
 + Parameters
 
-    + puddle: sgn4 (string) - Name of puddle collection.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
     + query: Q (string) - Formal SignWriting query string.
     + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 
 #### GET
 Search puddle collection for SignText with query.
 
-### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset}]
+### Query from FSW [/puddle/{puddle}/query/{flags}/{fsw}{?offset,limit,sort}]
 
 + Parameters
 
-    + puddle: sgn4 (string) - Name of puddle collection.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
     + flags: ASL (string) - Flags for FSW convertion to query string.
         'A' - sorted by the same exact symbols.
         'a' - sorted by the same general symbols.
@@ -141,15 +182,17 @@ Search puddle collection for SignText with query.
         'L' - location of spatial arrangement is similar.
     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
     + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 
 #### GET
 Search puddle collection with Formal SignWriting and conversion flags.
 
-### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset}]
+### Query SignText from FSW [/puddle/{puddle}/query/signtext/{flags}/{fsw}{?offset,limit,sort}]
 
 + Parameters
 
-    + puddle: sgn4 (string) - Name of puddle collection.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
     + flags: ASL (string) - Flags for FSW convertion to query string.
         'A' - sorted by the same exact symbols.
         'a' - sorted by the same general symbols.
@@ -158,22 +201,54 @@ Search puddle collection with Formal SignWriting and conversion flags.
         'L' - location of spatial arrangement is similar.
     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (string) - Formal SignWriting string.
     + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 
 #### GET
 Search puddle collection for SignText with Formal SignWriting and conversion flags.
 
-### Search text [/puddle/{puddle}/search/{search}{?part,ci,offset}]
+### Search text [/puddle/{puddle}/search/{search}{?match,ci,offset,limit,sort}]
 
 + Parameters
 
-    + puddle: sgn4 (string) - Name of puddle collection.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
     + search: hello (string) - search string.
     + match: exact (optional, string) - matching strategy: start, end, exact
     + ci: true (optional, boolean) - case insensitive flag.
     + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 
 #### GET
 Search puddle collection with string.
+
+### Search text [/puddle/{puddle}/created{?before,after,offset,limit,sort}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + before: 2015/01/01 (optional,string) - date time string
+    + after: 2015/01/01 (optional,string) - date time string
+    + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+
+#### GET
+Search puddle collection based on creation.
+
+### Search text [/puddle/{puddle}/updated{?before,after,offset,limit,sort}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + before: 2015/01/01 (optional,string) - date time string
+    + after: 2015/01/01 (optional,string) - date time string
+    + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+
+#### GET
+Search puddle collection based on updates.
 
 ## Group user
 Work in progress
