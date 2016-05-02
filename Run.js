@@ -73,6 +73,12 @@ swserverRegister({"data":null,"type":"application/json","status":422,"headers":{
 swserverRegister({"data":null,"type":"application/json","status":422,"headers":{"Description":"not valid FSW","Location":"/regex/asL/not_fsw"},"method":"GET","id":"regex-flags-bad-fsw"});
 swserverRegister({"data":null,"type":"application/json","status":422,"headers":{"Description":"no query possible","Location":"/regex/a/M521x547S33100482x483S20310506x500S26b02503x520"},"method":"GET","id":"regex-flags-no-query"});
 
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"SVG for countries of the world.","Location":"/world/svg"},"method":"GET","id":"world-svg"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Country Code and Flag image.","Location":"/world/flag"},"method":"GET","id":"world-flag"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Language and puddles by country.","Location":"/world/info"},"method":"GET","id":"world-info"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Country info by code.","Location":"/world/country/US"},"method":"GET","id":"world-country"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Country info by code for other languages.","Location":"/world/country/US/other"},"method":"GET","id":"world-country-other"});
+
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Listing of puddles available","Location":"/puddle"},"method":"GET","id":"puddle-list"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Listing of puddles available for sign language","Location":"/puddle/language/ase"},"method":"GET","id":"puddle-language"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Puddle information based on code","Location":"/puddle/ase"},"method":"GET","id":"puddle-information"});
@@ -93,12 +99,26 @@ swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Descr
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for string del at start, case insensitive","Location":"/puddle/sgn4/search/del?match=start&ci=1"},"method":"GET","id":"puddle-search-start-ci"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for string DEL at end, case insensitive","Location":"/puddle/sgn4/search/DEL?match=end&ci=1"},"method":"GET","id":"puddle-search-end-ci"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for exact string delaware, case insensitive","Location":"/puddle/sgn4/search/delaware?match=exact&ci=1"},"method":"GET","id":"puddle-search-exact-ci"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for signs by term","Location":"/puddle/sgn4/sign?term=hello"},"method":"GET","id":"puddle-signs-term"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for signs by text","Location":"/puddle/sgn4/sign?text=hello"},"method":"GET","id":"puddle-signs-text"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for signs by query","Location":"/puddle/sgn4/sign?query=QS2ff00S20500S26504"},"method":"GET","id":"puddle-signs-query"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for signs by fsw","Location":"/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516"},"method":"GET","id":"puddle-signs-fsw"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for signs by fsw with flags","Location":"/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=s"},"method":"GET","id":"puddle-signs-fsw-flags"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for signs by source","Location":"/puddle/sgn4/sign?source=valerie&limit=5"},"method":"GET","id":"puddle-signs-source"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for terms by term","Location":"/puddle/sgn4/term?term=hello"},"method":"GET","id":"puddle-terms-term"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for terms by text","Location":"/puddle/sgn4/term?text=hello"},"method":"GET","id":"puddle-terms-text"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for terms by query","Location":"/puddle/sgn4/term?query=QS2ff00S20500S26504"},"method":"GET","id":"puddle-terms-query"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for terms by fsw","Location":"/puddle/sgn4/term?fsw=M512x527S18002491x474S20500488x516S20500502x516"},"method":"GET","id":"puddle-terms-fsw"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for terms by fsw with flags","Location":"/puddle/sgn4/term?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=s"},"method":"GET","id":"puddle-terms-fsw-flags"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search for terms by source","Location":"/puddle/sgn4/term?source=valerie&limit=5"},"method":"GET","id":"puddle-terms-source"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for entries created after August 1st, sort by the sign spelling, limit to 5 results","Location":"/puddle/sgn4/created?after=2015/08/01 23:59:59&sort=sign&limit=5"},"method":"GET","id":"puddle-created-after"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for entries created before 2008, limit to 10 results","Location":"/puddle/sgn4/created?before=2008&limit=10"},"method":"GET","id":"puddle-created-before"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for entries created in January 2015","Location":"/puddle/sgn4/created?after=2015/01/01&before=2015/02/01"},"method":"GET","id":"puddle-created-between"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for entries updated after August 1st, sort by the sign spelling, limit to 5 results","Location":"/puddle/sgn4/updated?after=2015/08/01 23:59:59&sort=sign&limit=5"},"method":"GET","id":"puddle-updated-after"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for entries updated before 2008, limit to 10 results","Location":"/puddle/sgn4/updated?before=2008&limit=10"},"method":"GET","id":"puddle-updated-before"});
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Search puddle for entries updated in January 2015","Location":"/puddle/sgn4/updated?after=2015/01/01&before=2015/02/01"},"method":"GET","id":"puddle-updated-between"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Lookup entry by ID","Location":"/puddle/sgn4/entry/4"},"method":"GET","id":"puddle-entry-one"});
+swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Lookup entry by several IDs","Location":"/puddle/sgn4/entry/4,5,6?sort=created_at"},"method":"GET","id":"puddle-entry-many"});
 
 swserverRegister({"data":null,"type":"text/plain","status":200,"headers":{"Description":"Request salt from server","Location":"/user/salt"},"method":"GET","id":"user-salt"});
 

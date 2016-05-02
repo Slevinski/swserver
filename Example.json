@@ -793,6 +793,66 @@
   "data": null
 },
 
+{
+  "group": "world",
+  "text": "Interact with the coutries of the world."
+},
+{
+  "id": "world-svg",
+  "method": "GET",
+  "headers": {
+      "Location": "/world/svg",
+      "Description": "SVG for countries of the world."
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "world-flag",
+  "method": "GET",
+  "headers": {
+      "Location": "/world/flag",
+      "Description": "Country Code and Flag image."
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "world-info",
+  "method": "GET",
+  "headers": {
+      "Location": "/world/info",
+      "Description": "Language and puddles by country."
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "world-country",
+  "method": "GET",
+  "headers": {
+      "Location": "/world/country/US",
+      "Description": "Country info by code."
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "world-country-other",
+  "method": "GET",
+  "headers": {
+      "Location": "/world/country/US/other",
+      "Description": "Country info by code for other languages."
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+
   
 {
   "group": "puddle",
@@ -1019,6 +1079,138 @@
   "data": null
 },
 {
+  "id": "puddle-signs-term",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/sign?term=hello",
+      "Description": "Search for signs by term"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-signs-text",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/sign?text=hello",
+      "Description": "Search for signs by text"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-signs-query",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/sign?query=QS2ff00S20500S26504",
+      "Description": "Search for signs by query"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-signs-fsw",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516",
+      "Description": "Search for signs by fsw"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-signs-fsw-flags",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=s",
+      "Description": "Search for signs by fsw with flags"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-signs-source",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/sign?source=valerie&limit=5",
+      "Description": "Search for signs by source"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-terms-term",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/term?term=hello",
+      "Description": "Search for terms by term"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-terms-text",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/term?text=hello",
+      "Description": "Search for terms by text"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-terms-query",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/term?query=QS2ff00S20500S26504",
+      "Description": "Search for terms by query"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-terms-fsw",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/term?fsw=M512x527S18002491x474S20500488x516S20500502x516",
+      "Description": "Search for terms by fsw"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-terms-fsw-flags",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/term?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=s",
+      "Description": "Search for terms by fsw with flags"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-terms-source",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/term?source=valerie&limit=5",
+      "Description": "Search for terms by source"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
   "id": "puddle-created-after",
   "method": "GET",
   "headers": {
@@ -1084,7 +1276,30 @@
   "type": "text/plain",
   "data": null
 },
-  
+{
+  "id": "puddle-entry-one",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/entry/4",
+      "Description": "Lookup entry by ID"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+{
+  "id": "puddle-entry-many",
+  "method": "GET",
+  "headers": {
+      "Location": "/puddle/sgn4/entry/4,5,6?sort=created_at",
+      "Description": "Lookup entry by several IDs"
+   },
+  "status": 200,
+  "type": "text/plain",
+  "data": null
+},
+
+
 {
   "group": "user",
   "text": "Work in progress..."

@@ -1,0 +1,8 @@
+*~
+tools/log
+tools/output/Example.sh
+tools/output/*list
+data/swserver.db
+data/puddle/*db
+data/puddle/index.html*
+

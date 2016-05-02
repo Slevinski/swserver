@@ -8,7 +8,7 @@ echo "Example API Calls"
 ./output/Example.sh
 
 echo "Preparing example document"
-for GROUP in server svg regex puddle user
+for GROUP in server svg regex world puddle user
   do
     jq -r '.[] | if has("group") and (.group)=="'$GROUP'" then "# Group '$GROUP'\n\(.text)" else "" end' < ../Example.json | grep -v '^$' >> output/Example.md
     echo "" >> output/Example.md

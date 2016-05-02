@@ -55,7 +55,7 @@ Download the main SignWriting Server database
 ### API by Example [/notFound]
 
 #### GET
-The when a location is not found, a JSON error is returned.
+When a location is not found, a JSON error is returned.
 
 ## Group svg
 The svg groups creates SVG images that are stand-alone or that require the SignWriting 2010 fonts.
@@ -70,7 +70,7 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
 Individual signs and symbols are displayed in stand-alone SVG.
 An optional styling string can be used to adjust the output image.
 
-### Stand-Alone SVG [/svg/font/{text}]
+### SVG with font [/svg/font/{text}]
 
 + Parameters
 
@@ -108,6 +108,42 @@ Query strings can be transformed into regular expressions.
 Formal SignWriting can be transformed into regular expressions,
 depending on the flags supplied.
 
+## Group world
+Interact with the countries of the world.
+
+### World [/world/svg]
+
+#### GET
+SVG for countries of the world.
+
+### flag [/world/flag]
+
+#### GET
+Country Code and Flag image 
+
+### World counts [/world/info]
+
+#### GET
+Languages and puddles by country.
+
+### Country [/world/country/{code}]
+
++ Parameters
+
+    + code: us (string) - country code.
+
+#### GET
+Country info by code 
+
+### Country other [/world/country/{code}/other]
+
++ Parameters
+
+    + code: us (string) - country code.
+
+#### GET
+Country info by code for other languages 
+
 ## Group puddle
 Interact with collections of signs.
 
@@ -115,6 +151,7 @@ Interact with collections of signs.
 
 #### GET
 A listing of all puddle collections available.
+
 
 ### Puddles for language [/puddle/language/{iso639}]
 
@@ -222,7 +259,53 @@ Search puddle collection for SignText with Formal SignWriting and conversion fla
 #### GET
 Search puddle collection with string.
 
-### Search text [/puddle/{puddle}/created{?before,after,offset,limit,sort}]
+### Sign listing [/puddle/{puddle}/sign{?term,text,query,fsw,flags,source,offset,limit,sort}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + term: hello (optional, string) - search terms and titles.
+    + text: description (optional, string) - search extended text description.
+    + query: Q (optional, string) - Formal SignWriting query string.
+    + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (optional, string) - Formal SignWriting string.
+    + flags: ASL (optional, string) - Flags for FSW convertion to query string.
+        'A' - sorted by the same exact symbols.
+        'a' - sorted by the same general symbols.
+        'S' - spatial arrangement contains the same exact symbols.
+        's' - spatial arrangement contains the same general symbols.
+        'L' - location of spatial arrangement is similar.
+    + source: Val (optional, string) - search source field.
+    + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+
+#### GET
+Search puddle collection for signs using a variety of parameters.
+
+### Term listing [/puddle/{puddle}/term{?term,text,query,fsw,flags,source,offset,limit,sort}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + term: hello (optional, string) - search terms and titles.
+    + text: description (optional, string) - search extended text description.
+    + query: Q (optional, string) - Formal SignWriting query string.
+    + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (optional, string) - Formal SignWriting string.
+    + flags: ASL (optional, string) - Flags for FSW convertion to query string.
+        'A' - sorted by the same exact symbols.
+        'a' - sorted by the same general symbols.
+        'S' - spatial arrangement contains the same exact symbols.
+        's' - spatial arrangement contains the same general symbols.
+        'L' - location of spatial arrangement is similar.
+    + source: Val (optional, string) - search source field.
+    + offset: 100 (optional, number) - offset for results array.
+    + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+
+#### GET
+Search puddle collection for terms using a variety of parameters.
+
+### Created listing [/puddle/{puddle}/created{?before,after,offset,limit,sort}]
 
 + Parameters
 
@@ -236,7 +319,7 @@ Search puddle collection with string.
 #### GET
 Search puddle collection based on creation.
 
-### Search text [/puddle/{puddle}/updated{?before,after,offset,limit,sort}]
+### Updated listing [/puddle/{puddle}/updated{?before,after,offset,limit,sort}]
 
 + Parameters
 
@@ -249,6 +332,17 @@ Search puddle collection based on creation.
 
 #### GET
 Search puddle collection based on updates.
+
+### Entry listing [/puddle/{puddle}/entry/{id}{?sort}]
+
++ Parameters
+
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + id: 3,4,5 (string) - list of comma separated entry id numbers.
+    + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+
+#### GET
+Listing from puddle collection based on entry id.
 
 ## Group user
 Work in progress

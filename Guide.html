@@ -47,6 +47,8 @@
   
     <li><a href="#regex" data-toggle="tab"><strong>regex</strong></a></li>
   
+    <li><a href="#world" data-toggle="tab"><strong>world</strong></a></li>
+  
     <li><a href="#puddle" data-toggle="tab"><strong>puddle</strong></a></li>
   
     <li><a href="#user" data-toggle="tab"><strong>user</strong></a></li>
@@ -249,7 +251,7 @@
       <code>/notFound</code>
     </div>
     <div class="panel-body">
-      <p>The when a location is not found, a JSON error is returned.</p>
+      <p>When a location is not found, a JSON error is returned.</p>
 
     </div>
     <ul class="list-group">
@@ -435,6 +437,147 @@ depending on the flags supplied.</p>
       <strong>(required)</strong>
     
     <code>string</code> Formal SignWriting string.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="world">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 id="world">world</h2>
+      </div>
+      <div class="panel-body">
+        <p class="lead"><small>Interact with the countries of the world.
+
+</small></p>
+        
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/world/svg</code>
+    </div>
+    <div class="panel-body">
+      <p>SVG for countries of the world.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/world/flag</code>
+    </div>
+    <div class="panel-body">
+      <p>Country Code and Flag image</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/world/info</code>
+    </div>
+    <div class="panel-body">
+      <p>Languages and puddles by country.</p>
+
+    </div>
+    <ul class="list-group">
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/world/country/{code}</code>
+    </div>
+    <div class="panel-body">
+      <p>Country info by code</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>code</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> country code.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/world/country/{code}/other</code>
+    </div>
+    <div class="panel-body">
+      <p>Country info by code for other languages</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>code</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> country code.
     </dd>
   
 </dl>
@@ -930,6 +1073,196 @@ depending on the flags supplied.</p>
   <div class="panel panel-info">
     <div class="panel-heading">
       <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/sign{?term,text,query,fsw,flags,source,offset,limit,sort}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection for signs using a variety of parameters.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
+    </dd>
+  
+    <dt>term</dt>
+    <dd>
+    
+    <code>string</code> search terms and titles.
+    </dd>
+  
+    <dt>text</dt>
+    <dd>
+    
+    <code>string</code> search extended text description.
+    </dd>
+  
+    <dt>query</dt>
+    <dd>
+    
+    <code>string</code> Formal SignWriting query string.
+    </dd>
+  
+    <dt>fsw</dt>
+    <dd>
+    
+    <code>string</code> Formal SignWriting string.
+    </dd>
+  
+    <dt>flags</dt>
+    <dd>
+    
+    <code>string</code> Flags for FSW convertion to query string.
+&#39;A&#39; - sorted by the same exact symbols.
+&#39;a&#39; - sorted by the same general symbols.
+&#39;S&#39; - spatial arrangement contains the same exact symbols.
+&#39;s&#39; - spatial arrangement contains the same general symbols.
+&#39;L&#39; - location of spatial arrangement is similar.
+
+
+    </dd>
+  
+    <dt>source</dt>
+    <dd>
+    
+    <code>string</code> search source field.
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/term{?term,text,query,fsw,flags,source,offset,limit,sort}</code>
+    </div>
+    <div class="panel-body">
+      <p>Search puddle collection for terms using a variety of parameters.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
+    </dd>
+  
+    <dt>term</dt>
+    <dd>
+    
+    <code>string</code> search terms and titles.
+    </dd>
+  
+    <dt>text</dt>
+    <dd>
+    
+    <code>string</code> search extended text description.
+    </dd>
+  
+    <dt>query</dt>
+    <dd>
+    
+    <code>string</code> Formal SignWriting query string.
+    </dd>
+  
+    <dt>fsw</dt>
+    <dd>
+    
+    <code>string</code> Formal SignWriting string.
+    </dd>
+  
+    <dt>flags</dt>
+    <dd>
+    
+    <code>string</code> Flags for FSW convertion to query string.
+&#39;A&#39; - sorted by the same exact symbols.
+&#39;a&#39; - sorted by the same general symbols.
+&#39;S&#39; - spatial arrangement contains the same exact symbols.
+&#39;s&#39; - spatial arrangement contains the same general symbols.
+&#39;L&#39; - location of spatial arrangement is similar.
+
+
+    </dd>
+  
+    <dt>source</dt>
+    <dd>
+    
+    <code>string</code> search source field.
+    </dd>
+  
+    <dt>offset</dt>
+    <dd>
+    
+    <code>number</code> offset for results array.
+    </dd>
+  
+    <dt>limit</dt>
+    <dd>
+    
+    <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
       <code>/puddle/{puddle}/created{?before,after,offset,limit,sort}</code>
     </div>
     <div class="panel-body">
@@ -1036,6 +1369,54 @@ depending on the flags supplied.</p>
     <dd>
     
     <code>number</code> limit the number of results. 0 for no limit, default of 100.
+    </dd>
+  
+    <dt>sort</dt>
+    <dd>
+    
+    <code>number</code> field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+    </dd>
+  
+</dl>
+</li>
+      
+      
+    </ul>
+  </div>
+  
+
+  
+  
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <span class="btn btn-primary">GET</span>
+      <code>/puddle/{puddle}/entry/{id}{?sort}</code>
+    </div>
+    <div class="panel-body">
+      <p>Listing from puddle collection based on entry id.</p>
+
+    </div>
+    <ul class="list-group">
+      
+        <li class="list-group-item bg-default"><strong>Parameters</strong></li>
+        <li class="list-group-item">
+<dl class="dl-horizontal">
+  
+    <dt>puddle</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> puddle code for collections or ISO 639-3 code for public ditionary.
+    </dd>
+  
+    <dt>id</dt>
+    <dd>
+    
+      <strong>(required)</strong>
+    
+    <code>string</code> list of comma separated entry id numbers.
     </dd>
   
     <dt>sort</dt>

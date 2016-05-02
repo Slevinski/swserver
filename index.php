@@ -245,7 +245,7 @@ $app->get('/db/swserver', function () use ($app) {
 // 
 
 // #### GET
-// The when a location is not found, a JSON error is returned.
+// When a location is not found, a JSON error is returned.
 // 
 
 $app->notFound(function () use ($app) {
@@ -324,7 +324,7 @@ function stamp(){
 /**
 * Resource
 */
-// ### Stand-Alone SVG [/svg/font/{text}]
+// ### SVG with font [/svg/font/{text}]
 // 
 // + Parameters
 // 
@@ -431,6 +431,145 @@ $app->get('/regex/:flags/:fsw', function ($flags,$fsw) use ($app) {
   echo json_pretty($return);
 });
 
+/**********/
+// ## Group world
+// Interact with the countries of the world.
+// 
+
+/**
+* Resource
+*/
+// ### World [/world/svg]
+// 
+
+// #### GET
+// SVG for countries of the world.
+// 
+
+$app->get('/world/svg',function() use($db,$app){
+  $timein = microtime(true);
+
+  $countries = getCountries();
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=count($countries);
+  $return['results']=$countries;
+  $return['meta']['query']='/world/svg';
+  $return['meta']['searchTime'] = microtime(true)-$timein;
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### flag [/world/flag]
+// 
+
+// #### GET
+// Country Code and Flag image 
+// 
+
+$app->get('/world/flag',function() use($db,$app){
+  $app->contentType('application/json'); 
+  $timein = microtime(true);
+
+  $flags = getFlags();
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=count($flags);
+  $return['results']=$flags;
+  $return['meta']['query']='/world/flag';
+  $return['meta']['searchTime'] = microtime(true)-$timein;
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### World counts [/world/info]
+// 
+
+// #### GET
+// Languages and puddles by country.
+// 
+
+$app->get('/world/info',function() use($db,$app){
+  $timein = microtime(true);
+
+  $countries = getCountriesLanguagesPuddles();
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=count($countries);
+  $return['results']=$countries;
+  $return['meta']['query']='/world/info';
+  $return['meta']['searchTime'] = microtime(true)-$timein;
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Country [/world/country/{code}]
+// 
+// + Parameters
+// 
+//     + code: us (string) - country code.
+// 
+
+// #### GET
+// Country info by code 
+// 
+$app->get('/world/country/:code', function ($code) use ($app) {
+  $app->contentType('application/json'); 
+  $timein = microtime(true);
+
+  $countries = getCountryLanguagePuddles($code);
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=count($countries);
+  $return['results']=$countries;
+  $return['meta']['query']='/world/country/' . $code;
+  $return['meta']['searchTime'] = microtime(true)-$timein;
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Country other [/world/country/{code}/other]
+// 
+// + Parameters
+// 
+//     + code: us (string) - country code.
+// 
+
+// #### GET
+// Country info by code for other languages 
+// 
+$app->get('/world/country/:code/other', function ($code) use ($app) {
+  $app->contentType('application/json'); 
+  $timein = microtime(true);
+
+  $countries = getCountryLanguageOther($code);
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=count($countries);
+  $return['results']=$countries;
+  $return['meta']['query']='/world/country/' . $code . '/other';
+  $return['meta']['searchTime'] = microtime(true)-$timein;
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
 
 /**********/
 // ## Group puddle
@@ -445,6 +584,7 @@ $app->get('/regex/:flags/:fsw', function ($flags,$fsw) use ($app) {
 
 // #### GET
 // A listing of all puddle collections available.
+// 
 // 
 $app->get('/puddle', function () use ($app) {
   $timein = microtime(true);
@@ -860,11 +1000,226 @@ $app->get('/puddle/:puddle/search/:search', function ($puddle,$search) use ($app
   echo json_pretty($return);
 });
 
+/**
+* Resource
+*/
+// ### Sign listing [/puddle/{puddle}/sign{?term,text,query,fsw,flags,source,offset,limit,sort}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+//     + term: hello (optional, string) - search terms and titles.
+//     + text: description (optional, string) - search extended text description.
+//     + query: Q (optional, string) - Formal SignWriting query string.
+//     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (optional, string) - Formal SignWriting string.
+//     + flags: ASL (optional, string) - Flags for FSW convertion to query string.
+//         'A' - sorted by the same exact symbols.
+//         'a' - sorted by the same general symbols.
+//         'S' - spatial arrangement contains the same exact symbols.
+//         's' - spatial arrangement contains the same general symbols.
+//         'L' - location of spatial arrangement is similar.
+//     + source: Val (optional, string) - search source field.
+//     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+// 
+
+// #### GET
+// Search puddle collection for signs using a variety of parameters.
+// 
+$app->get('/puddle/:puddle/sign', function ($puddle) use ($app) {
+  $timein = microtime(true);
+  $term = $app->request()->get('term');
+  $text = $app->request()->get('text');
+  $query = $app->request()->get('query');
+  $fsw = $app->request()->get('fsw');
+  $flags = $app->request()->get('flags');
+  $source = $app->request()->get('source');
+  $offset = intval($app->request()->get('offset'));
+  $limit = entry_limit();
+  $sort = entry_sort();
+
+  $queryUse = '';
+  if ($query){
+    if (!SignWriting\fswQuery($query)){
+      haltValidation('invalid query string');
+    }
+    $queryUse = $query;
+    $fsw = '';
+    $flags = '';
+  } else if ($fsw){
+    $flags = SignWriting\convertFlags($flags);
+    if (!$flags){
+      $flags = 'ASL';
+    }
+    $fsw = SignWriting\fsw($fsw);
+    if (!$fsw){
+      haltValidation('invalid Formal SignWriting');
+    }
+    $queryUse = SignWriting\convert($fsw,$flags);
+  }
+  
+  $results = puddle_sign($puddle,$term,$text,$queryUse,$source,$offset,$limit,$sort);
+
+  $plus = array();
+  if ($term){
+    $plus['term'] = $term;
+  }
+  if ($text){
+    $plus['text'] = $text;
+  }
+  if ($query){
+    $plus['query'] = $query;
+  }
+  if ($fsw){
+    $plus['fsw'] = $fsw;
+  }
+  if ($flags){
+    $plus['flags'] = $flags;
+  }
+  if ($source){
+    $plus['source'] = $source;
+  }
+  if ($offset){
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
+  } else {
+    $plus = ''; 
+  }
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/' . $puddle . '/sign' . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
 
 /**
 * Resource
 */
-// ### Search text [/puddle/{puddle}/created{?before,after,offset,limit,sort}]
+// ### Term listing [/puddle/{puddle}/term{?term,text,query,fsw,flags,source,offset,limit,sort}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+//     + term: hello (optional, string) - search terms and titles.
+//     + text: description (optional, string) - search extended text description.
+//     + query: Q (optional, string) - Formal SignWriting query string.
+//     + fsw: AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520 (optional, string) - Formal SignWriting string.
+//     + flags: ASL (optional, string) - Flags for FSW convertion to query string.
+//         'A' - sorted by the same exact symbols.
+//         'a' - sorted by the same general symbols.
+//         'S' - spatial arrangement contains the same exact symbols.
+//         's' - spatial arrangement contains the same general symbols.
+//         'L' - location of spatial arrangement is similar.
+//     + source: Val (optional, string) - search source field.
+//     + offset: 100 (optional, number) - offset for results array.
+//     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+// 
+
+// #### GET
+// Search puddle collection for terms using a variety of parameters.
+// 
+$app->get('/puddle/:puddle/term', function ($puddle) use ($app) {
+  $timein = microtime(true);
+  $term = $app->request()->get('term');
+  $text = $app->request()->get('text');
+  $query = $app->request()->get('query');
+  $fsw = $app->request()->get('fsw');
+  $flags = $app->request()->get('flags');
+  $source = $app->request()->get('source');
+  $offset = intval($app->request()->get('offset'));
+  $limit = entry_limit();
+  $sort = entry_sort();
+
+  $queryUse = '';
+  if ($query){
+    if (!SignWriting\fswQuery($query)){
+      haltValidation('invalid query string');
+    }
+    $queryUse = $query;
+    $fsw = '';
+    $flags = '';
+  } else if ($fsw){
+    $flags = SignWriting\convertFlags($flags);
+    if (!$flags){
+      $flags = 'ASL';
+    }
+    $fsw = SignWriting\fsw($fsw);
+    if (!$fsw){
+      haltValidation('invalid Formal SignWriting');
+    }
+    $queryUse = SignWriting\convert($fsw,$flags);
+  }
+  
+  $results = puddle_term($puddle,$term,$text,$queryUse,$source,$offset,$limit,$sort);
+
+  $plus = array();
+  if ($term){
+    $plus['term'] = $term;
+  }
+  if ($text){
+    $plus['text'] = $text;
+  }
+  if ($query){
+    $plus['query'] = $query;
+  }
+  if ($fsw){
+    $plus['fsw'] = $fsw;
+  }
+  if ($flags){
+    $plus['flags'] = $flags;
+  }
+  if ($source){
+    $plus['source'] = $source;
+  }
+  if ($offset){
+    $plus['offset'] = $offset;
+  }
+  if ($limit!=$app->config('entry_limit') || $app->request()->get('limit')){
+    $plus['limit'] = $limit;
+  }
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
+  } else {
+    $plus = ''; 
+  }
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['limit']=$limit;
+  $return['meta']['offset']=$offset;
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/' . $puddle . '/sign' . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
+/**
+* Resource
+*/
+// ### Created listing [/puddle/{puddle}/created{?before,after,offset,limit,sort}]
 // 
 // + Parameters
 // 
@@ -928,7 +1283,7 @@ $app->get('/puddle/:puddle/created', function ($puddle) use ($app) {
 /**
 * Resource
 */
-// ### Search text [/puddle/{puddle}/updated{?before,after,offset,limit,sort}]
+// ### Updated listing [/puddle/{puddle}/updated{?before,after,offset,limit,sort}]
 // 
 // + Parameters
 // 
@@ -988,6 +1343,52 @@ $app->get('/puddle/:puddle/updated', function ($puddle) use ($app) {
 });
 
 
+/**
+* Resource
+*/
+// ### Entry listing [/puddle/{puddle}/entry/{id}{?sort}]
+// 
+// + Parameters
+// 
+//     + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+//     + id: 3,4,5 (string) - list of comma separated entry id numbers.
+//     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
+// 
+
+// #### GET
+// Listing from puddle collection based on entry id.
+// 
+$app->get('/puddle/:puddle/entry/:id', function ($puddle,$id) use ($app) {
+  $timein = microtime(true);
+  $sort = entry_sort();
+  preg_match_all('/[0-9]+/', $id, $matches);
+  $ids = implode(array_unique($matches[0]),',');
+  if (!$ids) {
+    haltValidation('invalid entry id');
+  }
+  $results = puddle_entry($puddle,$ids,$sort);
+
+  $plus = array();
+  if ($sort){
+    $plus['sort'] = $sort;
+  }
+  if (count($plus)){
+    $plus = '?' . http_build_query($plus); 
+  } else {
+    $plus = ''; 
+  }
+  
+  $return = array();
+  $return['meta']=array();
+  $return['meta']['totalResults']=$results['total'];
+  $return['results']=$results['data'];
+  $return['meta']['location']='/puddle/' . $puddle . '/entry/' . $ids . $plus;
+  $return['meta']['searchTime'] = searchtime($timein);
+
+  $app->contentType('application/json;charset=utf-8');
+  echo json_pretty($return);
+});
+
 /**********/
 // ## Group user
 // Work in progress
@@ -1009,4 +1410,7 @@ $app->get('/user/salt', function () use ($app) {
 });
 
 
+
 $app->run();
+
+
