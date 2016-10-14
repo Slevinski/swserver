@@ -18,9 +18,15 @@ function getKeys($text){
 function key2code($key){
   $key = str_replace('S','',$key);
   $code =((hexdec(substr($key,0,3)) - 256) * 96) + ((hexdec(substr($key,3,1)))*16) + hexdec(substr($key,4,1))+1;
-  return dec2utf($code,16);
-
+  return dec2utf($code,4);
 }
+
+function key2pua($key){
+  $key = str_replace('S','',$key);
+  $code =((hexdec(substr($key,0,3)) - 256) * 96) + ((hexdec(substr($key,3,1)))*16) + hexdec(substr($key,4,1))+1;
+  return dec2utf($code,16);
+}
+
 function dec2utf($code,$plane){
   $a = $code%64;
   $b = floor($code/64);
@@ -31,6 +37,12 @@ function dec2utf($code,$plane){
   case 1:
     $utf8 = "f0";
     $utf8 .= dechex($c + 144);//90
+    $utf8 .= dechex($b + 128);//80
+    $utf8 .= dechex($a + 128);//80
+    break;
+  case 4:
+    $utf8 = "f1";
+    $utf8 .= dechex($c + 128);//80
     $utf8 .= dechex($b + 128);//80
     $utf8 .= dechex($a + 128);//80
     break;
@@ -60,9 +72,9 @@ function chex($name){
 
 function stylingArray($styling){
   $styling = styling($styling);
-  $options = array('size'=>1,'colorize'=>0,'pad'=>0,'line'=>'black','fill'=>'white','back'=>'','E'=>array(),'F'=>array());
+  $options = array('size'=>1,'colorize'=>0,'pad'=>0,'line'=>'black','fill'=>'white','back'=>'','E'=>array(),'F'=>array(),'class'=>'','id'=>'');
   if ($styling){
-    $parts = explode("-",$styling . '-');
+    $parts = explode("-",$styling);
 
     if ($parts[1]){ /* general sign */
       if(preg_match("/C/",$parts[1],$matches) == true){
@@ -102,7 +114,7 @@ function stylingArray($styling){
     }
 
 
-   if ($parts[2]) { /* specific symbols */
+    if (count($parts)>2) { /* specific symbols */
       if(preg_match_all("/D[0-9]{2}_([0-9a-f]{3}([0-9a-f]{3})?|[a-wyzA-Z]+)(,([0-9a-f]{3}([0-9a-f]{3})?|[a-wyzA-Z]+))?_/",$parts[2],$matches) == true){
         foreach ($matches[0] as $colored){
           $specific = intval(substr($colored,1,2));
@@ -122,6 +134,12 @@ function stylingArray($styling){
           $options['F'][$specific] = $size;
         }
       }
+    }
+
+    if (count($parts)>3) { /* svg class and id */
+      $stylings = explode('!',implode('-',array_slice($parts,3)));
+      $options['class']=$stylings[0];
+      $options['id']=$stylings[1];
     }
 
   }
@@ -236,8 +254,8 @@ function svg ($text,$font=false){
       }
       if ($font) {
         $g = '  <g transform="translate(' . $x . ',' . $y . ')">' . "\n";
-        $g .= '    <text class="sym-fill" style="pointer-events:none;font-family:\'SignWriting 2010 Filling\';font-size:' . $fontsize . 'px;fill:' . $fill . ';">' . key2code($key) . '</text>' . "\n";
-        $g .= '    <text class="sym-line" style="pointer-events:none;font-family:\'SignWriting 2010\';font-size:' . $fontsize . 'px;fill:' . $line . ';">' . key2code($key) . '</text>' . "\n";
+        $g .= '    <text class="sym-fill" style="pointer-events:none;font-family:\'SuttonSignWritingFill\';font-size:' . $fontsize . 'px;fill:' . $fill . ';">' . key2pua($key) . '</text>' . "\n";
+        $g .= '    <text class="sym-line" style="pointer-events:none;font-family:\'SuttonSignWriting\';font-size:' . $fontsize . 'px;fill:' . $line . ';">' . key2code($key) . '</text>' . "\n";
         $g .= '  </g>' . "\n";
         $svgs[] = $g;
       } else {
@@ -260,12 +278,20 @@ function svg ($text,$font=false){
     $w = ($x2 - $x1);
     $h = ($y2 - $y1);
 
-    $svg = "<svg version='1.1' xmlns='http://www.w3.org/2000/svg'";
-    if ($options['size']!="x"){
-      $svg .= " width='" . ($w * $options['size']) . "' height='" . ($h * $options['size']) . "'";
+    $svg = '<svg ';
+    if ($options['class']) {
+      $svg .= 'class="' . $options['class'] . '" ';
     }
-    $svg .= " viewBox='" . $x1 . " " . $y1 . " " . $w . " " . $h . "'>" . "\n";
-    $svg .= "  <text font-size='0'>" . $text . "</text>" . "\n";
+    if ($options['id']) {
+      $svg .= 'id="' . $options['id'] . '" ';
+    }
+
+    $svg .= 'version="1.1" xmlns="http://www.w3.org/2000/svg"';
+    if ($options['size']!="x"){
+      $svg .= ' width="' . ($w * $options['size']) . '" height="' . ($h * $options['size']) . '"';
+    }
+    $svg .= ' viewBox="' . $x1 . ' ' . $y1 . ' ' . $w . ' ' . $h . '">' . "\n";
+    $svg .= '  <text style="font-size:0%;">' . $text . '</text>' . "\n";
     if ($options['back']) {
       $svg .= '  <rect x="' . $x1 . '" y="' . $y1 . '" width="' . $w . '" height="' . $h . '" style="fill:' . $options['back'] . ';" />' . "\n";
     }
@@ -377,7 +403,7 @@ function isPunc($key){
 
 
 function styling($text) {
-  $fsw_styling = '-C?(P[0-9]{2})?(G_([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+)_)?(D_([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+)(,([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+))?_)?(Z([0-9]+(\.[0-9]+)?|x))?(-(D[0-9]{2}_([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+)(,([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+))?_)*(Z[0-9]{2},[0-9]+(\.[0-9]+)?(,[0-9]{3}x[0-9]{3})?)*)?';
+  $fsw_styling = '-C?(P[0-9]{2})?(G_([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+)_)?(D_([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+)(,([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+))?_)?(Z([0-9]+(.[0-9]+)?|x))?(-(D[0-9]{2}_([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+)(,([0-9a-fA-F]{3}([0-9a-fA-F]{3})?|[a-zA-Z]+))?_)*(Z[0-9]{2},[0-9]+(.[0-9]+)?(,[0-9]{3}x[0-9]{3})?)*)?(--?[_a-zA-Z][_a-zA-Z0-9-]{0,100}( -?[_a-zA-Z][_a-zA-Z0-9-]{0,100})*!([a-zA-Z][_a-zA-Z0-9-]{0,100}!)?)?';
   $fsw_pattern = '/' . $fsw_styling . '/';
   $result = preg_match($fsw_pattern,$text,$matches);
   if ($result) {

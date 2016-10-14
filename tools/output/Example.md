@@ -200,7 +200,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public dictionary.
             
             #### GET
             Information about a specific puddle by code or alternate
@@ -218,7 +218,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + query: Q (string) - Formal SignWriting query string.
                 + offset: 100 (optional, number) - offset for results array.
                 + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
@@ -231,7 +231,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + query: Q (string) - Formal SignWriting query string.
                 + offset: 100 (optional, number) - offset for results array.
                 + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
@@ -244,7 +244,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + flags: ASL (string) - Flags for FSW convertion to query string.
                     'A' - sorted by the same exact symbols.
                     'a' - sorted by the same general symbols.
@@ -263,7 +263,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + flags: ASL (string) - Flags for FSW convertion to query string.
                     'A' - sorted by the same exact symbols.
                     'a' - sorted by the same general symbols.
@@ -282,7 +282,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + search: hello (string) - search string.
                 + match: exact (optional, string) - matching strategy: start, end, exact
                 + ci: true (optional, boolean) - case insensitive flag.
@@ -297,7 +297,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + term: hello (optional, string) - search terms and titles.
                 + text: description (optional, string) - search extended text description.
                 + query: Q (optional, string) - Formal SignWriting query string.
@@ -320,7 +320,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + term: hello (optional, string) - search terms and titles.
                 + text: description (optional, string) - search extended text description.
                 + query: Q (optional, string) - Formal SignWriting query string.
@@ -343,7 +343,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + before: 2015/01/01 (optional,string) - date time string
                 + after: 2015/01/01 (optional,string) - date time string
                 + offset: 100 (optional, number) - offset for results array.
@@ -357,7 +357,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + before: 2015/01/01 (optional,string) - date time string
                 + after: 2015/01/01 (optional,string) - date time string
                 + offset: 100 (optional, number) - offset for results array.
@@ -371,7 +371,7 @@ Server communication uses HTTP request methods and response statuses.
             
             + Parameters
             
-                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+                + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
                 + id: 3,4,5 (string) - list of comma separated entry id numbers.
                 + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
             
@@ -448,13 +448,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.01 ms
+            Search-Time:76.21 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="black" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -482,13 +482,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.18 ms
+            Search-Time:1.28 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="#006600" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="#0000CC" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="#CC0000" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -516,13 +516,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.06 ms
+            Search-Time:1.03 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='237' height='262' viewBox='383 384 237 262'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="237" height="262" viewBox="383 384 237 262">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="black" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -550,13 +550,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.03 ms
+            Search-Time:1.08 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="red" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="red" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="red" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -584,13 +584,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.04 ms
+            Search-Time:1.06 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="red" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="blue" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="red" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="red" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -618,13 +618,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.03 ms
+            Search-Time:1.07 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <rect x="482" y="483" width="39" height="64" style="fill:gray;" />
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="black" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
@@ -653,13 +653,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.08 ms
+            Search-Time:1.05 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='78' height='128' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="78" height="128" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="black" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -687,13 +687,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.07 ms
+            Search-Time:1.1 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="black" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -721,13 +721,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.38 ms
+            Search-Time:1.08 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='73.5' height='111' viewBox='477 478 49 74'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="73.5" height="111" viewBox="477 478 49 74">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <rect x="477" y="478" width="49" height="74" style="fill:black;" />
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="white" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="black" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="white" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
@@ -756,13 +756,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.1 ms
+            Search-Time:1.11 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="red" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -790,13 +790,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.12 ms
+            Search-Time:1.07 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="red" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="green" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -829,8 +829,8 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='57' height='91' viewBox='482 483 57 91'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="57" height="91" viewBox="482 483 57 91">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='482' y='483'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="black" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform='scale(2)'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></g></svg>
@@ -858,13 +858,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.13 ms
+            Search-Time:1.12 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='59' height='84' viewBox='462 463 59 84'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="59" height="84" viewBox="462 463 59 84">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <svg x='462' y='463'><g transform='scale(1.5)'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="black" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="black" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
               <svg x='503' y='520'><g transform="translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)"><path class="sym-line" fill="black" d="M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z"/></g></svg>
@@ -892,13 +892,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.14 ms
+            Search-Time:1.15 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='69' height='123.7' viewBox='457 458 69 123.7'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="69" height="123.7" viewBox="457 458 69 123.7">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <rect x="457" y="458" width="69" height="123.7" style="fill:lightblue;" />
               <svg x='462' y='463'><g transform='scale(1.5)'><g transform="translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)"><path class="sym-line" fill="red" d="M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z"/></g></g></svg>
               <svg x='506' y='500'><g transform="translate(0.0,15.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z"/><path class="sym-line" fill="green" d="M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z"/></g></svg>
@@ -927,24 +927,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.39 ms
+            Search-Time:0.41 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -970,24 +970,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.49 ms
+            Search-Time:0.53 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:#006600;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:#006600;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:#0000CC;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:#0000CC;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:#CC0000;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:#CC0000;">񈠣</text>
               </g>
             </svg>
 
@@ -1018,19 +1018,19 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='237' height='262' viewBox='383 384 237 262'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="237" height="262" viewBox="383 384 237 262">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1056,24 +1056,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.44 ms
+            Search-Time:0.43 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񈠣</text>
               </g>
             </svg>
 
@@ -1099,24 +1099,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.41 ms
+            Search-Time:0.42 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:blue;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:blue;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:blue;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:blue;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:blue;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:blue;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񈠣</text>
               </g>
             </svg>
 
@@ -1142,25 +1142,25 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.43 ms
+            Search-Time:0.44 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <rect x="482" y="483" width="39" height="64" style="fill:gray;" />
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1186,24 +1186,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.42 ms
+            Search-Time:0.45 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='78' height='128' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="78" height="128" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1229,24 +1229,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:4.47 ms
+            Search-Time:0.41 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1277,20 +1277,20 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='73.5' height='111' viewBox='477 478 49 74'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="73.5" height="111" viewBox="477 478 49 74">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <rect x="477" y="478" width="49" height="74" style="fill:black;" />
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:black;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:black;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:white;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:black;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:white;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:black;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:white;">񈠣</text>
               </g>
             </svg>
 
@@ -1316,24 +1316,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.45 ms
+            Search-Time:0.44 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1359,24 +1359,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.46 ms
+            Search-Time:0.44 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='39' height='64' viewBox='482 483 39 64'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="39" height="64" viewBox="482 483 39 64">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:green;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:green;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1407,19 +1407,19 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='57' height='91' viewBox='482 483 57 91'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="57" height="91" viewBox="482 483 57 91">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(482,483)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:60px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:60px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:60px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:60px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1445,24 +1445,24 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.18 ms
+            Search-Time:1.19 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='59' height='84' viewBox='462 463 59 84'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="59" height="84" viewBox="462 463 59 84">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <g transform="translate(462,463)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:45px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:45px;fill:black;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:45px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:45px;fill:black;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񆄱</text>
               </g>
               <g transform="translate(503,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1488,25 +1488,25 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.2 ms
+            Search-Time:1.23 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='69' height='123.7' viewBox='457 458 69 123.7'>
-              <text font-size='0'>AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="69" height="123.7" viewBox="457 458 69 123.7">
+              <text style="font-size:0%;">AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520</text>
               <rect x="457" y="458" width="69" height="123.7" style="fill:lightblue;" />
               <g transform="translate(462,463)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:45px;fill:white;">􍉡</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:45px;fill:red;">􍉡</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:45px;fill:white;">􍉡</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:45px;fill:red;">񍉡</text>
               </g>
               <g transform="translate(506,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􆄱</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:green;">􆄱</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􆄱</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:green;">񆄱</text>
               </g>
               <g transform="translate(483,520)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:63px;fill:white;">􈠣</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:63px;fill:black;">􈠣</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:63px;fill:white;">􈠣</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:63px;fill:black;">񈠣</text>
               </g>
             </svg>
 
@@ -1532,13 +1532,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.9 ms
+            Search-Time:1.06 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="black" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
 
@@ -1564,13 +1564,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.03 ms
+            Search-Time:1.01 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="#0000CC" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
 
@@ -1596,13 +1596,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.95 ms
+            Search-Time:5.14 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='213' height='228' viewBox='401 401 213 228'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="213" height="228" viewBox="401 401 213 228">
+              <text style="font-size:0%;">S10000500x500</text>
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="black" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
 
@@ -1633,8 +1633,8 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="red" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
 
@@ -1660,13 +1660,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.98 ms
+            Search-Time:0.97 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="blue" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="red" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
 
@@ -1692,13 +1692,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.99 ms
+            Search-Time:0.93 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <rect x="500" y="500" width="15" height="30" style="fill:gray;" />
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="black" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
@@ -1725,13 +1725,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.99 ms
+            Search-Time:0.96 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='30' height='60' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="black" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
 
@@ -1757,13 +1757,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.92 ms
+            Search-Time:0.96 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="white" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="black" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
 
@@ -1789,13 +1789,13 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1 ms
+            Search-Time:0.96 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='37.5' height='60' viewBox='495 495 25 40'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="37.5" height="60" viewBox="495 495 25 40">
+              <text style="font-size:0%;">S10000500x500</text>
               <rect x="495" y="495" width="25" height="40" style="fill:black;" />
               <svg x='500' y='500'><g transform="translate(0.0,30.0) scale(0.01,-0.01)"><path class="sym-fill" fill="black" d="M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z"/><path class="sym-line" fill="white" d="M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z"/></g></svg>
             </svg>
@@ -1822,16 +1822,16 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.95 ms
+            Search-Time:0.96 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񀀁</text>
               </g>
             </svg>
 
@@ -1857,16 +1857,16 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.06 ms
+            Search-Time:0.99 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:#0000CC;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:#0000CC;">񀀁</text>
               </g>
             </svg>
 
@@ -1892,16 +1892,16 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.95 ms
+            Search-Time:0.99 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='213' height='228' viewBox='401 401 213 228'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="213" height="228" viewBox="401 401 213 228">
+              <text style="font-size:0%;">S10000500x500</text>
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񀀁</text>
               </g>
             </svg>
 
@@ -1927,16 +1927,16 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:1.01 ms
+            Search-Time:1.02 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񀀁</text>
               </g>
             </svg>
 
@@ -1967,11 +1967,11 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:blue;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:red;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:blue;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:red;">񀀁</text>
               </g>
             </svg>
 
@@ -1997,17 +1997,17 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.98 ms
+            Search-Time:0.96 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='15' height='30' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <rect x="500" y="500" width="15" height="30" style="fill:gray;" />
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񀀁</text>
               </g>
             </svg>
 
@@ -2033,16 +2033,16 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.96 ms
+            Search-Time:1.03 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='30' height='60' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="60" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񀀁</text>
               </g>
             </svg>
 
@@ -2068,16 +2068,16 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.95 ms
+            Search-Time:0.97 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='500 500 15 30'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="500 500 15 30">
+              <text style="font-size:0%;">S10000500x500</text>
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:white;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:black;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:black;">񀀁</text>
               </g>
             </svg>
 
@@ -2103,17 +2103,17 @@ The svg groups creates SVG images that are stand-alone or that require the SignW
             Connection:close
             Access-Control-Allow-Origin:*
             X-Powered-By:SignWriting Server
-            Search-Time:0.99 ms
+            Search-Time:1 ms
             Content-Type:image/svg+xml;charset=utf-8
 
     + Body
 
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' width='37.5' height='60' viewBox='495 495 25 40'>
-              <text font-size='0'>S10000500x500</text>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="37.5" height="60" viewBox="495 495 25 40">
+              <text style="font-size:0%;">S10000500x500</text>
               <rect x="495" y="495" width="25" height="40" style="fill:black;" />
               <g transform="translate(500,500)">
-                <text class="sym-fill" style="pointer-events:none;font-family:'SignWriting 2010 Filling';font-size:30px;fill:black;">􀀁</text>
-                <text class="sym-line" style="pointer-events:none;font-family:'SignWriting 2010';font-size:30px;fill:white;">􀀁</text>
+                <text class="sym-fill" style="pointer-events:none;font-family:'SuttonSignWritingFill';font-size:30px;fill:black;">􀀁</text>
+                <text class="sym-line" style="pointer-events:none;font-family:'SuttonSignWriting';font-size:30px;fill:white;">񀀁</text>
               </g>
             </svg>
 
@@ -2184,7 +2184,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/Q",
-                "searchTime": "0.2 ms"
+                "searchTime": "32.75 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2221,7 +2221,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/QS10000",
-                "searchTime": "0.23 ms"
+                "searchTime": "0.3 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S10000[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2295,7 +2295,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 2,
                 "location": "/regex/QS10000S20500",
-                "searchTime": "0.23 ms"
+                "searchTime": "0.22 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S10000[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2333,7 +2333,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/QR100t110",
-                "searchTime": "0.26 ms"
+                "searchTime": "10.53 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S((10[0-9a-f])|(110))[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2370,7 +2370,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/QT",
-                "searchTime": "0.21 ms"
+                "searchTime": "0.2 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2407,7 +2407,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/QAS10000T",
-                "searchTime": "0.22 ms"
+                "searchTime": "0.27 ms"
               },
               "results": [
                 "/(AS10000(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2444,7 +2444,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/QAS100uuT",
-                "searchTime": "0.22 ms"
+                "searchTime": "0.24 ms"
               },
               "results": [
                 "/(AS100[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2481,7 +2481,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/QAS10000S20500T",
-                "searchTime": "0.23 ms"
+                "searchTime": "0.22 ms"
               },
               "results": [
                 "/(AS10000S20500(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2518,7 +2518,7 @@ Query string to regular expression transformation.
               "meta": {
                 "totalResults": 1,
                 "location": "/regex/QAR100t110T",
-                "searchTime": "0.26 ms"
+                "searchTime": "0.24 ms"
               },
               "results": [
                 "/(AS((10[0-9a-f])|(110))[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2590,7 +2590,7 @@ Query string to regular expression transformation.
                 "totalResults": 1,
                 "location": "/regex/A/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QAS20310S26b02S33100T",
-                "searchTime": "0.31 ms"
+                "searchTime": "0.43 ms"
               },
               "results": [
                 "/(AS20310S26b02S33100(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2628,7 +2628,7 @@ Query string to regular expression transformation.
                 "totalResults": 1,
                 "location": "/regex/a/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QAS203uuS26buuS331uuT",
-                "searchTime": "0.31 ms"
+                "searchTime": "0.3 ms"
               },
               "results": [
                 "/(AS203[0-5][0-9a-f]S26b[0-5][0-9a-f]S331[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/"
@@ -2666,7 +2666,7 @@ Query string to regular expression transformation.
                 "totalResults": 3,
                 "location": "/regex/S/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS33100S20310S26b02",
-                "searchTime": "0.3 ms"
+                "searchTime": "0.28 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2746,7 +2746,7 @@ Query string to regular expression transformation.
                 "totalResults": 3,
                 "location": "/regex/SL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS33100482x483S20310506x500S26b02503x520",
-                "searchTime": "0.44 ms"
+                "searchTime": "0.42 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2786,7 +2786,7 @@ Query string to regular expression transformation.
                 "totalResults": 3,
                 "location": "/regex/sL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS331uu482x483S203uu506x500S26buu503x520",
-                "searchTime": "0.44 ms"
+                "searchTime": "0.43 ms"
               },
               "results": [
                 "/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])+)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S331[0-5][0-9a-f]((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2826,7 +2826,7 @@ Query string to regular expression transformation.
                 "totalResults": 3,
                 "location": "/regex/ASL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QAS20310S26b02S33100TS33100482x483S20310506x500S26b02503x520",
-                "searchTime": "0.52 ms"
+                "searchTime": "0.49 ms"
               },
               "results": [
                 "/(AS20310S26b02S33100(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/",
@@ -2970,7 +2970,7 @@ Interact with the coutries of the world.
               "meta": {
                 "totalResults": 169,
                 "query": "/world/svg",
-                "searchTime": 0.0070929527282715
+                "searchTime": 0.025974988937378
               },
               "results": [
                 {
@@ -3565,7 +3565,7 @@ Interact with the coutries of the world.
                 },
                 {
                   "code": "GM",
-      
+       
 
 # GET /world/flag
 + Request
@@ -3596,7 +3596,7 @@ Interact with the coutries of the world.
               "meta": {
                 "totalResults": 68,
                 "query": "/world/flag",
-                "searchTime": 0.0036709308624268
+                "searchTime": 0.0045440196990967
               },
               "results": [
                 {
@@ -3790,7 +3790,7 @@ Interact with the coutries of the world.
               "meta": {
                 "totalResults": 118,
                 "query": "/world/info",
-                "searchTime": 0.0061221122741699
+                "searchTime": 0.0058419704437256
               },
               "results": [
                 {
@@ -4416,7 +4416,7 @@ Interact with the coutries of the world.
               "meta": {
                 "totalResults": 1,
                 "query": "/world/country/US",
-                "searchTime": 0.0017900466918945
+                "searchTime": 0.0017490386962891
               },
               "results": [
                 {
@@ -4529,7 +4529,7 @@ Interact with the coutries of the world.
               "meta": {
                 "totalResults": 1,
                 "query": "/world/country/US/other",
-                "searchTime": 0.0012907981872559
+                "searchTime": 0.0015530586242676
               },
               "results": [
                 {
@@ -4574,7 +4574,7 @@ Interact will collections of signs.
               "meta": {
                 "totalResults": 136,
                 "location": "/puddle",
-                "searchTime": "3.51 ms"
+                "searchTime": "4.32 ms"
               },
               "results": [
                 {
@@ -5392,7 +5392,7 @@ Interact will collections of signs.
               "meta": {
                 "totalResults": 10,
                 "location": "/puddle/language/ase",
-                "searchTime": "4.85 ms"
+                "searchTime": "6.6 ms"
               },
               "results": [
                 {
@@ -5568,7 +5568,7 @@ Interact will collections of signs.
               "meta": {
                 "totalResults": 1,
                 "location": "/puddle/ase",
-                "searchTime": "1.54 ms"
+                "searchTime": "1.53 ms"
               },
               "results": [
                 {
@@ -5620,7 +5620,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1,
                 "location": "/puddle/ase/query/QS10000S10008S21100",
-                "searchTime": "122.07 ms"
+                "searchTime": "142.59 ms"
               },
               "results": [
                 {
@@ -5674,7 +5674,7 @@ Interact will collections of signs.
                 "offset": 160,
                 "totalResults": 181,
                 "location": "/puddle/ase/query/QS2ff00S20500?offset=160",
-                "searchTime": "794.76 ms"
+                "searchTime": "191.68 ms"
               },
               "results": [
                 {
@@ -6058,7 +6058,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 161,
                 "location": "/puddle/ase/query/QS10000?limit=1",
-                "searchTime": "174.94 ms"
+                "searchTime": "137.1 ms"
               },
               "results": [
                 {
@@ -6113,7 +6113,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 6,
                 "location": "/puddle/ase/query/QS2ff00S20500S26504?limit=0",
-                "searchTime": "131.24 ms"
+                "searchTime": "114.76 ms"
               },
               "results": [
                 {
@@ -6249,7 +6249,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 6,
                 "location": "/puddle/ase/query/QS2ff00S20500S26504?sort=-created_at",
-                "searchTime": "131.38 ms"
+                "searchTime": "115.66 ms"
               },
               "results": [
                 {
@@ -6385,7 +6385,7 @@ Interact will collections of signs.
                 "offset": 160,
                 "totalResults": 181,
                 "location": "/puddle/ase/query/QS2ff00S20500?offset=160&limit=10&sort=id",
-                "searchTime": "791.63 ms"
+                "searchTime": "152.84 ms"
               },
               "results": [
                 {
@@ -6587,7 +6587,7 @@ Interact will collections of signs.
                 "totalResults": 2,
                 "location": "/puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520",
                 "query": "QS33100482x483S20310506x500S26b02503x520",
-                "searchTime": "119.8 ms"
+                "searchTime": "105.57 ms"
               },
               "results": [
                 {
@@ -6658,7 +6658,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1,
                 "location": "/puddle/sgn4/query/signtext/QS20500S20320",
-                "searchTime": "236.02 ms"
+                "searchTime": "167.44 ms"
               },
               "results": [
                 {
@@ -6669,18 +6669,18 @@ Interact will collections of signs.
                   "sign": "",
                   "signtext": "M525x515S14c20476x484S2880a503x497 M539x516S15d0a461x484S15d02475x487S2e700510x491S26500525x501S20500529x485 S38900464x493 M549x517S30007482x482S18010519x483S18018446x484S22104518x470S22104465x470 M513x518S15d02486x499S20500494x482 M525x523S1eb10501x477S15d0a475x477S2450c478x492 M556x528S17610509x512S17614480x512S14c20533x472S14c28445x471S2880a509x492S28812472x491S2fb00493x484 S38800464x496 M513x517S15d02486x498S20500495x482 M528x547S18620509x457S18628472x457S20500495x452S2df1e474x496S2df06507x497S20320513x532S20328474x530 M518x556S28802452x507S32403482x482S10010473x524S10029436x535S28812417x518S2fb01436x494 L516x550S17610494x450S17610493x534S11502484x479S19220495x503 L523x529S10028477x499S1dc20499x489S22e04505x471 S38800464x496 M521x518S10033491x481S20500478x507 M552x517S2ff00482x482S18510527x488S18508450x486S26a00520x468S26a10452x465S2fb00493x467 M538x515S1f720462x499S20320493x499S1dc20514x485 M524x513S18530499x498S26506475x492S22104503x486 M547x573S10021517x427S10029453x427S2eb08515x463S2eb14476x463S2fd00491x453S1eb10488x522S15d0a466x526S2450c468x542",
                   "terms": [
-                    "ASL",
-                    "Ohio",
-                    "SignWriting",
-                    "all",
                     "hi",
-                    "me",
+                    "all",
+                    "teach",
                     "my",
+                    "workshop",
                     "next month",
-                    "over there (right)",
+                    "me",
                     "teach",
-                    "teach",
-                    "workshop"
+                    "ASL",
+                    "SignWriting",
+                    "Ohio",
+                    "over there (right)"
                   ],
                   "text": "Hi all, I hope my writing is clear. My workshop is in Ohio next month. I will teach ASL and SignWriting.",
                   "source": "Charles Butler Neto 2010",
@@ -6724,7 +6724,7 @@ Interact will collections of signs.
                 "totalResults": 1,
                 "location": "/puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516",
                 "query": "QS18002491x474S20500488x516S20500502x516",
-                "searchTime": "229.82 ms"
+                "searchTime": "134.71 ms"
               },
               "results": [
                 {
@@ -6778,7 +6778,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 12,
                 "location": "/puddle/sgn4/search/del",
-                "searchTime": "113.14 ms"
+                "searchTime": "72.35 ms"
               },
               "results": [
                 {
@@ -7025,7 +7025,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 9,
                 "location": "/puddle/sgn4/search/del?match=start",
-                "searchTime": "109.84 ms"
+                "searchTime": "72.48 ms"
               },
               "results": [
                 {
@@ -7224,7 +7224,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1,
                 "location": "/puddle/sgn4/search/del?match=end",
-                "searchTime": "70.12 ms"
+                "searchTime": "70.43 ms"
               },
               "results": [
                 {
@@ -7278,7 +7278,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 2,
                 "location": "/puddle/sgn4/search/Delaware?match=exact",
-                "searchTime": "80.86 ms"
+                "searchTime": "74.9 ms"
               },
               "results": [
                 {
@@ -7348,7 +7348,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 16,
                 "location": "/puddle/sgn4/search/DEL?ci=1",
-                "searchTime": "129.9 ms"
+                "searchTime": "76.97 ms"
               },
               "results": [
                 {
@@ -7660,7 +7660,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 13,
                 "location": "/puddle/sgn4/search/del?match=start&ci=1",
-                "searchTime": "123.68 ms"
+                "searchTime": "76.18 ms"
               },
               "results": [
                 {
@@ -7924,7 +7924,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1,
                 "location": "/puddle/sgn4/search/DEL?match=end&ci=1",
-                "searchTime": "73.66 ms"
+                "searchTime": "62.38 ms"
               },
               "results": [
                 {
@@ -7978,7 +7978,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 2,
                 "location": "/puddle/sgn4/search/delaware?match=exact&ci=1",
-                "searchTime": "82.51 ms"
+                "searchTime": "72.52 ms"
               },
               "results": [
                 {
@@ -8048,7 +8048,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 14,
                 "location": "/puddle/sgn4/sign?term=hello",
-                "searchTime": "67.46 ms"
+                "searchTime": "77.53 ms"
               },
               "results": [
                 {
@@ -8142,7 +8142,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 3,
                 "location": "/puddle/sgn4/sign?text=hello",
-                "searchTime": "154.19 ms"
+                "searchTime": "154.85 ms"
               },
               "results": [
                 {
@@ -8192,7 +8192,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 6,
                 "location": "/puddle/sgn4/sign?query=QS2ff00S20500S26504",
-                "searchTime": "117.25 ms"
+                "searchTime": "112.88 ms"
               },
               "results": [
                 {
@@ -8254,7 +8254,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 2,
                 "location": "/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=ASL",
-                "searchTime": "148.45 ms"
+                "searchTime": "141.84 ms"
               },
               "results": [
                 {
@@ -8300,7 +8300,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 86,
                 "location": "/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=s",
-                "searchTime": "192.61 ms"
+                "searchTime": "187.07 ms"
               },
               "results": [
                 {
@@ -8682,7 +8682,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1357,
                 "location": "/puddle/sgn4/sign?source=valerie&limit=5",
-                "searchTime": "227.56 ms"
+                "searchTime": "225.06 ms"
               },
               "results": [
                 {
@@ -8740,7 +8740,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1,
                 "location": "/puddle/sgn4/sign?term=hello",
-                "searchTime": "60.68 ms"
+                "searchTime": "62.9 ms"
               },
               "results": [
                 {
@@ -8782,7 +8782,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 2,
                 "location": "/puddle/sgn4/sign?text=hello",
-                "searchTime": "150.74 ms"
+                "searchTime": "146.29 ms"
               },
               "results": [
                 {
@@ -8828,7 +8828,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 7,
                 "location": "/puddle/sgn4/sign?query=QS2ff00S20500S26504",
-                "searchTime": "115.22 ms"
+                "searchTime": "108.61 ms"
               },
               "results": [
                 {
@@ -8894,7 +8894,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 2,
                 "location": "/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=ASL",
-                "searchTime": "160.53 ms"
+                "searchTime": "141.24 ms"
               },
               "results": [
                 {
@@ -8940,7 +8940,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 91,
                 "location": "/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&flags=s",
-                "searchTime": "205.21 ms"
+                "searchTime": "192.75 ms"
               },
               "results": [
                 {
@@ -9342,7 +9342,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1584,
                 "location": "/puddle/sgn4/sign?source=valerie&limit=5",
-                "searchTime": "245.57 ms"
+                "searchTime": "237.82 ms"
               },
               "results": [
                 {
@@ -9423,7 +9423,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 5028,
                 "location": "/puddle/sgn4/created?before=2008&limit=10",
-                "searchTime": "199.75 ms"
+                "searchTime": "161.07 ms"
               },
               "results": [
                 {
@@ -9621,7 +9621,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 7,
                 "location": "/puddle/sgn4/created?before=2015%2F02%2F01&after=2015%2F01%2F01",
-                "searchTime": "74.83 ms"
+                "searchTime": "19.97 ms"
               },
               "results": [
                 {
@@ -9648,8 +9648,8 @@ Interact will collections of signs.
                   "sign": "M520x532S1440a480x468S14402489x492S22f04488x518",
                   "signtext": "",
                   "terms": [
-                    "cl44 water running",
-                    "running water"
+                    "running water",
+                    "cl44 water running"
                   ],
                   "text": "",
                   "source": "",
@@ -9795,7 +9795,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 1698,
                 "location": "/puddle/sgn4/updated?before=2008&limit=10",
-                "searchTime": "117.14 ms"
+                "searchTime": "73.65 ms"
               },
               "results": [
                 {
@@ -9996,7 +9996,7 @@ Interact will collections of signs.
                 "offset": 0,
                 "totalResults": 7,
                 "location": "/puddle/sgn4/updated?before=2015%2F02%2F01&after=2015%2F01%2F01",
-                "searchTime": "72.47 ms"
+                "searchTime": "28.26 ms"
               },
               "results": [
                 {
@@ -10023,8 +10023,8 @@ Interact will collections of signs.
                   "sign": "M520x532S1440a480x468S14402489x492S22f04488x518",
                   "signtext": "",
                   "terms": [
-                    "cl44 water running",
-                    "running water"
+                    "running water",
+                    "cl44 water running"
                   ],
                   "text": "",
                   "source": "",
@@ -10145,7 +10145,7 @@ Interact will collections of signs.
               "meta": {
                 "totalResults": 1,
                 "location": "/puddle/sgn4/entry/4",
-                "searchTime": "8.52 ms"
+                "searchTime": "0.86 ms"
               },
               "results": [
                 {
@@ -10197,7 +10197,7 @@ Interact will collections of signs.
               "meta": {
                 "totalResults": 3,
                 "location": "/puddle/sgn4/entry/4,5,6?sort=created_at",
-                "searchTime": "16.3 ms"
+                "searchTime": "0.95 ms"
               },
               "results": [
                 {
@@ -10280,5 +10280,5 @@ Work in progress...
 
     + Body
 
-            57279d878af06
+            5801278d78efd
 

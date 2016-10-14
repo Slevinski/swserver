@@ -279,7 +279,7 @@ A listing of all puddle collections available for specific sign language.
 
 &#43; Parameters
 
-    &#43; puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: ase (string) - puddle code for collections or ISO 639-3 code for public dictionary.
 
 #### GET
 Information about a specific puddle by code or alternate
@@ -297,7 +297,7 @@ Download database for a specific puddle
 
 &#43; Parameters
 
-    &#43; puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: ase (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; query: Q (string) - Formal SignWriting query string.
     &#43; offset: 100 (optional, number) - offset for results array.
     &#43; limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
@@ -310,7 +310,7 @@ Search puddle collection with query.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; query: Q (string) - Formal SignWriting query string.
     &#43; offset: 100 (optional, number) - offset for results array.
     &#43; limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
@@ -323,7 +323,7 @@ Search puddle collection for SignText with query.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; flags: ASL (string) - Flags for FSW convertion to query string.
         &#39;A&#39; - sorted by the same exact symbols.
         &#39;a&#39; - sorted by the same general symbols.
@@ -342,7 +342,7 @@ Search puddle collection with Formal SignWriting and conversion flags.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; flags: ASL (string) - Flags for FSW convertion to query string.
         &#39;A&#39; - sorted by the same exact symbols.
         &#39;a&#39; - sorted by the same general symbols.
@@ -361,7 +361,7 @@ Search puddle collection for SignText with Formal SignWriting and conversion fla
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; search: hello (string) - search string.
     &#43; match: exact (optional, string) - matching strategy: start, end, exact
     &#43; ci: true (optional, boolean) - case insensitive flag.
@@ -376,7 +376,7 @@ Search puddle collection with string.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; term: hello (optional, string) - search terms and titles.
     &#43; text: description (optional, string) - search extended text description.
     &#43; query: Q (optional, string) - Formal SignWriting query string.
@@ -399,7 +399,7 @@ Search puddle collection for signs using a variety of parameters.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; term: hello (optional, string) - search terms and titles.
     &#43; text: description (optional, string) - search extended text description.
     &#43; query: Q (optional, string) - Formal SignWriting query string.
@@ -422,7 +422,7 @@ Search puddle collection for terms using a variety of parameters.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; before: 2015/01/01 (optional,string) - date time string
     &#43; after: 2015/01/01 (optional,string) - date time string
     &#43; offset: 100 (optional, number) - offset for results array.
@@ -436,7 +436,7 @@ Search puddle collection based on creation.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; before: 2015/01/01 (optional,string) - date time string
     &#43; after: 2015/01/01 (optional,string) - date time string
     &#43; offset: 100 (optional, number) - offset for results array.
@@ -450,7 +450,7 @@ Search puddle collection based on updates.
 
 &#43; Parameters
 
-    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    &#43; puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     &#43; id: 3,4,5 (string) - list of comma separated entry id numbers.
     &#43; sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 
@@ -588,11 +588,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.01 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 76.21 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -645,11 +645,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.18 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.28 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;#006600&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;#0000CC&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;#CC0000&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -702,11 +702,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.06 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.03 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;237&#39; height=&#39;262&#39; viewBox=&#39;383 384 237 262&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;237&#34; height=&#34;262&#34; viewBox=&#34;383 384 237 262&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -759,11 +759,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.03 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.08 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -816,11 +816,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.04 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.06 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;blue&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -873,11 +873,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.03 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.07 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;rect x=&#34;482&#34; y=&#34;483&#34; width=&#34;39&#34; height=&#34;64&#34; style=&#34;fill:gray;&#34; /&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -931,11 +931,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.08 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.05 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;78&#39; height=&#39;128&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;78&#34; height=&#34;128&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -988,11 +988,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.07 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.1 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -1045,11 +1045,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.38 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.08 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;73.5&#39; height=&#39;111&#39; viewBox=&#39;477 478 49 74&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;73.5&#34; height=&#34;111&#34; viewBox=&#34;477 478 49 74&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;rect x=&#34;477&#34; y=&#34;478&#34; width=&#34;49&#34; height=&#34;74&#34; style=&#34;fill:black;&#34; /&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;white&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;black&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;white&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -1103,11 +1103,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.1 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.11 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -1160,11 +1160,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.12 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.07 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;green&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -1220,8 +1220,8 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.07 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;57&#39; height=&#39;91&#39; viewBox=&#39;482 483 57 91&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;57&#34; height=&#34;91&#34; viewBox=&#34;482 483 57 91&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;482&#39; y=&#39;483&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#39;scale(2)&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -1274,11 +1274,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.13 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.12 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;59&#39; height=&#39;84&#39; viewBox=&#39;462 463 59 84&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;59&#34; height=&#34;84&#34; viewBox=&#34;462 463 59 84&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;svg x=&#39;462&#39; y=&#39;463&#39;&gt;&lt;g transform=&#39;scale(1.5)&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;503&#39; y=&#39;520&#39;&gt;&lt;g transform=&#34;translate(0.196840829729,26.6999810561) scale(0.00975214136907,-0.00983390502079)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M345 2350 l-350 -350 325 -325 325 -325 -325 -325 -325 -325 353 -353 352 -352 0 303 0 302 350 0 350 0 0 100 0 100 -350 0 -350 0 0 550 0 550 350 0 350 0 0 100 0 100 -350 0 -350 0 -2 300 -3 300 -350 -350z M1600 1350 l0 -1350 100 0 100 0 0 1350 0 1350 -100 0 -100 0 0 -1350z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -1331,11 +1331,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.14 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.15 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;69&#39; height=&#39;123.7&#39; viewBox=&#39;457 458 69 123.7&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;69&#34; height=&#34;123.7&#34; viewBox=&#34;457 458 69 123.7&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;rect x=&#34;457&#34; y=&#34;458&#34; width=&#34;69&#34; height=&#34;123.7&#34; style=&#34;fill:lightblue;&#34; /&gt;
   &lt;svg x=&#39;462&#39; y=&#39;463&#39;&gt;&lt;g transform=&#39;scale(1.5)&#39;&gt;&lt;g transform=&#34;translate(0.149874875465,34.7500790925) scale(0.00988906872676,-0.00988956850125)&#34;&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M1528 3484 c-592 -92 -1088 -447 -1348 -963 -125 -249 -180 -485 -180 -771 0 -480 183 -911 529 -1242 350 -336 780 -508 1271 -508 451 0 864 150 1193 434 326 281 517 620 591 1051 21 121 21 409 0 530 -43 252 -114 444 -237 639 -282 453 -741 750 -1284 831 -127 19 -413 18 -535 -1z m607 -173 c583 -126 1038 -523 1224 -1069 59 -173 75 -277 75 -492 0 -165 -3 -211 -22 -300 -71 -327 -228 -611 -458 -829 -186 -177 -381 -295 -614 -374 -176 -60 -282 -78 -490 -84 -247 -7 -416 19 -628 97 -549 201 -944 674 -1043 1250 -17 97 -17 383 0 480 99 576 495 1050 1043 1250 105 38 177 58 303 81 143 26 467 21 610 -10z M1720 1800 l0 -600 80 0 80 0 0 600 0 600 -80 0 -80 0 0 -600z&#34;/&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;
   &lt;svg x=&#39;506&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,15.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 300 0 300 0 0 550 0 550 -300 0 -300 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;green&#34; d=&#34;M0 750 l0 -750 750 0 750 0 0 750 0 750 -750 0 -750 0 0 -750z m800 0 l0 -550 -300 0 -300 0 0 550 0 550 300 0 300 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
@@ -1389,22 +1389,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.39 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1455,22 +1455,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.49 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.53 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:#006600;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:#006600;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:#0000CC;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:#0000CC;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:#CC0000;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:#CC0000;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1524,19 +1524,19 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;237&#39; height=&#39;262&#39; viewBox=&#39;383 384 237 262&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;237&#34; height=&#34;262&#34; viewBox=&#34;383 384 237 262&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1587,22 +1587,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.44 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.43 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1653,22 +1653,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.42 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:blue;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:blue;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:blue;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:blue;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:blue;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:blue;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1719,23 +1719,23 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.43 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.44 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;rect x=&#34;482&#34; y=&#34;483&#34; width=&#34;39&#34; height=&#34;64&#34; style=&#34;fill:gray;&#34; /&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1786,22 +1786,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.42 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.45 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;78&#39; height=&#39;128&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;78&#34; height=&#34;128&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1852,22 +1852,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 4.47 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.41 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1921,20 +1921,20 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.45 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;73.5&#39; height=&#39;111&#39; viewBox=&#39;477 478 49 74&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;73.5&#34; height=&#34;111&#34; viewBox=&#34;477 478 49 74&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;rect x=&#34;477&#34; y=&#34;478&#34; width=&#34;49&#34; height=&#34;74&#34; style=&#34;fill:black;&#34; /&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:white;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:white;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:white;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -1985,22 +1985,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.45 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.44 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2051,22 +2051,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.46 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.44 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;39&#39; height=&#39;64&#39; viewBox=&#39;482 483 39 64&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;39&#34; height=&#34;64&#34; viewBox=&#34;482 483 39 64&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:green;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:green;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2120,19 +2120,19 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.2 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;57&#39; height=&#39;91&#39; viewBox=&#39;482 483 57 91&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;57&#34; height=&#34;91&#34; viewBox=&#34;482 483 57 91&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(482,483)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:60px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:60px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:60px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:60px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2183,22 +2183,22 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.18 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.19 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;59&#39; height=&#39;84&#39; viewBox=&#39;462 463 59 84&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;59&#34; height=&#34;84&#34; viewBox=&#34;462 463 59 84&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;g transform=&#34;translate(462,463)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:45px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:45px;fill:black;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:45px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:45px;fill:black;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(503,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2249,23 +2249,23 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.2 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.23 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;69&#39; height=&#39;123.7&#39; viewBox=&#39;457 458 69 123.7&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;69&#34; height=&#34;123.7&#34; viewBox=&#34;457 458 69 123.7&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&lt;/text&gt;
   &lt;rect x=&#34;457&#34; y=&#34;458&#34; width=&#34;69&#34; height=&#34;123.7&#34; style=&#34;fill:lightblue;&#34; /&gt;
   &lt;g transform=&#34;translate(462,463)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:45px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:45px;fill:red;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:45px;fill:white;&#34;&gt;􍉡&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:45px;fill:red;&#34;&gt;񍉡&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(506,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:green;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􆄱&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:green;&#34;&gt;񆄱&lt;/text&gt;
   &lt;/g&gt;
   &lt;g transform=&#34;translate(483,520)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:63px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:63px;fill:black;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:63px;fill:white;&#34;&gt;􈠣&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:63px;fill:black;&#34;&gt;񈠣&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2316,11 +2316,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.9 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.06 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
 </pre>
@@ -2371,11 +2371,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.03 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.01 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;#0000CC&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
 </pre>
@@ -2426,11 +2426,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.95 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 5.14 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;213&#39; height=&#39;228&#39; viewBox=&#39;401 401 213 228&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;213&#34; height=&#34;228&#34; viewBox=&#34;401 401 213 228&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
 </pre>
@@ -2484,8 +2484,8 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
 </pre>
@@ -2536,11 +2536,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.98 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.97 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;blue&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;red&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
 </pre>
@@ -2591,11 +2591,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.93 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;rect x=&#34;500&#34; y=&#34;500&#34; width=&#34;15&#34; height=&#34;30&#34; style=&#34;fill:gray;&#34; /&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
@@ -2647,11 +2647,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;30&#39; height=&#39;60&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;30&#34; height=&#34;60&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
 </pre>
@@ -2702,11 +2702,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.92 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;white&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;black&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
 </pre>
@@ -2757,11 +2757,11 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;37.5&#39; height=&#39;60&#39; viewBox=&#39;495 495 25 40&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;37.5&#34; height=&#34;60&#34; viewBox=&#34;495 495 25 40&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;rect x=&#34;495&#34; y=&#34;495&#34; width=&#34;25&#34; height=&#34;40&#34; style=&#34;fill:black;&#34; /&gt;
   &lt;svg x=&#39;500&#39; y=&#39;500&#39;&gt;&lt;g transform=&#34;translate(0.0,30.0) scale(0.01,-0.01)&#34;&gt;&lt;path class=&#34;sym-fill&#34; fill=&#34;black&#34; d=&#34;M200 750 l0 -550 550 0 550 0 0 550 0 550 -550 0 -550 0 0 -550z&#34;/&gt;&lt;path class=&#34;sym-line&#34; fill=&#34;white&#34; d=&#34;M1300 2250 l0 -750 -650 0 -650 0 0 -750 0 -750 750 0 750 0 0 1500 0 1500 -100 0 -100 0 0 -750z m0 -1500 l0 -550 -550 0 -550 0 0 550 0 550 550 0 550 0 0 -550z&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;
 &lt;/svg&gt;
@@ -2813,14 +2813,14 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.95 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2871,14 +2871,14 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.06 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:#0000CC;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:#0000CC;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2929,14 +2929,14 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.95 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;213&#39; height=&#39;228&#39; viewBox=&#39;401 401 213 228&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;213&#34; height=&#34;228&#34; viewBox=&#34;401 401 213 228&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -2987,14 +2987,14 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.01 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.02 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -3048,11 +3048,11 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.01 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:blue;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:red;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:blue;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:red;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -3103,15 +3103,15 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.98 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;15&#39; height=&#39;30&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;15&#34; height=&#34;30&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;rect x=&#34;500&#34; y=&#34;500&#34; width=&#34;15&#34; height=&#34;30&#34; style=&#34;fill:gray;&#34; /&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -3162,14 +3162,14 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.96 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1.03 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;30&#39; height=&#39;60&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;30&#34; height=&#34;60&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -3220,14 +3220,14 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.95 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.97 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;500 500 15 30&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;500 500 15 30&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:black;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:black;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -3278,15 +3278,15 @@ Passwords are mixed with the salt before they are sent to the server.
     </li>
     <li class="list-group-item snippet">
       
-        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 0.99 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
+        <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Search-Time: 1 ms</code><br><code>&lt; Content-Type: image/svg&#43;xml;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">&lt;svg version=&#39;1.1&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;37.5&#39; height=&#39;60&#39; viewBox=&#39;495 495 25 40&#39;&gt;
-  &lt;text font-size=&#39;0&#39;&gt;S10000500x500&lt;/text&gt;
+        <pre class="prettyprint">&lt;svg version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;37.5&#34; height=&#34;60&#34; viewBox=&#34;495 495 25 40&#34;&gt;
+  &lt;text style=&#34;font-size:0%;&#34;&gt;S10000500x500&lt;/text&gt;
   &lt;rect x=&#34;495&#34; y=&#34;495&#34; width=&#34;25&#34; height=&#34;40&#34; style=&#34;fill:black;&#34; /&gt;
   &lt;g transform=&#34;translate(500,500)&#34;&gt;
-    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010 Filling&#39;;font-size:30px;fill:black;&#34;&gt;􀀁&lt;/text&gt;
-    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SignWriting 2010&#39;;font-size:30px;fill:white;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-fill&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWritingFill&#39;;font-size:30px;fill:black;&#34;&gt;􀀁&lt;/text&gt;
+    &lt;text class=&#34;sym-line&#34; style=&#34;pointer-events:none;font-family:&#39;SuttonSignWriting&#39;;font-size:30px;fill:white;&#34;&gt;񀀁&lt;/text&gt;
   &lt;/g&gt;
 &lt;/svg&gt;
 </pre>
@@ -3419,7 +3419,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/Q&#34;,
-    &#34;searchTime&#34;: &#34;0.2 ms&#34;
+    &#34;searchTime&#34;: &#34;32.75 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3480,7 +3480,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/QS10000&#34;,
-    &#34;searchTime&#34;: &#34;0.23 ms&#34;
+    &#34;searchTime&#34;: &#34;0.3 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S10000[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3602,7 +3602,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 2,
     &#34;location&#34;: &#34;/regex/QS10000S20500&#34;,
-    &#34;searchTime&#34;: &#34;0.23 ms&#34;
+    &#34;searchTime&#34;: &#34;0.22 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S10000[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -3664,7 +3664,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/QR100t110&#34;,
-    &#34;searchTime&#34;: &#34;0.26 ms&#34;
+    &#34;searchTime&#34;: &#34;10.53 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S((10[0-9a-f])|(110))[0-5][0-9a-f][0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3725,7 +3725,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/QT&#34;,
-    &#34;searchTime&#34;: &#34;0.21 ms&#34;
+    &#34;searchTime&#34;: &#34;0.2 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3786,7 +3786,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/QAS10000T&#34;,
-    &#34;searchTime&#34;: &#34;0.22 ms&#34;
+    &#34;searchTime&#34;: &#34;0.27 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS10000(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3847,7 +3847,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/QAS100uuT&#34;,
-    &#34;searchTime&#34;: &#34;0.22 ms&#34;
+    &#34;searchTime&#34;: &#34;0.24 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS100[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3908,7 +3908,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/QAS10000S20500T&#34;,
-    &#34;searchTime&#34;: &#34;0.23 ms&#34;
+    &#34;searchTime&#34;: &#34;0.22 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS10000S20500(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -3969,7 +3969,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/QAR100t110T&#34;,
-    &#34;searchTime&#34;: &#34;0.26 ms&#34;
+    &#34;searchTime&#34;: &#34;0.24 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS((10[0-9a-f])|(110))[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -4089,7 +4089,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/A/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QAS20310S26b02S33100T&#34;,
-    &#34;searchTime&#34;: &#34;0.31 ms&#34;
+    &#34;searchTime&#34;: &#34;0.43 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS20310S26b02S33100(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -4151,7 +4151,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/regex/a/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QAS203uuS26buuS331uuT&#34;,
-    &#34;searchTime&#34;: &#34;0.31 ms&#34;
+    &#34;searchTime&#34;: &#34;0.3 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS203[0-5][0-9a-f]S26b[0-5][0-9a-f]S331[0-5][0-9a-f](S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;
@@ -4213,7 +4213,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;location&#34;: &#34;/regex/S/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS33100S20310S26b02&#34;,
-    &#34;searchTime&#34;: &#34;0.3 ms&#34;
+    &#34;searchTime&#34;: &#34;0.28 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100[0-9]{3}x[0-9]{3}(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4341,7 +4341,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;location&#34;: &#34;/regex/SL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS33100482x483S20310506x500S26b02503x520&#34;,
-    &#34;searchTime&#34;: &#34;0.44 ms&#34;
+    &#34;searchTime&#34;: &#34;0.42 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4405,7 +4405,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;location&#34;: &#34;/regex/sL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS331uu482x483S203uu506x500S26buu503x520&#34;,
-    &#34;searchTime&#34;: &#34;0.44 ms&#34;
+    &#34;searchTime&#34;: &#34;0.43 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(A(S[123][0-9a-f]{2}[0-5][0-9a-f])&#43;)?[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S331[0-5][0-9a-f]((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4469,7 +4469,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 3,
     &#34;location&#34;: &#34;/regex/ASL/AS20310S26b02S33100M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QAS20310S26b02S33100TS33100482x483S20310506x500S26b02503x520&#34;,
-    &#34;searchTime&#34;: &#34;0.52 ms&#34;
+    &#34;searchTime&#34;: &#34;0.49 ms&#34;
   },
   &#34;results&#34;: [
     &#34;/(AS20310S26b02S33100(S[123][0-9a-f]{2}[0-5][0-9a-f])*)[BLMR]([0-9]{3}x[0-9]{3})(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*S33100((46[2-9])|(4[7-9][0-9])|(50[0-2]))x((46[3-9])|(4[7-9][0-9])|(50[0-3]))(S[123][0-9a-f]{2}[0-5][0-9a-f][0-9]{3}x[0-9]{3})*/&#34;,
@@ -4723,7 +4723,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 169,
     &#34;query&#34;: &#34;/world/svg&#34;,
-    &#34;searchTime&#34;: 0.0070929527282715
+    &#34;searchTime&#34;: 0.025974988937378
   },
   &#34;results&#34;: [
     {
@@ -5373,7 +5373,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 68,
     &#34;query&#34;: &#34;/world/flag&#34;,
-    &#34;searchTime&#34;: 0.0036709308624268
+    &#34;searchTime&#34;: 0.0045440196990967
   },
   &#34;results&#34;: [
     {
@@ -5592,7 +5592,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 118,
     &#34;query&#34;: &#34;/world/info&#34;,
-    &#34;searchTime&#34;: 0.0061221122741699
+    &#34;searchTime&#34;: 0.0058419704437256
   },
   &#34;results&#34;: [
     {
@@ -6242,7 +6242,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;query&#34;: &#34;/world/country/US&#34;,
-    &#34;searchTime&#34;: 0.0017900466918945
+    &#34;searchTime&#34;: 0.0017490386962891
   },
   &#34;results&#34;: [
     {
@@ -6379,7 +6379,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;query&#34;: &#34;/world/country/US/other&#34;,
-    &#34;searchTime&#34;: 0.0012907981872559
+    &#34;searchTime&#34;: 0.0015530586242676
   },
   &#34;results&#34;: [
     {
@@ -6462,7 +6462,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 136,
     &#34;location&#34;: &#34;/puddle&#34;,
-    &#34;searchTime&#34;: &#34;3.51 ms&#34;
+    &#34;searchTime&#34;: &#34;4.32 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -7304,7 +7304,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 10,
     &#34;location&#34;: &#34;/puddle/language/ase&#34;,
-    &#34;searchTime&#34;: &#34;4.85 ms&#34;
+    &#34;searchTime&#34;: &#34;6.6 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -7504,7 +7504,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/ase&#34;,
-    &#34;searchTime&#34;: &#34;1.54 ms&#34;
+    &#34;searchTime&#34;: &#34;1.53 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -7580,7 +7580,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/ase/query/QS10000S10008S21100&#34;,
-    &#34;searchTime&#34;: &#34;122.07 ms&#34;
+    &#34;searchTime&#34;: &#34;142.59 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -7658,7 +7658,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 160,
     &#34;totalResults&#34;: 181,
     &#34;location&#34;: &#34;/puddle/ase/query/QS2ff00S20500?offset=160&#34;,
-    &#34;searchTime&#34;: &#34;794.76 ms&#34;
+    &#34;searchTime&#34;: &#34;191.68 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8066,7 +8066,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 161,
     &#34;location&#34;: &#34;/puddle/ase/query/QS10000?limit=1&#34;,
-    &#34;searchTime&#34;: &#34;174.94 ms&#34;
+    &#34;searchTime&#34;: &#34;137.1 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8145,7 +8145,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 6,
     &#34;location&#34;: &#34;/puddle/ase/query/QS2ff00S20500S26504?limit=0&#34;,
-    &#34;searchTime&#34;: &#34;131.24 ms&#34;
+    &#34;searchTime&#34;: &#34;114.76 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8305,7 +8305,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 6,
     &#34;location&#34;: &#34;/puddle/ase/query/QS2ff00S20500S26504?sort=-created_at&#34;,
-    &#34;searchTime&#34;: &#34;131.38 ms&#34;
+    &#34;searchTime&#34;: &#34;115.66 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8465,7 +8465,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 160,
     &#34;totalResults&#34;: 181,
     &#34;location&#34;: &#34;/puddle/ase/query/QS2ff00S20500?offset=160&amp;limit=10&amp;sort=id&#34;,
-    &#34;searchTime&#34;: &#34;791.63 ms&#34;
+    &#34;searchTime&#34;: &#34;152.84 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8691,7 +8691,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 2,
     &#34;location&#34;: &#34;/puddle/sgn4/query/SL/M521x547S33100482x483S20310506x500S26b02503x520&#34;,
     &#34;query&#34;: &#34;QS33100482x483S20310506x500S26b02503x520&#34;,
-    &#34;searchTime&#34;: &#34;119.8 ms&#34;
+    &#34;searchTime&#34;: &#34;105.57 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8786,7 +8786,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/sgn4/query/signtext/QS20500S20320&#34;,
-    &#34;searchTime&#34;: &#34;236.02 ms&#34;
+    &#34;searchTime&#34;: &#34;167.44 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8797,18 +8797,18 @@ Passwords are mixed with the salt before they are sent to the server.
       &#34;sign&#34;: &#34;&#34;,
       &#34;signtext&#34;: &#34;M525x515S14c20476x484S2880a503x497 M539x516S15d0a461x484S15d02475x487S2e700510x491S26500525x501S20500529x485 S38900464x493 M549x517S30007482x482S18010519x483S18018446x484S22104518x470S22104465x470 M513x518S15d02486x499S20500494x482 M525x523S1eb10501x477S15d0a475x477S2450c478x492 M556x528S17610509x512S17614480x512S14c20533x472S14c28445x471S2880a509x492S28812472x491S2fb00493x484 S38800464x496 M513x517S15d02486x498S20500495x482 M528x547S18620509x457S18628472x457S20500495x452S2df1e474x496S2df06507x497S20320513x532S20328474x530 M518x556S28802452x507S32403482x482S10010473x524S10029436x535S28812417x518S2fb01436x494 L516x550S17610494x450S17610493x534S11502484x479S19220495x503 L523x529S10028477x499S1dc20499x489S22e04505x471 S38800464x496 M521x518S10033491x481S20500478x507 M552x517S2ff00482x482S18510527x488S18508450x486S26a00520x468S26a10452x465S2fb00493x467 M538x515S1f720462x499S20320493x499S1dc20514x485 M524x513S18530499x498S26506475x492S22104503x486 M547x573S10021517x427S10029453x427S2eb08515x463S2eb14476x463S2fd00491x453S1eb10488x522S15d0a466x526S2450c468x542&#34;,
       &#34;terms&#34;: [
-        &#34;ASL&#34;,
-        &#34;Ohio&#34;,
-        &#34;SignWriting&#34;,
-        &#34;all&#34;,
         &#34;hi&#34;,
-        &#34;me&#34;,
+        &#34;all&#34;,
+        &#34;teach&#34;,
         &#34;my&#34;,
+        &#34;workshop&#34;,
         &#34;next month&#34;,
-        &#34;over there (right)&#34;,
+        &#34;me&#34;,
         &#34;teach&#34;,
-        &#34;teach&#34;,
-        &#34;workshop&#34;
+        &#34;ASL&#34;,
+        &#34;SignWriting&#34;,
+        &#34;Ohio&#34;,
+        &#34;over there (right)&#34;
       ],
       &#34;text&#34;: &#34;Hi all, I hope my writing is clear. My workshop is in Ohio next month. I will teach ASL and SignWriting.&#34;,
       &#34;source&#34;: &#34;Charles Butler Neto 2010&#34;,
@@ -8876,7 +8876,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/sgn4/query/signtext/SL/M512x527S18002491x474S20500488x516S20500502x516&#34;,
     &#34;query&#34;: &#34;QS18002491x474S20500488x516S20500502x516&#34;,
-    &#34;searchTime&#34;: &#34;229.82 ms&#34;
+    &#34;searchTime&#34;: &#34;134.71 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -8954,7 +8954,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 12,
     &#34;location&#34;: &#34;/puddle/sgn4/search/del&#34;,
-    &#34;searchTime&#34;: &#34;113.14 ms&#34;
+    &#34;searchTime&#34;: &#34;72.35 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -9225,7 +9225,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 9,
     &#34;location&#34;: &#34;/puddle/sgn4/search/del?match=start&#34;,
-    &#34;searchTime&#34;: &#34;109.84 ms&#34;
+    &#34;searchTime&#34;: &#34;72.48 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -9448,7 +9448,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/sgn4/search/del?match=end&#34;,
-    &#34;searchTime&#34;: &#34;70.12 ms&#34;
+    &#34;searchTime&#34;: &#34;70.43 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -9526,7 +9526,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 2,
     &#34;location&#34;: &#34;/puddle/sgn4/search/Delaware?match=exact&#34;,
-    &#34;searchTime&#34;: &#34;80.86 ms&#34;
+    &#34;searchTime&#34;: &#34;74.9 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -9620,7 +9620,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 16,
     &#34;location&#34;: &#34;/puddle/sgn4/search/DEL?ci=1&#34;,
-    &#34;searchTime&#34;: &#34;129.9 ms&#34;
+    &#34;searchTime&#34;: &#34;76.97 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -9956,7 +9956,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 13,
     &#34;location&#34;: &#34;/puddle/sgn4/search/del?match=start&amp;ci=1&#34;,
-    &#34;searchTime&#34;: &#34;123.68 ms&#34;
+    &#34;searchTime&#34;: &#34;76.18 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -10244,7 +10244,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/sgn4/search/DEL?match=end&amp;ci=1&#34;,
-    &#34;searchTime&#34;: &#34;73.66 ms&#34;
+    &#34;searchTime&#34;: &#34;62.38 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -10322,7 +10322,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 2,
     &#34;location&#34;: &#34;/puddle/sgn4/search/delaware?match=exact&amp;ci=1&#34;,
-    &#34;searchTime&#34;: &#34;82.51 ms&#34;
+    &#34;searchTime&#34;: &#34;72.52 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -10416,7 +10416,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 14,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?term=hello&#34;,
-    &#34;searchTime&#34;: &#34;67.46 ms&#34;
+    &#34;searchTime&#34;: &#34;77.53 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -10534,7 +10534,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 3,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?text=hello&#34;,
-    &#34;searchTime&#34;: &#34;154.19 ms&#34;
+    &#34;searchTime&#34;: &#34;154.85 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -10608,7 +10608,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 6,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?query=QS2ff00S20500S26504&#34;,
-    &#34;searchTime&#34;: &#34;117.25 ms&#34;
+    &#34;searchTime&#34;: &#34;112.88 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -10694,7 +10694,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 2,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&amp;flags=ASL&#34;,
-    &#34;searchTime&#34;: &#34;148.45 ms&#34;
+    &#34;searchTime&#34;: &#34;141.84 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -10764,7 +10764,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 86,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&amp;flags=s&#34;,
-    &#34;searchTime&#34;: &#34;192.61 ms&#34;
+    &#34;searchTime&#34;: &#34;187.07 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -11170,7 +11170,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1357,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?source=valerie&amp;limit=5&#34;,
-    &#34;searchTime&#34;: &#34;227.56 ms&#34;
+    &#34;searchTime&#34;: &#34;225.06 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -11252,7 +11252,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?term=hello&#34;,
-    &#34;searchTime&#34;: &#34;60.68 ms&#34;
+    &#34;searchTime&#34;: &#34;62.9 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -11318,7 +11318,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 2,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?text=hello&#34;,
-    &#34;searchTime&#34;: &#34;150.74 ms&#34;
+    &#34;searchTime&#34;: &#34;146.29 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -11388,7 +11388,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 7,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?query=QS2ff00S20500S26504&#34;,
-    &#34;searchTime&#34;: &#34;115.22 ms&#34;
+    &#34;searchTime&#34;: &#34;108.61 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -11478,7 +11478,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 2,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&amp;flags=ASL&#34;,
-    &#34;searchTime&#34;: &#34;160.53 ms&#34;
+    &#34;searchTime&#34;: &#34;141.24 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -11548,7 +11548,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 91,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?fsw=M512x527S18002491x474S20500488x516S20500502x516&amp;flags=s&#34;,
-    &#34;searchTime&#34;: &#34;205.21 ms&#34;
+    &#34;searchTime&#34;: &#34;192.75 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -11974,7 +11974,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1584,
     &#34;location&#34;: &#34;/puddle/sgn4/sign?source=valerie&amp;limit=5&#34;,
-    &#34;searchTime&#34;: &#34;245.57 ms&#34;
+    &#34;searchTime&#34;: &#34;237.82 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -12103,7 +12103,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 5028,
     &#34;location&#34;: &#34;/puddle/sgn4/created?before=2008&amp;limit=10&#34;,
-    &#34;searchTime&#34;: &#34;199.75 ms&#34;
+    &#34;searchTime&#34;: &#34;161.07 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -12325,7 +12325,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 7,
     &#34;location&#34;: &#34;/puddle/sgn4/created?before=2015%2F02%2F01&amp;after=2015%2F01%2F01&#34;,
-    &#34;searchTime&#34;: &#34;74.83 ms&#34;
+    &#34;searchTime&#34;: &#34;19.97 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -12352,8 +12352,8 @@ Passwords are mixed with the salt before they are sent to the server.
       &#34;sign&#34;: &#34;M520x532S1440a480x468S14402489x492S22f04488x518&#34;,
       &#34;signtext&#34;: &#34;&#34;,
       &#34;terms&#34;: [
-        &#34;cl44 water running&#34;,
-        &#34;running water&#34;
+        &#34;running water&#34;,
+        &#34;cl44 water running&#34;
       ],
       &#34;text&#34;: &#34;&#34;,
       &#34;source&#34;: &#34;&#34;,
@@ -12547,7 +12547,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 1698,
     &#34;location&#34;: &#34;/puddle/sgn4/updated?before=2008&amp;limit=10&#34;,
-    &#34;searchTime&#34;: &#34;117.14 ms&#34;
+    &#34;searchTime&#34;: &#34;73.65 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -12772,7 +12772,7 @@ Passwords are mixed with the salt before they are sent to the server.
     &#34;offset&#34;: 0,
     &#34;totalResults&#34;: 7,
     &#34;location&#34;: &#34;/puddle/sgn4/updated?before=2015%2F02%2F01&amp;after=2015%2F01%2F01&#34;,
-    &#34;searchTime&#34;: &#34;72.47 ms&#34;
+    &#34;searchTime&#34;: &#34;28.26 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -12799,8 +12799,8 @@ Passwords are mixed with the salt before they are sent to the server.
       &#34;sign&#34;: &#34;M520x532S1440a480x468S14402489x492S22f04488x518&#34;,
       &#34;signtext&#34;: &#34;&#34;,
       &#34;terms&#34;: [
-        &#34;cl44 water running&#34;,
-        &#34;running water&#34;
+        &#34;running water&#34;,
+        &#34;cl44 water running&#34;
       ],
       &#34;text&#34;: &#34;&#34;,
       &#34;source&#34;: &#34;&#34;,
@@ -12945,7 +12945,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 1,
     &#34;location&#34;: &#34;/puddle/sgn4/entry/4&#34;,
-    &#34;searchTime&#34;: &#34;8.52 ms&#34;
+    &#34;searchTime&#34;: &#34;0.86 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -13021,7 +13021,7 @@ Passwords are mixed with the salt before they are sent to the server.
   &#34;meta&#34;: {
     &#34;totalResults&#34;: 3,
     &#34;location&#34;: &#34;/puddle/sgn4/entry/4,5,6?sort=created_at&#34;,
-    &#34;searchTime&#34;: &#34;16.3 ms&#34;
+    &#34;searchTime&#34;: &#34;0.95 ms&#34;
   },
   &#34;results&#34;: [
     {
@@ -13142,7 +13142,7 @@ Passwords are mixed with the salt before they are sent to the server.
         <code>&lt; Host: localhost:8888</code><br><code>&lt; Connection: close</code><br><code>&lt; Access-Control-Allow-Origin: *</code><br><code>&lt; X-Powered-By: SignWriting Server</code><br><code>&lt; Content-Type: text/plain;charset=utf-8</code><br>
       
       
-        <pre class="prettyprint">57279d878af06
+        <pre class="prettyprint">5801278d78efd
 </pre>
       
     </li>

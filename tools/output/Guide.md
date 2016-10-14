@@ -166,7 +166,7 @@ A listing of all puddle collections available for specific sign language.
 
 + Parameters
 
-    + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public dictionary.
 
 #### GET
 Information about a specific puddle by code or alternate
@@ -184,7 +184,7 @@ Download database for a specific puddle
 
 + Parameters
 
-    + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: ase (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + query: Q (string) - Formal SignWriting query string.
     + offset: 100 (optional, number) - offset for results array.
     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
@@ -197,7 +197,7 @@ Search puddle collection with query.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + query: Q (string) - Formal SignWriting query string.
     + offset: 100 (optional, number) - offset for results array.
     + limit: 100 (optional, number) - limit the number of results. 0 for no limit, default of 100.
@@ -210,7 +210,7 @@ Search puddle collection for SignText with query.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + flags: ASL (string) - Flags for FSW convertion to query string.
         'A' - sorted by the same exact symbols.
         'a' - sorted by the same general symbols.
@@ -229,7 +229,7 @@ Search puddle collection with Formal SignWriting and conversion flags.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + flags: ASL (string) - Flags for FSW convertion to query string.
         'A' - sorted by the same exact symbols.
         'a' - sorted by the same general symbols.
@@ -248,7 +248,7 @@ Search puddle collection for SignText with Formal SignWriting and conversion fla
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + search: hello (string) - search string.
     + match: exact (optional, string) - matching strategy: start, end, exact
     + ci: true (optional, boolean) - case insensitive flag.
@@ -263,7 +263,7 @@ Search puddle collection with string.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + term: hello (optional, string) - search terms and titles.
     + text: description (optional, string) - search extended text description.
     + query: Q (optional, string) - Formal SignWriting query string.
@@ -286,7 +286,7 @@ Search puddle collection for signs using a variety of parameters.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + term: hello (optional, string) - search terms and titles.
     + text: description (optional, string) - search extended text description.
     + query: Q (optional, string) - Formal SignWriting query string.
@@ -309,7 +309,7 @@ Search puddle collection for terms using a variety of parameters.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + before: 2015/01/01 (optional,string) - date time string
     + after: 2015/01/01 (optional,string) - date time string
     + offset: 100 (optional, number) - offset for results array.
@@ -323,7 +323,7 @@ Search puddle collection based on creation.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + before: 2015/01/01 (optional,string) - date time string
     + after: 2015/01/01 (optional,string) - date time string
     + offset: 100 (optional, number) - offset for results array.
@@ -337,7 +337,7 @@ Search puddle collection based on updates.
 
 + Parameters
 
-    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public ditionary.
+    + puddle: sgn4 (string) - puddle code for collections or ISO 639-3 code for public dictionary.
     + id: 3,4,5 (string) - list of comma separated entry id numbers.
     + sort: created_at (optional, number) - field for sorting results, prefix with minus for descending.  Options: id, user, sign, created_at, updated_at.
 

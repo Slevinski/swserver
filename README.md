@@ -1,13 +1,13 @@
 # SignWriting Server
-> swserver, v1.3.0
-May 2nd, 2016
+> swserver, v1.4.0
+October 14th, 2016
 
 ## About
 SignWriting is the international script for writing the sign languages of the world.
 The SignWriting Server provides online resources for SignWriting applications and users.  The server accepts HTTP requests and responds with SVG or JSON data. The SignWriting Server is built with the PHP SLIM Framework v2.6.
 
 The primary site is available on the Center for Sutton Movement Writing server.
-* http://signpuddle.net
+* https://signpuddle.net
 
 A mirror site is available on Wikimedia Labs.
 * https://swserver.wmflabs.org
@@ -128,11 +128,11 @@ http://www.slideshare.net/StephenSlevinski/presentations
 
 
 ## Reference
-The Formal SignWriting character encoding used in SignMaker is defined in an Internet Draft submitted to the IETF: [draft-slevinski-signwriting-text].
+The Formal SignWriting character encoding used in the SignWriting Server is defined in an Internet Draft submitted to the IETF: [draft-slevinski-formal-signwriting].
 The document is improved and resubmitted every 6 months.
 The character design has been stable since January 12, 2012.
-The current version of the Internet Draft is 06.
-The next version is planned for May 2016.
+The current version of the Internet Draft is 00.
+The next version is planned for April 2017.
 
 
 ## Epilogue
@@ -147,12 +147,13 @@ MIT
 * expand API for create, update, and delete
 
 ## Version History
+* 1.4.0 - Oct 14th, 2016: improved styling string and new Sutton SignWriting fonts 
 * 1.3.0 - May 2nd, 2016: new world group, added listings for puddle signs and terms 
 * 1.2.0 - Dec 17th, 2015: list puddles, download databases, custom limits, sorting, and date retrieval
 * 1.1.0 - Nov 25th, 2015: added query and search for puddle data
 * 1.0.0 - Nov 5th, 2015: initial public release
 
-[draft-slevinski-signwriting-text]: http://tools.ietf.org/html/draft-slevinski-signwriting-text
+[draft-slevinski-formal-signwriting]: http://tools.ietf.org/html/draft-slevinski-formal-signwriting
 [SignWriting 2010 Fonts]: https://github.com/Slevinski/signwriting_2010_fonts
 [SignWriting List]: http://www.signwriting.org/forums/swlist/
 [SignPuddle Online]: http://signpuddle.org
